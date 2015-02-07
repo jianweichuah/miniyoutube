@@ -65,25 +65,35 @@ $(document).ready(function() {
     // Keep track of the position of view and show small screen when original video div is out of view
     $(window).scroll(function() {
         if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.html5-video-container').height()) {
-            // 1. Grab the video element
+            // 1. Create the mini screen div to hold the video
+            $miniScreen = $('<div id="miniyoutube"></div');
+            $miniScreen.css('top', 55);
+            $miniScreen.css('left', $(window).width() - 380);
+
+            // 2. Grab the video element
             $video = $('.video-stream');
 
-            // 2. Store the current width and height to restore later
+            // 3. Store the current width and height to restore later
             originalWidth = $video.width();
             originalHeight = $video.height();
 
-            // 3. Wrap the video into the small element div
-            $video.wrap('<div id="miniyoutube"></div');
+            // 4. Wrap the video into the small element div
+            $video.wrap($miniScreen);
+            // If video is paused after wrapping, play it!
+            if ($video.get(0).paused) {
+                $video.get(0).play();
+            }
 
             // var player = document.getElementsByClassName("video-stream")[0];
             // $video.get(0).play();
-            // 4. Set the width and height of the video to fit the div
-            $video.css('width', '310px');
-            $video.css('height', '175px');
+            // 5. Set the width and height of the video to fit the div
+            $video.css('width', '100%');
+            $video.css('height', '100%');
 
-            // 5. Activate the draggable feature of the small screen
+            // 6. Activate the draggable feature of the small screen
             $('#miniyoutube').drags();
-            // 6. Set flag to true
+
+            // 7. Set flag to true
             floated = true;
         } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + $('.html5-video-container').height()) {
             // Put back the screen when the user scrolls up to the original player
@@ -93,9 +103,13 @@ $(document).ready(function() {
             // 2. Restore the width and heigh of the video
             $video.css('width', originalWidth);
             $video.css('height', originalHeight);
-            
+
             // 3. Take away the parent.
             $video.unwrap();
+            // If video is paused after unwrapping, play it!
+            if ($video.get(0).paused) {
+                $video.get(0).play();
+            }
 
             // 4. Set flag to false
             floated = false;
