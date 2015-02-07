@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Mini YouTube",
+  "description": "Makes YouTube video float while you're reading comments so you can do both at the same time.",
+  "version": "1.0",
+
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/watch*"],
+    "css": ["floatVideo.css"],
+    "js": ["floatVideo.js"]
+  }]
+}

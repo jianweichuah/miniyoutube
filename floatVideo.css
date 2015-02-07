@@ -1,0 +1,12 @@
+#miniyoutube {
+  width: 310px;
+  height: 175px;
+  line-height: 100px;
+  text-align: center;
+  background: red;
+  color: white;
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  z-index: 1000;
+}
