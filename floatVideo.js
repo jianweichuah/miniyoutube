@@ -1,22 +1,17 @@
-// Load jQuery if it's not already loaded.
-if (typeof jQuery == 'undefined') {
-    var script = document.createElement('script');
-    script.type = "text/javascript";
-    script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js";
-    document.getElementsByTagName('head')[0].appendChild(script);
-}
+var miniScreen = document.createElement('div');
+miniScreen.id = 'miniyoutube';
 
-var div = document.createElement( 'div' );
-div.innerHTML = "DRAG ME";
-div.id = "miniyoutube";
+var videoContainer = document.createElement('div');
+videoContainer.class = 'videoContainer';
 
-var video = document.getElementsByClassName('video-stream');
-video[0].style.width= "310px";
-video[0].style.height= "175px";
-console.log(video[0]);
-div.appendChild(video[0]);
+var video = document.getElementsByClassName('video-stream')[0];
+video.style.width= "310px";
+video.style.height= "175px";
 
-document.body.appendChild(div);
+videoContainer.appendChild(video);
+miniScreen.appendChild(videoContainer);
+
+document.body.appendChild(miniScreen);
 
 
 (function($) {
@@ -42,9 +37,23 @@ document.body.appendChild(div);
                 pos_y = $drag.offset().top + drg_h - e.pageY,
                 pos_x = $drag.offset().left + drg_w - e.pageX;
             $drag.css('z-index', 1000).parents().on("mousemove", function(e) {
+                // Prevent going out of screen
+                var left = e.pageX + pos_x - drg_w;
+                if (left < 5) {
+                    left = 5;
+                } else if (left > $(window).width() - drg_w - 5) {
+                    left = $(window).width() - drg_w - 5;
+                }
+
+                var top = e.pageY + pos_y - drg_h;
+                console.log(top + ", " + e.pageY + ", " + pos)
+                if (top < 55) {
+                    top = 55;
+                }
+
                 $('.draggable').offset({
-                    top:e.pageY + pos_y - drg_h,
-                    left:e.pageX + pos_x - drg_w
+                    top: top,
+                    left: left
                 }).on("mouseup", function() {
                     $(this).removeClass('draggable').css('z-index', z_idx);
                 });

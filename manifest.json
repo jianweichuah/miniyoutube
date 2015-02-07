@@ -7,6 +7,6 @@
   "content_scripts": [{
     "matches": ["https://www.youtube.com/watch*"],
     "css": ["floatVideo.css"],
-    "js": ["floatVideo.js"]
+    "js": ["jquery-2.1.3.min.js", "floatVideo.js"]
   }]
 }
