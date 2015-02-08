@@ -26,7 +26,7 @@ $(document).ready(function() {
                     drg_w = $drag.outerWidth(),
                     pos_y = $drag.offset().top + drg_h - e.pageY,
                     pos_x = $drag.offset().left + drg_w - e.pageX;
-                $drag.css('z-index', 1000).parents().on("mousemove", function(e) {
+                $drag.css('z-index', 1000).parent().on("mousemove", function(e) {
                     // Prevent going out of screen horizontally.
                     var left = e.pageX + pos_x - drg_w;
                     if (left < 5) {
@@ -53,8 +53,10 @@ $(document).ready(function() {
                 e.preventDefault(); // disable selection
             }).on("mouseup", function() {
                 if(opt.handle === "") {
+                    $(this).parent().unbind('mousemove');
                     $(this).removeClass('draggable');
                 } else {
+                    $(this).parent().unbind('mousemove');
                     $(this).removeClass('active-handle').parent().removeClass('draggable');
                 }
             });
@@ -67,51 +69,67 @@ $(document).ready(function() {
         if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.html5-video-container').height()) {
             // 1. Create the mini screen div to hold the video
             $miniScreen = $('<div id="miniyoutube"></div');
+            // Fix the mini screen to top right of the screen
             $miniScreen.css('top', 55);
             $miniScreen.css('left', $(window).width() - 380);
 
             // 2. Grab the video element
             $video = $('.video-stream');
 
-            // 3. Store the current width and height to restore later
+            // 3. Store the status of the video
+            var videoPaused = $video.get(0).paused;
+
+            // 4. Store the current width and height to restore later
             originalWidth = $video.width();
             originalHeight = $video.height();
 
-            // 4. Wrap the video into the small element div
+            // 5. Wrap the video into the small element div
             $video.wrap($miniScreen);
-            // If video is paused after wrapping, play it!
-            if ($video.get(0).paused) {
+
+            // 6. Disable video control for the small screen
+            $('#miniyoutube').click(function() {
+                return false;
+            });
+            $('#miniyoutube').dblclick(function() {
+                return false;
+            });
+
+            // 7. If the video was playing before, make sure it's not paused
+            if (!videoPaused) {
                 $video.get(0).play();
             }
 
-            // var player = document.getElementsByClassName("video-stream")[0];
-            // $video.get(0).play();
-            // 5. Set the width and height of the video to fit the div
+            // 8. Set the width and height of the video to fit the div
             $video.css('width', '100%');
             $video.css('height', '100%');
 
-            // 6. Activate the draggable feature of the small screen
+            // 9. Activate the draggable feature of the small screen
             $('#miniyoutube').drags();
 
-            // 7. Set flag to true
+            // 10. Set flag to true
             floated = true;
+
         } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + $('.html5-video-container').height()) {
             // Put back the screen when the user scrolls up to the original player
             // 1. Grab the video element
             $video = $('.video-stream');
 
-            // 2. Restore the width and heigh of the video
+            // 2. Store the status of the video 
+            var videoPaused = $video.get(0).paused;
+
+            // 3. Restore the width and heigh of the video
             $video.css('width', originalWidth);
             $video.css('height', originalHeight);
 
-            // 3. Take away the parent.
+            // 4. Take away the parent.
             $video.unwrap();
-            // If video is paused after unwrapping, play it!
-            if ($video.get(0).paused) {
+
+            // 5. Make the video status consistent
+            if (!videoPaused) {
                 $video.get(0).play();
             }
 
-            // 4. Set flag to false
+            // 6. Set flag to false
             floated = false;
         }
     });
