@@ -3,6 +3,8 @@ $(document).ready(function() {
     var floated = false;
     var originalHeight;
     var originalWidth;
+    var miniScreenLastTop;
+    var miniScreenLastLeft;
 
     (function($) {
         $.fn.drags = function(opt) {
@@ -69,9 +71,17 @@ $(document).ready(function() {
         if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.html5-video-container').height()) {
             // 1. Create the mini screen div to hold the video
             $miniScreen = $('<div id="miniyoutube"></div');
-            // Fix the mini screen to top right of the screen
-            $miniScreen.css('top', 55);
-            $miniScreen.css('left', $(window).width() - 380);
+            // Put the screen back to its last position, if defined.
+            // Else default to top right.
+            var miniScreenTop = 55;
+            if (miniScreenLastTop)
+                miniScreenTop = miniScreenLastTop;
+
+            var miniScreenLeft = $(window).width() - 380;
+            if (miniScreenLastLeft)
+                miniScreenLeft = miniScreenLastLeft;
+            $miniScreen.css('top', miniScreenTop);
+            $miniScreen.css('left', miniScreenLeft);
 
             // 2. Grab the video element
             $video = $('.video-stream');
@@ -117,19 +127,23 @@ $(document).ready(function() {
             // 2. Store the status of the video 
             var videoPaused = $video.get(0).paused;
 
-            // 3. Restore the width and heigh of the video
+            // 3. Save the current top and left of the mini screen.
+            miniScreenLastTop = $('#miniyoutube').css('top');
+            miniScreenLastLeft = $('#miniyoutube').css('left');
+
+            // 4. Restore the width and heigh of the video
             $video.css('width', originalWidth);
             $video.css('height', originalHeight);
 
-            // 4. Take away the parent.
+            // 5. Take away the parent.
             $video.unwrap();
 
-            // 5. Make the video status consistent
+            // 6. Make the video status consistent
             if (!videoPaused) {
                 $video.get(0).play();
             }
 
-            // 6. Set flag to false
+            // 7. Set flag to false
             floated = false;
         }
     });
