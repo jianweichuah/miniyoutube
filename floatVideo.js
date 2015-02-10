@@ -5,6 +5,8 @@ $(document).ready(function() {
     var originalWidth;
     var miniScreenLastTop;
     var miniScreenLastLeft;
+    var start;
+    var longpress = 100;
 
     (function($) {
         $.fn.drags = function(opt) {
@@ -96,10 +98,25 @@ $(document).ready(function() {
             // 5. Wrap the video into the small element div
             $video.wrap($miniScreen);
 
-            // 6. Disable video control for the small screen
+            // 6. Modify clicking to differentiate long vs short clicks.
+            // Long click -> dragging. Short click -> pause/play
+            $('#miniyoutube').on('mousedown', function(e) {
+                start = new Date().getTime();
+            });
+            $('#miniyoutube').on('mouseleave', function(e) {
+                start = 0;
+            });
+            $('#miniyoutube').on('mouseup', function(e) {
+                // If it's a short click, toggle the video status.
+                if (new Date().getTime() < (start + longpress)) {
+                   toggleVideo();
+                }
+                return false;
+            });
             $('#miniyoutube').click(function() {
                 return false;
             });
+            // Disable double click to full screen.
             $('#miniyoutube').dblclick(function() {
                 return false;
             });
@@ -147,4 +164,12 @@ $(document).ready(function() {
             floated = false;
         }
     });
+
+    function toggleVideo() {
+        $vid = $('.video-stream').get(0);
+        if ($vid.paused)
+            $vid.play();
+        else
+            $vid.pause();
+    }
 });
