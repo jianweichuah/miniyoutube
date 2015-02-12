@@ -4,7 +4,7 @@ The floating screen can be dragged and placed anywhere on the screen.
 
 It's published on the Chrome Web Store! [Download it here](https://chrome.google.com/webstore/detail/mini-youtube/acphfpihfjpgnihkgelafhmjeoodbehp)
 
-![Banner](https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/screenshots/promotional_tile_marquee.jpg)
+![Banner](https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/screenshots/promotional_tile_marquee.png)
 
 # Screenshots
 
