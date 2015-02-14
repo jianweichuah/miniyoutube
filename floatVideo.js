@@ -73,7 +73,10 @@ $(document).ready(function() {
 
     // Keep track of the position of view and show small screen when original video div is out of view
     $(window).scroll(function() {
-        if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.html5-video-container').height()) {
+        if (floated == false && $('.ended-mode').length) {
+            // If the video has ended and there is no floating screen, do nothing
+            return false;
+        } else if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.html5-video-container').height()) {
             // 1. Create the mini screen div to hold the video
             $miniScreen = $('<div id="miniyoutube"></div');
             // Put the screen back to its last position, if defined.
@@ -191,6 +194,24 @@ $(document).ready(function() {
             }
 
             // 7. Set flag to false
+            floated = false;
+        } else if (floated == true && $('.ended-mode').length) {
+            // If the video has ended and the screen is still around, clear it.
+            // 1. Grab the video element
+            $video = $('.video-stream');
+
+            // 2. Restore the width and heigh of the video
+            $video.css('width', originalWidth);
+            $video.css('height', originalHeight);
+
+            // Remove the resizers
+            $('.resizer').unbind('mousedown');
+            $video.next().remove();
+
+            // 3. Take away the parent.
+            $video.unwrap();
+
+            // 4. Set flag to false
             floated = false;
         }
     });
