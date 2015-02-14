@@ -226,6 +226,7 @@ $(document).ready(function() {
         dragRatio = dragStartHeight/dragStartWidth;
         // Add event listeners to perform resize
         $(document).mousemove(doDrag);
+        window.addEventListener('mouseup', stopDrag);
         e.preventDefault();
 
         return false;
