@@ -38,7 +38,9 @@ $(document).ready(function() {
                     drg_w = $drag.outerWidth(),
                     pos_y = $drag.offset().top + drg_h - e.pageY,
                     pos_x = $drag.offset().left + drg_w - e.pageX;
-                $drag.css('z-index', 1000).parent().on("mousemove", function(e) {
+                $drag.css('z-index', 1000);
+
+                $(window).on("mousemove", function(e) {
                     // Prevent going out of screen horizontally.
                     var left = e.pageX + pos_x - drg_w;
                     if (left < 5) {
@@ -62,7 +64,7 @@ $(document).ready(function() {
                         $(this).removeClass('draggable').css('z-index', z_idx);
                     });
                 }).on("mouseup", function() {
-                    $(this).parent().unbind('mousemove');
+                    $(window).unbind('mousemove');
                     $(this).removeClass('draggable');
                 });
 
