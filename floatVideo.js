@@ -5,8 +5,14 @@ $(document).ready(function() {
     var originalWidth;
     var miniScreenLastTop;
     var miniScreenLastLeft;
+    var miniScreenLastHeight;
+    var miniScreenLastWidth;
     var start;
     var longpress = 100;
+    var dragStartX, dragStartY, dragStartWidth, dragStartHeight, dragRatio;
+    var maxWidth = 640;
+    var minWidth = 310;
+    var resizing = false;
 
     (function($) {
         $.fn.drags = function(opt) {
@@ -20,11 +26,13 @@ $(document).ready(function() {
             }
 
             return $el.css('cursor', opt.cursor).on("mousedown", function(e) {
-                if(opt.handle === "") {
-                    var $drag = $(this).addClass('draggable');
-                } else {
-                    var $drag = $(this).addClass('active-handle').parent().addClass('draggable');
+                // If the clicked div is resizer, don't make it draggable.
+                if(e.target.className === "resizer") {
+                    return false;
                 }
+
+                var $drag = $(this).addClass('draggable');
+
                 var z_idx = $drag.css('z-index'),
                     drg_h = $drag.outerHeight(),
                     drg_w = $drag.outerWidth(),
@@ -53,18 +61,13 @@ $(document).ready(function() {
                     }).on("mouseup", function() {
                         $(this).removeClass('draggable').css('z-index', z_idx);
                     });
-                });
-                e.preventDefault(); // disable selection
-            }).on("mouseup", function() {
-                if(opt.handle === "") {
+                }).on("mouseup", function() {
                     $(this).parent().unbind('mousemove');
                     $(this).removeClass('draggable');
-                } else {
-                    $(this).parent().unbind('mousemove');
-                    $(this).removeClass('active-handle').parent().removeClass('draggable');
-                }
-            });
+                });
 
+                e.preventDefault(); // disable selection
+            });
         }
     })(jQuery);
 
@@ -84,6 +87,13 @@ $(document).ready(function() {
                 miniScreenLeft = miniScreenLastLeft;
             $miniScreen.css('top', miniScreenTop);
             $miniScreen.css('left', miniScreenLeft);
+
+            if (miniScreenLastHeight) {
+                $miniScreen.height(miniScreenLastHeight);
+            }
+            if (miniScreenLastWidth) {
+                $miniScreen.width(miniScreenLastWidth);
+            }
 
             // 2. Grab the video element
             $video = $('.video-stream');
@@ -108,6 +118,11 @@ $(document).ready(function() {
             });
             $('#miniyoutube').on('mouseup', function(e) {
                 // If it's a short click, toggle the video status.
+                if (resizing == true) {
+                    stopDrag(e);
+                    return false;
+                }
+
                 if (new Date().getTime() < (start + longpress)) {
                    toggleVideo();
                 }
@@ -136,6 +151,15 @@ $(document).ready(function() {
             // 10. Set flag to true
             floated = true;
 
+            // Add resizers to the right corners of the div
+            $('#miniyoutube').append('<div>\
+                                            <div class="resizer" id="mnyt-br"></div>\
+                                            <div class="resizer" id="mnyt-tr"></div>\
+                                      </div>');
+
+            // Add listener for the resizers
+            $('.resizer').bind('mousedown.resizer', initDrag);
+
         } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + $('.html5-video-container').height()) {
             // Put back the screen when the user scrolls up to the original player
             // 1. Grab the video element
@@ -147,10 +171,16 @@ $(document).ready(function() {
             // 3. Save the current top and left of the mini screen.
             miniScreenLastTop = $('#miniyoutube').css('top');
             miniScreenLastLeft = $('#miniyoutube').css('left');
+            miniScreenLastHeight = $('#miniyoutube').height();
+            miniScreenLastWidth = $('#miniyoutube').width();
 
             // 4. Restore the width and heigh of the video
             $video.css('width', originalWidth);
             $video.css('height', originalHeight);
+
+            // Remove the resizers
+            $('.resizer').unbind('mousedown');
+            $video.next().remove();
 
             // 5. Take away the parent.
             $video.unwrap();
@@ -164,6 +194,52 @@ $(document).ready(function() {
             floated = false;
         }
     });
+
+    function initDrag(e) {
+        resizing = true;
+        // Store the initial values to calculate new size later
+        dragStartX = e.clientX;
+        dragStartY = e.clientY;
+        dragStartWidth = $('#miniyoutube').width();
+        dragStartHeight = $('#miniyoutube').height();
+        dragRatio = dragStartHeight/dragStartWidth;
+        // Add event listeners to perform resize
+        $(document).mousemove(doDrag);
+        e.preventDefault();
+
+        return false;
+    }
+
+    function doDrag(e) {
+        // if not resizing, do nothing
+        if (resizing == false) {
+            return false;
+        }
+
+        var newWidth = dragStartWidth + e.clientX - dragStartX;
+        // Make sure the new width does not exceed the max width
+        if (newWidth > maxWidth) {
+            newWidth = maxWidth;
+        }
+        if (newWidth < minWidth) {
+            newWidth = minWidth;
+        }
+
+        var newHeight = parseInt(newWidth * dragRatio);
+        $('#miniyoutube').width(newWidth);
+        $('#miniyoutube').height(newHeight);
+        e.preventDefault();
+
+        return false;
+    }
+
+    function stopDrag(e) {
+        // Set the flag to false
+        resizing = false;
+        // Remove the listensers
+        $(document).unbind('mousemove');
+        return false;
+    }
 
     function toggleVideo() {
         $vid = $('.video-stream').get(0);
