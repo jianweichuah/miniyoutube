@@ -102,6 +102,7 @@ $(document).ready(function() {
 
             // 2. Grab the video element
             $video = $('.video-stream');
+            $video.addClass('mnyt-video');
 
             // 3. Store the status of the video
             var videoPaused = $video.get(0).paused;
@@ -159,11 +160,12 @@ $(document).ready(function() {
             // Add resizers to the right corners of the div
             $('#miniyoutube').append('<div>\
                                             <div class="resizer" id="mnyt-br"></div>\
-                                            <div class="resizer" id="mnyt-tr"></div>\
+                                            <img class="resize-icon" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png" />\
                                       </div>');
 
             // Add listener for the resizers
             $('.resizer').bind('mousedown.resizer', initDrag);
+            $('.resize-icon').bind('mousedown.resizer', initDrag);
 
         } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + $('.html5-video-container').height()) {
             // Put back the screen when the user scrolls up to the original player
@@ -184,10 +186,10 @@ $(document).ready(function() {
             $video.css('height', originalHeight);
 
             // Remove the resizers
-            $('.resizer').unbind('mousedown');
             $video.next().remove();
 
             // 5. Take away the parent.
+            $video.removeClass('mnyt-video');
             $video.unwrap();
 
             // 6. Make the video status consistent
@@ -211,6 +213,7 @@ $(document).ready(function() {
             $video.next().remove();
 
             // 3. Take away the parent.
+            $video.removeClass('mnyt-video');
             $video.unwrap();
 
             // 4. Set flag to false
@@ -227,8 +230,8 @@ $(document).ready(function() {
         dragStartHeight = $('#miniyoutube').height();
         dragRatio = dragStartHeight/dragStartWidth;
         // Add event listeners to perform resize
-        $(document).mousemove(doDrag);
-        window.addEventListener('mouseup', stopDrag);
+        $(window).mousemove(doDrag);
+        $(window).mouseup(stopDrag);
         e.preventDefault();
 
         return false;
@@ -249,7 +252,7 @@ $(document).ready(function() {
             newWidth = minWidth;
         }
 
-        var newHeight = parseInt(newWidth * dragRatio);
+        var newHeight = Math.round(newWidth * dragRatio);
         $('#miniyoutube').width(newWidth);
         $('#miniyoutube').height(newHeight);
         e.preventDefault();
@@ -261,7 +264,7 @@ $(document).ready(function() {
         // Set the flag to false
         resizing = false;
         // Remove the listensers
-        $(document).unbind('mousemove');
+        $(window).unbind('mousemove');
         return false;
     }
 

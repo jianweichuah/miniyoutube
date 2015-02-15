@@ -5,6 +5,12 @@
   left: 5px;
   top: 55px;
   z-index: 1000;
+  background-color: black;
+}
+
+.mnyt-video {
+  top: 0px !important;
+  left: 0px !important;
 }
 
 .draggable {
@@ -21,11 +27,13 @@
 #mnyt-br {
   right: 0;
   bottom: 0;
-  cursor: e-resize;
+  cursor: se-resize;
 }
 
-#mnyt-tr {
-  right: 0;
-  top: 0;
-  cursor: e-resize;
+.resize-icon {
+  right: -3px;
+  bottom: -3px;
+  position:absolute;
+  z-index: 1001;
+  cursor: se-resize;
 }
