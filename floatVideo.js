@@ -14,6 +14,9 @@ $(document).ready(function() {
     var minWidth = 310;
     var resizing = false;
 
+    // Bind the time update event to the video
+    $('.video-stream').bind('timeupdate', updateTime);
+
     (function($) {
         $.fn.drags = function(opt) {
 
@@ -161,6 +164,9 @@ $(document).ready(function() {
             $('#miniyoutube').append('<div>\
                                             <div class="resizer" id="mnyt-br"></div>\
                                             <img class="resize-icon" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png" />\
+                                            <div class="mnyt-progress-wrap mnyt-progress">\
+                                                <div class="mnyt-progress-bar mnyt-progress"></div>\
+                                            </div>\
                                       </div>');
 
             // Add listener for the resizers
@@ -220,6 +226,22 @@ $(document).ready(function() {
             floated = false;
         }
     });
+
+    function updateTime() {
+        // If video is not floated, do nothing.
+        if (floated == false) {
+            return false;
+        }
+        // Get the video player and calculate the progress
+        $video = $('.video-stream').get(0);
+        var percent = $video.currentTime/$video.duration;
+        var progressBarWidth = $('#miniyoutube').width();
+        var progressTotal = percent * progressBarWidth;
+
+        $('.mnyt-progress-bar').stop().animate({
+            left: progressTotal
+        });
+    }
 
     function initDrag(e) {
         resizing = true;
