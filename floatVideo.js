@@ -205,25 +205,6 @@ $(document).ready(function() {
 
             // 7. Set flag to false
             floated = false;
-        } else if (floated == true && $('.ended-mode').length) {
-            // If the video has ended and the screen is still around, clear it.
-            // 1. Grab the video element
-            $video = $('.video-stream');
-
-            // 2. Restore the width and heigh of the video
-            $video.css('width', originalWidth);
-            $video.css('height', originalHeight);
-
-            // Remove the resizers
-            $('.resizer').unbind('mousedown');
-            $video.next().remove();
-
-            // 3. Take away the parent.
-            $video.removeClass('mnyt-video');
-            $video.unwrap();
-
-            // 4. Set flag to false
-            floated = false;
         }
     });
 
@@ -234,6 +215,29 @@ $(document).ready(function() {
         }
         // Get the video player and calculate the progress
         $video = $('.video-stream').get(0);
+
+        // If the video has ended and the screen is still around, clear it.
+        if (floated == true && $video.currentTime == $video.duration) {
+            // 1. Grab the video element
+            $miniScreen = $('.video-stream');
+
+            // 2. Restore the width and heigh of the video
+            $miniScreen.css('width', originalWidth);
+            $miniScreen.css('height', originalHeight);
+
+            // Remove the resizers
+            $('.resizer').unbind('mousedown');
+            $miniScreen.next().remove();
+
+            // 3. Take away the parent.
+            $miniScreen.removeClass('mnyt-video');
+            $miniScreen.unwrap();
+
+            // 4. Set flag to false
+            floated = false;
+            return false;
+        }
+
         var percent = $video.currentTime/$video.duration;
         var progressBarWidth = $('#miniyoutube').width();
         var progressTotal = percent * progressBarWidth;
