@@ -1,8 +1,8 @@
 # Mini Youtube
-A chrome extension to float video in a small screen so the user can read comments and watch video simultaneously.
-The floating screen can be dragged and placed anywhere on the screen.
+A chrome extension that makes YouTube video float while you're reading/writing comments so you can do both at the same time.
+The floating screen is resizable and can be dragged and placed anywhere on the screen.
 
-It's published on the Chrome Web Store! [Download it here](http://goo.gl/TyNOlF)
+Download it on the [Chrome Web Store](http://goo.gl/TyNOlF)
 
 ![Banner](https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/screenshots/promotional_tile_marquee.png)
 
