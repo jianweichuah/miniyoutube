@@ -56,3 +56,36 @@
   z-index: 1001;
   cursor: se-resize;
 }
+
+.mnyt-control-icons {
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 3px;
+  z-index: 1001;
+  display: none;
+}
+
+.mnyt-size-button {
+  display: block;
+  margin-bottom: 3px;
+
+  width: 30px;
+  height: 30px;
+  background: rgba(23,35,34,.75);
+  border-radius: 0.5em;
+  border: 0;
+  cursor: pointer;
+
+  font-size: 1em;
+  text-align: center;
+  font-family: 'Helvetica Neue',Helvetica,Arial;
+  transition: background-color 40ms;
+  font-weight: bold;
+  text-decoration: none;
+  color:#ffffff;
+}
+
+.mnyt-size-button:hover {
+  background-color: #cc181e;
+}

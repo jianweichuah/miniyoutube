@@ -10,12 +10,19 @@ $(document).ready(function() {
     var start;
     var longpress = 100;
     var dragStartX, dragStartY, dragStartWidth, dragStartHeight, dragRatio;
-    var maxWidth = 640;
+    var maxWidth = 854;
     var minWidth = 310;
     var resizing = false;
 
-    // Bind the time update event to the video
-    $('.video-stream').bind('timeupdate', updateTime);
+    // A list of predefined size of the screen
+    var SMALL_WIDTH = 310;
+    var SMALL_HEIGHT = 175;
+    var MEDIUM_WIDTH = 475;
+    var MEDIUM_HEIGHT = 268;
+    var LARGE_WIDTH = 640;
+    var LARGE_HEIGHT = 360;
+    var EXTRA_LARGE_WIDTH = 854;
+    var EXTRA_LARGE_HEIGHT = 480;
 
     (function($) {
         $.fn.drags = function(opt) {
@@ -30,7 +37,7 @@ $(document).ready(function() {
 
             return $el.css('cursor', opt.cursor).on("mousedown", function(e) {
                 // If the clicked div is resizer, don't make it draggable.
-                if(e.target.className === "resizer") {
+                if(e.target.className === "resizer" || e.target.className === "mnyt-size-button") {
                     return false;
                 }
 
@@ -106,6 +113,8 @@ $(document).ready(function() {
             // 2. Grab the video element
             $video = $('.video-stream');
             $video.addClass('mnyt-video');
+            // Bind the time update event to the video
+            $video.bind('timeupdate', updateTime);
 
             // 3. Store the status of the video
             var videoPaused = $video.get(0).paused;
@@ -122,8 +131,12 @@ $(document).ready(function() {
             $('#miniyoutube').on('mousedown', function(e) {
                 start = new Date().getTime();
             });
+            $('#miniyoutube').on('mouseover', function(e) {
+                $('.mnyt-control-icons').show();
+            });
             $('#miniyoutube').on('mouseleave', function(e) {
                 start = 0;
+                $('.mnyt-control-icons').hide();
             });
             $('#miniyoutube').on('mouseup', function(e) {
                 // If it's a short click, toggle the video status.
@@ -133,7 +146,11 @@ $(document).ready(function() {
                 }
 
                 if (new Date().getTime() < (start + longpress)) {
-                   toggleVideo();
+                    // If the click is on the controls, don't pause
+                    if (e.target.className == "mnyt-size-button") {
+                        return false;
+                    }
+                    toggleVideo();
                 }
                 return false;
             });
@@ -164,10 +181,24 @@ $(document).ready(function() {
             $('#miniyoutube').append('<div>\
                                             <div class="resizer" id="mnyt-br"></div>\
                                             <img class="resize-icon" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png" />\
+                                            <div class="mnyt-control-icons">\
+                                                <button class="mnyt-size-button" id="mnyt-small-button">S</button>\
+                                                <button class="mnyt-size-button" id="mnyt-medium-button">M</button>\
+                                                <button class="mnyt-size-button" id="mnyt-large-button">L</button>\
+                                                <button class="mnyt-size-button" id="mnyt-extra-large-button">XL</button>\
+                                            </div>\
                                             <div class="mnyt-progress-wrap mnyt-progress">\
                                                 <div class="mnyt-progress-bar mnyt-progress"></div>\
                                             </div>\
                                       </div>');
+
+            // Add listeners for the controls
+            $('#mnyt-small-button').click(handleTransitionSmall);
+            $('#mnyt-medium-button').click(handleTransitionMedium);
+            $('#mnyt-large-button').click(handleTransitionLarge);
+            $('#mnyt-extra-large-button').click(handleTransitionExtraLarge);
+
+            $('.mnyt-fastforward-icon').click(handleFastForward);
 
             // Add listener for the resizers
             $('.resizer').bind('mousedown.resizer', initDrag);
@@ -207,6 +238,52 @@ $(document).ready(function() {
             floated = false;
         }
     });
+
+    // Update the size of the screen to small
+    function handleTransitionSmall() {
+        resizeScreen(SMALL_WIDTH, SMALL_HEIGHT);
+    }
+
+    function handleTransitionMedium() {
+        resizeScreen(MEDIUM_WIDTH, MEDIUM_HEIGHT);
+    }
+
+    function handleTransitionLarge() {
+        resizeScreen(LARGE_WIDTH, LARGE_HEIGHT);
+    }
+
+    function handleTransitionExtraLarge() {
+        resizeScreen(EXTRA_LARGE_WIDTH, EXTRA_LARGE_HEIGHT);
+    }
+
+    function resizeScreen(newWidth, newHeight) {
+        if ($('#miniyoutube').width() == newWidth) {
+            return false;
+        }
+
+        $('#miniyoutube').animate({'width':newWidth, 'height':newHeight}, 300);
+    }
+
+    function handleFastForward() {
+        $video = $('.video-stream').get(0);
+        var updatedRate = 1;
+        switch ($video.playbackRate) {
+            case 1:
+                updatedRate = 1.25;
+                break;
+            case 1.25:
+                updatedRate = 1.5;
+                break;
+            case 1.5:
+                updatedRate = 2;
+                break;
+            default:
+                updatedRate = 1;
+                break;
+        }
+        $video.playbackRate = updatedRate;
+        return false;
+    }
 
     function updateTime() {
         // If video is not floated, do nothing.
