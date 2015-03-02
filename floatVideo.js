@@ -24,6 +24,24 @@ $(document).ready(function() {
     var EXTRA_LARGE_WIDTH = 854;
     var EXTRA_LARGE_HEIGHT = 480;
 
+    // Preload images
+    preloadImage("https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/pin.png");
+    preloadImage("https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png");
+
+    // Read from the storage to see if the settings exist.
+    // If yes, populate the variables
+    chrome.storage.sync.get(['miniScreenLastTop', 'miniScreenLastLeft', 
+                             'miniScreenLastHeight', 'miniScreenLastWidth'], function(items) {
+        if (items['miniScreenLastTop'])
+            miniScreenLastTop = items['miniScreenLastTop'];
+        if (items['miniScreenLastLeft'])
+            miniScreenLastLeft = items['miniScreenLastLeft'];
+        if (items['miniScreenLastHeight'])
+            miniScreenLastHeight = items['miniScreenLastHeight'];
+        if (items['miniScreenLastWidth'])
+            miniScreenLastWidth = items['miniScreenLastWidth'];
+    });
+
     (function($) {
         $.fn.drags = function(opt) {
 
@@ -37,7 +55,9 @@ $(document).ready(function() {
 
             return $el.css('cursor', opt.cursor).on("mousedown", function(e) {
                 // If the clicked div is resizer, don't make it draggable.
-                if(e.target.className === "resizer" || e.target.className === "mnyt-size-button") {
+                if(e.target.className === "resizer" || 
+                   e.target.className === "mnyt-size-button" || 
+                   e.target.className === "mnyt-pin-img") {
                     return false;
                 }
 
@@ -91,24 +111,29 @@ $(document).ready(function() {
         } else if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.html5-video-container').height()) {
             // 1. Create the mini screen div to hold the video
             $miniScreen = $('<div id="miniyoutube"></div');
+
             // Put the screen back to its last position, if defined.
             // Else default to top right.
             var miniScreenTop = 55;
-            if (miniScreenLastTop)
-                miniScreenTop = miniScreenLastTop;
-
+            var miniScreenHeight = 175;
             var miniScreenLeft = $(window).width() - 380;
-            if (miniScreenLastLeft)
+            var miniScreenWidth = 310;
+
+            if (miniScreenLastTop && miniScreenLastHeight && 
+                miniScreenLastLeft && miniScreenLastWidth &&
+                miniScreenLastLeft + miniScreenLastWidth <= $(window).width() &&
+                miniScreenLastTop + miniScreenLastHeight <= $(window).height()) {
+
+                miniScreenTop = miniScreenLastTop;
+                miniScreenHeight = miniScreenLastHeight;
                 miniScreenLeft = miniScreenLastLeft;
+                miniScreenWidth = miniScreenLastWidth;
+            }
+
             $miniScreen.css('top', miniScreenTop);
             $miniScreen.css('left', miniScreenLeft);
-
-            if (miniScreenLastHeight) {
-                $miniScreen.height(miniScreenLastHeight);
-            }
-            if (miniScreenLastWidth) {
-                $miniScreen.width(miniScreenLastWidth);
-            }
+            $miniScreen.height(miniScreenHeight);
+            $miniScreen.width(miniScreenWidth);
 
             // 2. Grab the video element
             $video = $('.video-stream');
@@ -147,7 +172,7 @@ $(document).ready(function() {
 
                 if (new Date().getTime() < (start + longpress)) {
                     // If the click is on the controls, don't pause
-                    if (e.target.className == "mnyt-size-button") {
+                    if (e.target.className === "mnyt-size-button" || e.target.className === "mnyt-pin-img") {
                         return false;
                     }
                     toggleVideo();
@@ -182,6 +207,8 @@ $(document).ready(function() {
                                             <div class="resizer" id="mnyt-br"></div>\
                                             <img class="resize-icon" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png" />\
                                             <div class="mnyt-control-icons">\
+                                                <button class="mnyt-size-button" id="mnyt-pin-button"><img class="mnyt-pin-img" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/pin.png" width="20px"/></button>\
+                                                <label class="mnyt-pin-label">Save screen settings.</label>\
                                                 <button class="mnyt-size-button" id="mnyt-small-button">S</button>\
                                                 <button class="mnyt-size-button" id="mnyt-medium-button">M</button>\
                                                 <button class="mnyt-size-button" id="mnyt-large-button">L</button>\
@@ -198,6 +225,16 @@ $(document).ready(function() {
             $('#mnyt-large-button').click(handleTransitionLarge);
             $('#mnyt-extra-large-button').click(handleTransitionExtraLarge);
 
+            // Save the position and size of the screen if pin button is clicked
+            $('#mnyt-pin-button').click(saveMiniYouTubeSettings);
+
+            $('#mnyt-pin-button').on('mouseover', function(e) {
+                $('.mnyt-pin-label').show();
+            });
+            $('#mnyt-pin-button').on('mouseleave', function(e) {
+                $('.mnyt-pin-label').hide();
+            });
+
             $('.mnyt-fastforward-icon').click(handleFastForward);
 
             // Add listener for the resizers
@@ -213,10 +250,7 @@ $(document).ready(function() {
             var videoPaused = $video.get(0).paused;
 
             // 3. Save the current top and left of the mini screen.
-            miniScreenLastTop = $('#miniyoutube').css('top');
-            miniScreenLastLeft = $('#miniyoutube').css('left');
-            miniScreenLastHeight = $('#miniyoutube').height();
-            miniScreenLastWidth = $('#miniyoutube').width();
+            saveMiniYouTubeSettings();
 
             // 4. Restore the width and heigh of the video
             $video.css('width', originalWidth);
@@ -238,6 +272,19 @@ $(document).ready(function() {
             floated = false;
         }
     });
+
+    function saveMiniYouTubeSettings() {
+        // Save screen position and size
+        miniScreenLastTop = $('#miniyoutube').position().top;
+        miniScreenLastLeft = $('#miniyoutube').position().left;
+        miniScreenLastHeight = $('#miniyoutube').height();
+        miniScreenLastWidth = $('#miniyoutube').width();
+        // Persist to browser storage
+        chrome.storage.sync.set({'miniScreenLastTop': miniScreenLastTop,
+                                 'miniScreenLastLeft': miniScreenLastLeft,
+                                 'miniScreenLastHeight': miniScreenLastHeight,
+                                 'miniScreenLastWidth': miniScreenLastWidth});
+    }
 
     // Update the size of the screen to small
     function handleTransitionSmall() {
@@ -377,5 +424,11 @@ $(document).ready(function() {
             $vid.play();
         else
             $vid.pause();
+    }
+
+    function preloadImage(url)
+    {
+        var img=new Image();
+        img.src=url;
     }
 });
