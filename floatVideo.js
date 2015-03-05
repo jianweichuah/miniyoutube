@@ -13,6 +13,7 @@ $(document).ready(function() {
     var maxWidth = 854;
     var minWidth = 310;
     var resizing = false;
+    var flashAlertShown = false;
 
     // A list of predefined size of the screen
     var SMALL_WIDTH = 310;
@@ -105,7 +106,25 @@ $(document).ready(function() {
 
     // Keep track of the position of view and show small screen when original video div is out of view
     $(window).scroll(function() {
-        if (floated == false && $('.ended-mode').length) {
+        // If this is not a html5 video page, tell the user it's not supported.
+        if (!$('.html5-video-container').length) {
+            // Only show the alert if it hasn't been shown before.
+            if (!flashAlertShown) {
+                $flashNotSupportedAlert = $('<div style="width: 100%">\
+                                                <div class="alert alert-danger" role="alert">\
+                                                    <img src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/icon16.png" height="10px">\
+                                                    Mini YouTube: Flash videos not currently supported!\
+                                                </div>\
+                                             </div>');
+                $('body').prepend($flashNotSupportedAlert);
+                // Show it for 5 seconds, fade it out and remove it.
+                $flashNotSupportedAlert.show().delay(5000).fadeOut(300, function() {
+                    $(this).remove();
+                });
+                flashAlertShown = true;
+            }
+            return false;
+        } else if (floated == false && $('.ended-mode').length) {
             // If the video has ended and there is no floating screen, do nothing
             return false;
         } else if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.html5-video-container').height()) {

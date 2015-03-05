@@ -8,6 +8,26 @@
   background-color: black;
 }
 
+.alert {
+  position: fixed;
+  width: 90%;
+  top: 60px;
+  z-index: 1000;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: block;
+  margin-left: 3.25%;
+  text-align: center;
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
 .mnyt-progress-wrap {
   background: #cc181e;
   overflow: hidden;
