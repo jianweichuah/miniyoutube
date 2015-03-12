@@ -106,8 +106,8 @@ $(document).ready(function() {
 
     // Keep track of the position of view and show small screen when original video div is out of view
     $(window).scroll(function() {
-        // If this is not a html5 video page, tell the user it's not supported.
-        if (!$('.html5-video-container').length) {
+        // If this is a Flash video page, tell the user it's not supported.
+        if ($('#movie_player').length && $('#movie_player').is('embed')) {
             // Only show the alert if it hasn't been shown before.
             if (!flashAlertShown) {
                 $flashNotSupportedAlert = $('<div style="width: 100%">\
