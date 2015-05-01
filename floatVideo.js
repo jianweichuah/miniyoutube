@@ -15,7 +15,7 @@ $(document).ready(function() {
     var resizing = false;
     var flashAlertShown = false;
 
-    // A list of predefined size of the screen
+    // A list of predefined sizes of the screen
     var SMALL_WIDTH = 310;
     var SMALL_HEIGHT = 175;
     var MEDIUM_WIDTH = 475;
@@ -245,7 +245,7 @@ $(document).ready(function() {
             $('#mnyt-extra-large-button').click(handleTransitionExtraLarge);
 
             // Save the position and size of the screen if pin button is clicked
-            $('#mnyt-pin-button').click(saveMiniYouTubeSettings);
+            $('#mnyt-pin-button').click(pinButtonClicked);
 
             $('#mnyt-pin-button').on('mouseover', function(e) {
                 $('.mnyt-pin-label').show();
@@ -291,6 +291,22 @@ $(document).ready(function() {
             floated = false;
         }
     });
+
+    function pinButtonClicked() {
+        saveMiniYouTubeSettings();
+        // Show settings saved alert
+        $settingsSavedAlert = $('<div style="width: 100%">\
+                                    <div class="alert alert-success" role="alert">\
+                                        <img src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/icon16.png" height="10px">\
+                                        Mini YouTube: Screen settings saved!\
+                                    </div>\
+                                 </div>');
+        $('body').prepend($settingsSavedAlert);
+        // Show it for 5 seconds, fade it out and remove it.
+        $settingsSavedAlert.show().delay(1000).fadeOut(100, function() {
+            $(this).remove();
+        });
+    }
 
     function saveMiniYouTubeSettings() {
         // Save screen position and size

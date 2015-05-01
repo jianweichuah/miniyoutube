@@ -28,6 +28,12 @@
   border-color: #ebccd1;
 }
 
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
 .mnyt-progress-wrap {
   background: #cc181e;
   overflow: hidden;
