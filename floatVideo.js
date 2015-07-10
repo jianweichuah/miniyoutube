@@ -124,10 +124,13 @@ $(document).ready(function() {
                 flashAlertShown = true;
             }
             return false;
-        } else if (floated == false && $('.ended-mode').length) {
-            // If the video has ended and there is no floating screen, do nothing
+        } else if ((floated == false && $('.ended-mode').length) ||
+                   ($('#player').length && $('#player').hasClass('off-screen'))) {
+            // 1. If the video has ended and there is no floating screen, do nothing
+            // 2. Added to prevent the mini screen from showing up on the homepage for
+            // the new YouTube interface.
             return false;
-        } else if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.html5-video-container').height()) {
+        } else if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.html5-video-content').height()) {
             // 1. Create the mini screen div to hold the video
             $miniScreen = $('<div id="miniyoutube"></div');
 
@@ -260,7 +263,7 @@ $(document).ready(function() {
             $('.resizer').bind('mousedown.resizer', initDrag);
             $('.resize-icon').bind('mousedown.resizer', initDrag);
 
-        } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + $('.html5-video-container').height()) {
+        } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + $('.html5-video-content').height()) {
             // Put back the screen when the user scrolls up to the original player
             // 1. Grab the video element
             $video = $('.video-stream');
