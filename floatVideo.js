@@ -215,8 +215,8 @@ $(document).ready(function() {
             }
 
             // 8. Set the width and height of the video to fit the div
-            $video.css('width', '100%');
-            $video.css('height', '100%');
+            $video.css('width', miniScreenWidth);
+            $video.css('height', miniScreenHeight);
 
             // 9. Activate the draggable feature of the small screen
             $('#miniyoutube').drags();
@@ -347,6 +347,7 @@ $(document).ready(function() {
         }
 
         $('#miniyoutube').animate({'width':newWidth, 'height':newHeight}, 300);
+        $('.video-stream').animate({'width':newWidth, 'height':newHeight}, 300);
     }
 
     function handleFastForward() {
