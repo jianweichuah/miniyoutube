@@ -1,6 +1,7 @@
 $(document).ready(function() {
     // Handle dragging.
     var floated = false;
+
     var originalHeight;
     var originalWidth;
     var miniScreenLastTop;
@@ -124,12 +125,28 @@ $(document).ready(function() {
                 flashAlertShown = true;
             }
             return false;
-        } else if ((floated == false && $('.ended-mode').length) ||
-                   ($('#player').length && $('#player').hasClass('off-screen'))) {
-            // 1. If the video has ended and there is no floating screen, do nothing
-            // 2. Added to prevent the mini screen from showing up on the homepage for
-            // the new YouTube interface.
+        } else if ((floated == false && $('.ended-mode').length)) {
+            // If the video has ended and there is no floating screen, do nothing
             return false;
+        } else if ($('#player').length && $('#player').hasClass('off-screen')) {
+            // Added to prevent the mini screen from showing up on the homepage for
+            // the new YouTube interface.
+            if (floated == false) {
+                return false;
+            } else {
+                // 1. Grab the video element
+                $video = $('.video-stream');
+
+                // 2. Remove the resizers
+                $video.next().remove();
+
+                // 3. Take away the parent.
+                $video.removeClass('mnyt-video');
+                $video.unwrap();
+
+                // 4. Set flag to false
+                floated = false;
+            }
         } else if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.html5-video-content').height()) {
             // 1. Create the mini screen div to hold the video
             $miniScreen = $('<div id="miniyoutube"></div');
@@ -444,6 +461,9 @@ $(document).ready(function() {
         var newHeight = Math.round(newWidth * dragRatio);
         $('#miniyoutube').width(newWidth);
         $('#miniyoutube').height(newHeight);
+        // Added to also resize the video after the YouTube update
+        $('.video-stream').width(newWidth);
+        $('.video-stream').height(newHeight);
         e.preventDefault();
 
         return false;
