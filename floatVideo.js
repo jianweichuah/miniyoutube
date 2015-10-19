@@ -59,7 +59,8 @@ $(document).ready(function() {
                 // If the clicked div is resizer, don't make it draggable.
                 if(e.target.className === "resizer" || 
                    e.target.className === "mnyt-size-button" || 
-                   e.target.className === "mnyt-pin-img") {
+                   e.target.className === "mnyt-pin-img" ||
+                   e.target.className === "mnyt-progress-area") {
                     return false;
                 }
 
@@ -211,7 +212,13 @@ $(document).ready(function() {
 
                 if (new Date().getTime() < (start + longpress)) {
                     // If the click is on the controls, don't pause
-                    if (e.target.className === "mnyt-size-button" || e.target.className === "mnyt-pin-img") {
+                    if (e.target.className === "mnyt-size-button" ||
+                        e.target.className === "mnyt-pin-img" ||
+                        e.target.className === "mnyt-progress-area" ||
+                        e.target.className === "mnyt-progress-wrap mnyt-progress" ||
+                        e.target.className === "mnyt-progress-bar mnyt-progress" ||
+                        e.target.className === "mnyt-progress-pointer") 
+                    {
                         return false;
                     }
                     toggleVideo();
@@ -253,9 +260,12 @@ $(document).ready(function() {
                                                 <button class="mnyt-size-button" id="mnyt-large-button">L</button>\
                                                 <button class="mnyt-size-button" id="mnyt-extra-large-button">XL</button>\
                                             </div>\
-                                            <div class="mnyt-progress-wrap mnyt-progress">\
-                                                <div class="mnyt-progress-bar mnyt-progress"></div>\
+                                            <div class="mnyt-progress-area">\
+                                                <div class="mnyt-progress-wrap mnyt-progress">\
+                                                    <div class="mnyt-progress-bar mnyt-progress"></div>\
+                                                </div>\
                                             </div>\
+                                            <div class="mnyt-progress-pointer"></div>\
                                       </div>');
 
             // Add listeners for the controls
@@ -279,6 +289,10 @@ $(document).ready(function() {
             // Add listener for the resizers
             $('.resizer').bind('mousedown.resizer', initDrag);
             $('.resize-icon').bind('mousedown.resizer', initDrag);
+
+            // Add listener for the progress bar
+            $('.mnyt-progress-area').hover(handleProgressHoverIn, handleProgressHoverOut);
+            $('.mnyt-progress-area').click(handleVideoProgress);
 
         } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + $('.html5-video-content').height()) {
             // Put back the screen when the user scrolls up to the original player
@@ -311,6 +325,30 @@ $(document).ready(function() {
             floated = false;
         }
     });
+
+    function handleProgressHoverIn() {
+        $('.mnyt-progress-wrap').height(5);
+        $('.mnyt-progress-bar').height(5);
+        $('.mnyt-progress-pointer').show();
+    }
+
+    function handleProgressHoverOut() {
+        $('.mnyt-progress-wrap').height(1);
+        $('.mnyt-progress-bar').height(1);
+        $('.mnyt-progress-pointer').hide();
+    }
+
+    function handleVideoProgress(e) {
+        var clickedPositionX = e.offsetX;
+        var totalWidth = $('.mnyt-progress-area').width();
+        if (e.target.className === "mnyt-progress-bar mnyt-progress") {
+            clickedPositionX = clickedPositionX + $('.mnyt-progress-bar').position().left;
+        }
+        var percent = clickedPositionX/totalWidth;
+        var video = $('.video-stream').get(0);
+        video.currentTime = percent * video.duration;
+        updateTime();
+    }
 
     function pinButtonClicked() {
         saveMiniYouTubeSettings();
@@ -424,6 +462,9 @@ $(document).ready(function() {
 
         $('.mnyt-progress-bar').stop().animate({
             left: progressTotal
+        });
+        $('.mnyt-progress-pointer').stop().animate({
+            left: progressTotal - 5
         });
     }
 
