@@ -8,6 +8,22 @@
   background-color: black;
 }
 
+.alert-close {
+  float: right;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
+  text-decoration: none;
+}
+
+.alert-close:hover {
+  text-decoration: none;
+}
+
 .alert {
   position: fixed;
   width: 90%;
@@ -20,6 +36,12 @@
   display: block;
   margin-left: 3.25%;
   text-align: center;
+}
+
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
 }
 
 .alert-danger {

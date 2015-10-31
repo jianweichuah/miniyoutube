@@ -15,6 +15,7 @@ $(document).ready(function() {
     var minWidth = 310;
     var resizing = false;
     var flashAlertShown = false;
+    var miniFacebookAlertShown = false;
 
     // A list of predefined sizes of the screen
     var SMALL_WIDTH = 310;
@@ -33,7 +34,8 @@ $(document).ready(function() {
     // Read from the storage to see if the settings exist.
     // If yes, populate the variables
     chrome.storage.sync.get(['miniScreenLastTop', 'miniScreenLastLeft', 
-                             'miniScreenLastHeight', 'miniScreenLastWidth'], function(items) {
+                             'miniScreenLastHeight', 'miniScreenLastWidth',
+                             'miniFacebookAlertShown'], function(items) {
         if (items['miniScreenLastTop'])
             miniScreenLastTop = items['miniScreenLastTop'];
         if (items['miniScreenLastLeft'])
@@ -42,6 +44,8 @@ $(document).ready(function() {
             miniScreenLastHeight = items['miniScreenLastHeight'];
         if (items['miniScreenLastWidth'])
             miniScreenLastWidth = items['miniScreenLastWidth'];
+        if (items['miniFacebookAlertShown'])
+            miniFacebookAlertShown = items['miniFacebookAlertShown'];
     });
 
     (function($) {
@@ -293,6 +297,31 @@ $(document).ready(function() {
             // Add listener for the progress bar
             $('.mnyt-progress-area').hover(handleProgressHoverIn, handleProgressHoverOut);
             $('.mnyt-progress-area').click(handleVideoProgress);
+
+            // Show Mini Facebook alert
+            if (!miniFacebookAlertShown) {
+                // Show it!
+                $miniFacebookAlert = $('<div style="width: 100%">\
+                                            <div class="alert alert-info" role="alert">\
+                                                <a class="alert-close">&times;</a>\
+                                                <img src="https://raw.githubusercontent.com/jianweichuah/minifacebook/master/icon16.png" height="10px">\
+                                                Use Facebook? Try\
+                                                <a href="https://chrome.google.com/webstore/detail/mini-facebook/ojfhdmbkbfeblfemipgndpbnofhhpmgd" target="_blank">\
+                                                    Mini Facebook!\
+                                                </a>\
+                                            </div>\
+                                         </div>');
+                $('body').prepend($miniFacebookAlert);
+
+                miniFacebookAlertShown = true;
+                chrome.storage.sync.set({'miniFacebookAlertShown': true});
+
+                $('.alert-close').click(function() {
+                    $miniFacebookAlert.fadeOut(500, function() {
+                        $(this).remove();
+                    })
+                });
+            }
 
         } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + $('.html5-video-content').height()) {
             // Put back the screen when the user scrolls up to the original player
