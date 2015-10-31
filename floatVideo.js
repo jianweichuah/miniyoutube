@@ -27,25 +27,33 @@ $(document).ready(function() {
     var EXTRA_LARGE_WIDTH = 854;
     var EXTRA_LARGE_HEIGHT = 480;
 
+    // A list of constants
+    var MINI_SCREEN_LAST_TOP = 'miniScreenLastTop';
+    var MINI_SCREEN_LAST_LEFT = 'miniScreenLastLeft';
+    var MINI_SCREEN_LAST_HEIGHT = 'miniScreenLastHeight';
+    var MINI_SCREEN_LAST_WIDTH = 'miniScreenLastWidth';
+    var MINI_FACEBOOK_ALERT_SHOWN = 'miniFacebookAlertShown';
+    var MINI_YOUTUBE_ID = '#miniyoutube';
+
     // Preload images
     preloadImage("https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/pin.png");
     preloadImage("https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png");
 
     // Read from the storage to see if the settings exist.
     // If yes, populate the variables
-    chrome.storage.sync.get(['miniScreenLastTop', 'miniScreenLastLeft', 
-                             'miniScreenLastHeight', 'miniScreenLastWidth',
-                             'miniFacebookAlertShown'], function(items) {
-        if (items['miniScreenLastTop'])
-            miniScreenLastTop = items['miniScreenLastTop'];
-        if (items['miniScreenLastLeft'])
-            miniScreenLastLeft = items['miniScreenLastLeft'];
-        if (items['miniScreenLastHeight'])
-            miniScreenLastHeight = items['miniScreenLastHeight'];
-        if (items['miniScreenLastWidth'])
-            miniScreenLastWidth = items['miniScreenLastWidth'];
-        if (items['miniFacebookAlertShown'])
-            miniFacebookAlertShown = items['miniFacebookAlertShown'];
+    chrome.storage.sync.get([MINI_SCREEN_LAST_TOP, MINI_SCREEN_LAST_LEFT, 
+                             MINI_SCREEN_LAST_HEIGHT, MINI_SCREEN_LAST_WIDTH,
+                             MINI_FACEBOOK_ALERT_SHOWN], function(items) {
+        if (items[MINI_SCREEN_LAST_TOP])
+            miniScreenLastTop = items[MINI_SCREEN_LAST_TOP];
+        if (items[MINI_SCREEN_LAST_LEFT])
+            miniScreenLastLeft = items[MINI_SCREEN_LAST_LEFT];
+        if (items[MINI_SCREEN_LAST_HEIGHT])
+            miniScreenLastHeight = items[MINI_SCREEN_LAST_HEIGHT];
+        if (items[MINI_SCREEN_LAST_WIDTH])
+            miniScreenLastWidth = items[MINI_SCREEN_LAST_WIDTH];
+        if (items[MINI_FACEBOOK_ALERT_SHOWN])
+            miniFacebookAlertShown = items[MINI_FACEBOOK_ALERT_SHOWN];
     });
 
     (function($) {
@@ -197,17 +205,17 @@ $(document).ready(function() {
 
             // 6. Modify clicking to differentiate long vs short clicks.
             // Long click -> dragging. Short click -> pause/play
-            $('#miniyoutube').on('mousedown', function(e) {
+            $(MINI_YOUTUBE_ID).on('mousedown', function(e) {
                 start = new Date().getTime();
             });
-            $('#miniyoutube').on('mouseover', function(e) {
+            $(MINI_YOUTUBE_ID).on('mouseover', function(e) {
                 $('.mnyt-control-icons').show();
             });
-            $('#miniyoutube').on('mouseleave', function(e) {
+            $(MINI_YOUTUBE_ID).on('mouseleave', function(e) {
                 start = 0;
                 $('.mnyt-control-icons').hide();
             });
-            $('#miniyoutube').on('mouseup', function(e) {
+            $(MINI_YOUTUBE_ID).on('mouseup', function(e) {
                 // If it's a short click, toggle the video status.
                 if (resizing == true) {
                     stopDrag(e);
@@ -229,11 +237,11 @@ $(document).ready(function() {
                 }
                 return false;
             });
-            $('#miniyoutube').click(function() {
+            $(MINI_YOUTUBE_ID).click(function() {
                 return false;
             });
             // Disable double click to full screen.
-            $('#miniyoutube').dblclick(function() {
+            $(MINI_YOUTUBE_ID).dblclick(function() {
                 return false;
             });
 
@@ -247,13 +255,13 @@ $(document).ready(function() {
             $video.css('height', miniScreenHeight);
 
             // 9. Activate the draggable feature of the small screen
-            $('#miniyoutube').drags();
+            $(MINI_YOUTUBE_ID).drags();
 
             // 10. Set flag to true
             floated = true;
 
             // Add resizers to the right corners of the div
-            $('#miniyoutube').append('<div>\
+            $(MINI_YOUTUBE_ID).append('<div>\
                                             <div class="resizer" id="mnyt-br"></div>\
                                             <img class="resize-icon" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png" />\
                                             <div class="mnyt-control-icons">\
@@ -314,7 +322,7 @@ $(document).ready(function() {
                 $('body').prepend($miniFacebookAlert);
 
                 miniFacebookAlertShown = true;
-                chrome.storage.sync.set({'miniFacebookAlertShown': true});
+                chrome.storage.sync.set({MINI_FACEBOOK_ALERT_SHOWN: true});
 
                 $('.alert-close').click(function() {
                     $miniFacebookAlert.fadeOut(500, function() {
@@ -397,15 +405,15 @@ $(document).ready(function() {
 
     function saveMiniYouTubeSettings() {
         // Save screen position and size
-        miniScreenLastTop = $('#miniyoutube').position().top;
-        miniScreenLastLeft = $('#miniyoutube').position().left;
-        miniScreenLastHeight = $('#miniyoutube').height();
-        miniScreenLastWidth = $('#miniyoutube').width();
+        miniScreenLastTop = $(MINI_YOUTUBE_ID).position().top;
+        miniScreenLastLeft = $(MINI_YOUTUBE_ID).position().left;
+        miniScreenLastHeight = $(MINI_YOUTUBE_ID).height();
+        miniScreenLastWidth = $(MINI_YOUTUBE_ID).width();
         // Persist to browser storage
-        chrome.storage.sync.set({'miniScreenLastTop': miniScreenLastTop,
-                                 'miniScreenLastLeft': miniScreenLastLeft,
-                                 'miniScreenLastHeight': miniScreenLastHeight,
-                                 'miniScreenLastWidth': miniScreenLastWidth});
+        chrome.storage.sync.set({MINI_SCREEN_LAST_TOP: miniScreenLastTop,
+                                 MINI_SCREEN_LAST_LEFT: miniScreenLastLeft,
+                                 MINI_SCREEN_LAST_HEIGHT: miniScreenLastHeight,
+                                 MINI_SCREEN_LAST_WIDTH: miniScreenLastWidth});
     }
 
     // Update the size of the screen to small
@@ -426,11 +434,11 @@ $(document).ready(function() {
     }
 
     function resizeScreen(newWidth, newHeight) {
-        if ($('#miniyoutube').width() == newWidth) {
+        if ($(MINI_YOUTUBE_ID).width() == newWidth) {
             return false;
         }
 
-        $('#miniyoutube').animate({'width':newWidth, 'height':newHeight}, 300);
+        $(MINI_YOUTUBE_ID).animate({'width':newWidth, 'height':newHeight}, 300);
         $('.video-stream').animate({'width':newWidth, 'height':newHeight}, 300);
     }
 
@@ -486,7 +494,7 @@ $(document).ready(function() {
         }
 
         var percent = $video.currentTime/$video.duration;
-        var progressBarWidth = $('#miniyoutube').width();
+        var progressBarWidth = $(MINI_YOUTUBE_ID).width();
         var progressTotal = percent * progressBarWidth;
 
         $('.mnyt-progress-bar').stop().animate({
@@ -502,8 +510,8 @@ $(document).ready(function() {
         // Store the initial values to calculate new size later
         dragStartX = e.clientX;
         dragStartY = e.clientY;
-        dragStartWidth = $('#miniyoutube').width();
-        dragStartHeight = $('#miniyoutube').height();
+        dragStartWidth = $(MINI_YOUTUBE_ID).width();
+        dragStartHeight = $(MINI_YOUTUBE_ID).height();
         dragRatio = dragStartHeight/dragStartWidth;
         // Add event listeners to perform resize
         $(window).mousemove(doDrag);
@@ -529,8 +537,8 @@ $(document).ready(function() {
         }
 
         var newHeight = Math.round(newWidth * dragRatio);
-        $('#miniyoutube').width(newWidth);
-        $('#miniyoutube').height(newHeight);
+        $(MINI_YOUTUBE_ID).width(newWidth);
+        $(MINI_YOUTUBE_ID).height(newHeight);
         // Added to also resize the video after the YouTube update
         $('.video-stream').width(newWidth);
         $('.video-stream').height(newHeight);
