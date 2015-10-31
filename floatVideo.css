@@ -27,7 +27,7 @@
 .alert {
   position: fixed;
   width: 90%;
-  top: 60px;
+  top: 52px;
   z-index: 1000;
   padding: 15px;
   margin-bottom: 20px;
