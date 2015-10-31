@@ -34,6 +34,7 @@ $(document).ready(function() {
     var MINI_SCREEN_LAST_WIDTH = 'miniScreenLastWidth';
     var MINI_FACEBOOK_ALERT_SHOWN = 'miniFacebookAlertShown';
     var MINI_YOUTUBE_ID = '#miniyoutube';
+    var VIDEO_STREAM_CLASS = '.video-stream';
 
     // Preload images
     preloadImage("https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/pin.png");
@@ -148,7 +149,7 @@ $(document).ready(function() {
                 return false;
             } else {
                 // 1. Grab the video element
-                $video = $('.video-stream');
+                $video = $(VIDEO_STREAM_CLASS);
 
                 // 2. Remove the resizers
                 $video.next().remove();
@@ -188,7 +189,7 @@ $(document).ready(function() {
             $miniScreen.width(miniScreenWidth);
 
             // 2. Grab the video element
-            $video = $('.video-stream');
+            $video = $(VIDEO_STREAM_CLASS);
             $video.addClass('mnyt-video');
             // Bind the time update event to the video
             $video.bind('timeupdate', updateTime);
@@ -314,7 +315,7 @@ $(document).ready(function() {
         } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + $('.html5-video-content').height()) {
             // Put back the screen when the user scrolls up to the original player
             // 1. Grab the video element
-            $video = $('.video-stream');
+            $video = $(VIDEO_STREAM_CLASS);
 
             // 2. Store the status of the video 
             var videoPaused = $video.get(0).paused;
@@ -385,7 +386,7 @@ $(document).ready(function() {
             clickedPositionX = clickedPositionX + $('.mnyt-progress-bar').position().left;
         }
         var percent = clickedPositionX/totalWidth;
-        var video = $('.video-stream').get(0);
+        var video = $(VIDEO_STREAM_CLASS).get(0);
         video.currentTime = percent * video.duration;
         updateTime();
     }
@@ -442,11 +443,11 @@ $(document).ready(function() {
         }
 
         $(MINI_YOUTUBE_ID).animate({'width':newWidth, 'height':newHeight}, 300);
-        $('.video-stream').animate({'width':newWidth, 'height':newHeight}, 300);
+        $(VIDEO_STREAM_CLASS).animate({'width':newWidth, 'height':newHeight}, 300);
     }
 
     function handleFastForward() {
-        $video = $('.video-stream').get(0);
+        $video = $(VIDEO_STREAM_CLASS).get(0);
         var updatedRate = 1;
         switch ($video.playbackRate) {
             case 1:
@@ -472,12 +473,12 @@ $(document).ready(function() {
             return false;
         }
         // Get the video player and calculate the progress
-        $video = $('.video-stream').get(0);
+        $video = $(VIDEO_STREAM_CLASS).get(0);
 
         // If the video has ended and the screen is still around, clear it.
         if (floated == true && $video.currentTime == $video.duration) {
             // 1. Grab the video element
-            $miniScreen = $('.video-stream');
+            $miniScreen = $(VIDEO_STREAM_CLASS);
 
             // 2. Restore the width and heigh of the video
             $miniScreen.css('width', originalWidth);
@@ -543,8 +544,8 @@ $(document).ready(function() {
         $(MINI_YOUTUBE_ID).width(newWidth);
         $(MINI_YOUTUBE_ID).height(newHeight);
         // Added to also resize the video after the YouTube update
-        $('.video-stream').width(newWidth);
-        $('.video-stream').height(newHeight);
+        $(VIDEO_STREAM_CLASS).width(newWidth);
+        $(VIDEO_STREAM_CLASS).height(newHeight);
         e.preventDefault();
 
         return false;
@@ -559,7 +560,7 @@ $(document).ready(function() {
     }
 
     function toggleVideo() {
-        $vid = $('.video-stream').get(0);
+        $vid = $(VIDEO_STREAM_CLASS).get(0);
         if ($vid.paused)
             $vid.play();
         else
