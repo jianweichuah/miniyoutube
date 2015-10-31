@@ -308,27 +308,7 @@ $(document).ready(function() {
 
             // Show Mini Facebook alert
             if (!miniFacebookAlertShown) {
-                // Show it!
-                $miniFacebookAlert = $('<div style="width: 100%">\
-                                            <div class="alert alert-info" role="alert">\
-                                                <a class="alert-close">&times;</a>\
-                                                <img src="https://raw.githubusercontent.com/jianweichuah/minifacebook/master/icon16.png" height="10px">\
-                                                Use Facebook? Try\
-                                                <a href="https://chrome.google.com/webstore/detail/mini-facebook/ojfhdmbkbfeblfemipgndpbnofhhpmgd" target="_blank">\
-                                                    Mini Facebook!\
-                                                </a>\
-                                            </div>\
-                                         </div>');
-                $('body').prepend($miniFacebookAlert);
-
-                miniFacebookAlertShown = true;
-                chrome.storage.sync.set({MINI_FACEBOOK_ALERT_SHOWN: true});
-
-                $('.alert-close').click(function() {
-                    $miniFacebookAlert.fadeOut(500, function() {
-                        $(this).remove();
-                    })
-                });
+                showMiniFacebookAlert();
             }
 
         } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + $('.html5-video-content').height()) {
@@ -362,6 +342,29 @@ $(document).ready(function() {
             floated = false;
         }
     });
+
+    function showMiniFacebookAlert() {
+        $miniFacebookAlert = $('<div style="width: 100%">\
+                                    <div class="alert alert-info" role="alert">\
+                                        <a class="alert-close">&times;</a>\
+                                        <img src="https://raw.githubusercontent.com/jianweichuah/minifacebook/master/icon16.png" height="10px">\
+                                        Use Facebook? Try\
+                                        <a href="https://chrome.google.com/webstore/detail/mini-facebook/ojfhdmbkbfeblfemipgndpbnofhhpmgd" target="_blank">\
+                                            Mini Facebook!\
+                                        </a>\
+                                    </div>\
+                                 </div>');
+        $('body').prepend($miniFacebookAlert);
+
+        miniFacebookAlertShown = true;
+        chrome.storage.sync.set({MINI_FACEBOOK_ALERT_SHOWN: true});
+
+        $('.alert-close').click(function() {
+            $miniFacebookAlert.fadeOut(500, function() {
+                $(this).remove();
+            })
+        });
+    }
 
     function handleProgressHoverIn() {
         $('.mnyt-progress-wrap').height(5);
