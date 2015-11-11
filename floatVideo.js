@@ -16,6 +16,7 @@ $(document).ready(function() {
     var resizing = false;
     var flashAlertShown = false;
     var miniFacebookAlertShown = false;
+    var miniYouTubeActivated = true;
 
     // A list of predefined sizes of the screen
     var SMALL_WIDTH = 310;
@@ -55,6 +56,17 @@ $(document).ready(function() {
             miniScreenLastWidth = items[MINI_SCREEN_LAST_WIDTH];
         if (items[MINI_FACEBOOK_ALERT_SHOWN])
             miniFacebookAlertShown = items[MINI_FACEBOOK_ALERT_SHOWN];
+    });
+
+    // Update activation status
+    getActivationStatus(updateActivationStatus);
+
+    // Add a listener for the activation status
+    chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+        if ("update_activation_status" in message) {
+            // 1. Update status
+            updateActivationStatus(message["update_activation_status"]);
+        }
     });
 
     (function($) {
@@ -121,226 +133,191 @@ $(document).ready(function() {
 
     // Keep track of the position of view and show small screen when original video div is out of view
     $(window).scroll(function() {
-        // If this is a Flash video page, tell the user it's not supported.
-        if ($('#movie_player').length && $('#movie_player').is('embed')) {
-            // Only show the alert if it hasn't been shown before.
-            if (!flashAlertShown) {
-                $flashNotSupportedAlert = $('<div style="width: 100%">\
-                                                <div class="alert alert-danger" role="alert">\
-                                                    <img src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/icon16.png" height="10px">\
-                                                    Mini YouTube: Flash videos not currently supported!\
-                                                </div>\
-                                             </div>');
-                $('body').prepend($flashNotSupportedAlert);
-                // Show it for 5 seconds, fade it out and remove it.
-                $flashNotSupportedAlert.show().delay(5000).fadeOut(300, function() {
-                    $(this).remove();
-                });
-                flashAlertShown = true;
-            }
-            return false;
-        } else if ((floated == false && $('.ended-mode').length)) {
-            // If the video has ended and there is no floating screen, do nothing
-            return false;
-        } else if ($('#player').length && $('#player').hasClass('off-screen')) {
-            // Added to prevent the mini screen from showing up on the homepage for
-            // the new YouTube interface.
-            if (floated == false) {
+        // Do nothing if it's not activated
+        if (miniYouTubeActivated) {
+            // If this is a Flash video page, tell the user it's not supported.
+            if ($('#movie_player').length && $('#movie_player').is('embed')) {
+                // Only show the alert if it hasn't been shown before.
+                if (!flashAlertShown) {
+                    $flashNotSupportedAlert = $('<div style="width: 100%">\
+                                                    <div class="alert alert-danger" role="alert">\
+                                                        <img src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/icon16.png" height="10px">\
+                                                        Mini YouTube: Flash videos not currently supported!\
+                                                    </div>\
+                                                 </div>');
+                    $('body').prepend($flashNotSupportedAlert);
+                    // Show it for 5 seconds, fade it out and remove it.
+                    $flashNotSupportedAlert.show().delay(5000).fadeOut(300, function() {
+                        $(this).remove();
+                    });
+                    flashAlertShown = true;
+                }
                 return false;
-            } else {
-                // 1. Grab the video element
-                $video = $(VIDEO_STREAM_CLASS);
-
-                // 2. Remove the resizers
-                $video.next().remove();
-
-                // 3. Take away the parent.
-                $video.removeClass('mnyt-video');
-                $video.unwrap();
-
-                // 4. Set flag to false
-                floated = false;
-            }
-        } else if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.html5-video-content').height()) {
-            // 1. Create the mini screen div to hold the video
-            $miniScreen = $('<div id="miniyoutube"></div');
-
-            // Put the screen back to its last position, if defined.
-            // Else default to top right.
-            var miniScreenTop = 55;
-            var miniScreenHeight = 175;
-            var miniScreenLeft = $(window).width() - 380;
-            var miniScreenWidth = 310;
-
-            if (miniScreenLastTop && miniScreenLastHeight && 
-                miniScreenLastLeft && miniScreenLastWidth &&
-                miniScreenLastLeft + miniScreenLastWidth <= $(window).width() &&
-                miniScreenLastTop + miniScreenLastHeight <= $(window).height()) {
-
-                miniScreenTop = miniScreenLastTop;
-                miniScreenHeight = miniScreenLastHeight;
-                miniScreenLeft = miniScreenLastLeft;
-                miniScreenWidth = miniScreenLastWidth;
-            }
-
-            $miniScreen.css('top', miniScreenTop);
-            $miniScreen.css('left', miniScreenLeft);
-            $miniScreen.height(miniScreenHeight);
-            $miniScreen.width(miniScreenWidth);
-
-            // 2. Grab the video element
-            $video = $(VIDEO_STREAM_CLASS);
-            $video.addClass('mnyt-video');
-            // Bind the time update event to the video
-            $video.bind('timeupdate', updateTime);
-
-            // 3. Store the status of the video
-            var videoPaused = $video.get(0).paused;
-
-            // 4. Store the current width and height to restore later
-            originalWidth = $video.width();
-            originalHeight = $video.height();
-
-            // 5. Wrap the video into the small element div
-            $video.wrap($miniScreen);
-
-            // 6. Modify clicking to differentiate long vs short clicks.
-            // Long click -> dragging. Short click -> pause/play
-            $(MINI_YOUTUBE_ID).on('mousedown', function(e) {
-                start = new Date().getTime();
-            });
-            $(MINI_YOUTUBE_ID).on('mouseover', function(e) {
-                $('.mnyt-control-icons').show();
-            });
-            $(MINI_YOUTUBE_ID).on('mouseleave', function(e) {
-                start = 0;
-                $('.mnyt-control-icons').hide();
-            });
-            $(MINI_YOUTUBE_ID).on('mouseup', function(e) {
-                // If it's a short click, toggle the video status.
-                if (resizing == true) {
-                    stopDrag(e);
+            } else if ((floated == false && $('.ended-mode').length)) {
+                // If the video has ended and there is no floating screen, do nothing
+                return false;
+            } else if ($('#player').length && $('#player').hasClass('off-screen')) {
+                // Added to prevent the mini screen from showing up on the homepage for
+                // the new YouTube interface.
+                if (floated == false) {
                     return false;
+                } else {
+                    removeMiniScreen();
+                }
+            } else if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.html5-video-content').height()) {
+                // 1. Create the mini screen div to hold the video
+                $miniScreen = $('<div id="miniyoutube"></div');
+
+                // Put the screen back to its last position, if defined.
+                // Else default to top right.
+                var miniScreenTop = 55;
+                var miniScreenHeight = 175;
+                var miniScreenLeft = $(window).width() - 380;
+                var miniScreenWidth = 310;
+
+                if (miniScreenLastTop && miniScreenLastHeight &&
+                    miniScreenLastLeft && miniScreenLastWidth &&
+                    miniScreenLastLeft + miniScreenLastWidth <= $(window).width() &&
+                    miniScreenLastTop + miniScreenLastHeight <= $(window).height()) {
+
+                    miniScreenTop = miniScreenLastTop;
+                    miniScreenHeight = miniScreenLastHeight;
+                    miniScreenLeft = miniScreenLastLeft;
+                    miniScreenWidth = miniScreenLastWidth;
                 }
 
-                if (new Date().getTime() < (start + longpress)) {
-                    // If the click is on the controls, don't pause
-                    if (e.target.className === "mnyt-size-button" ||
-                        e.target.className === "mnyt-pin-img" ||
-                        e.target.className === "mnyt-progress-area" ||
-                        e.target.className === "mnyt-progress-wrap mnyt-progress" ||
-                        e.target.className === "mnyt-progress-bar mnyt-progress" ||
-                        e.target.className === "mnyt-progress-pointer") 
-                    {
+                $miniScreen.css('top', miniScreenTop);
+                $miniScreen.css('left', miniScreenLeft);
+                $miniScreen.height(miniScreenHeight);
+                $miniScreen.width(miniScreenWidth);
+
+                // 2. Grab the video element
+                $video = $(VIDEO_STREAM_CLASS);
+                $video.addClass('mnyt-video');
+                // Bind the time update event to the video
+                $video.bind('timeupdate', updateTime);
+
+                // 3. Store the status of the video
+                var videoPaused = $video.get(0).paused;
+
+                // 4. Store the current width and height to restore later
+                originalWidth = $video.width();
+                originalHeight = $video.height();
+
+                // 5. Wrap the video into the small element div
+                $video.wrap($miniScreen);
+
+                // 6. Modify clicking to differentiate long vs short clicks.
+                // Long click -> dragging. Short click -> pause/play
+                $(MINI_YOUTUBE_ID).on('mousedown', function(e) {
+                    start = new Date().getTime();
+                });
+                $(MINI_YOUTUBE_ID).on('mouseover', function(e) {
+                    $('.mnyt-control-icons').show();
+                });
+                $(MINI_YOUTUBE_ID).on('mouseleave', function(e) {
+                    start = 0;
+                    $('.mnyt-control-icons').hide();
+                });
+                $(MINI_YOUTUBE_ID).on('mouseup', function(e) {
+                    // If it's a short click, toggle the video status.
+                    if (resizing == true) {
+                        stopDrag(e);
                         return false;
                     }
-                    toggleVideo();
+
+                    if (new Date().getTime() < (start + longpress)) {
+                        // If the click is on the controls, don't pause
+                        if (e.target.className === "mnyt-size-button" ||
+                            e.target.className === "mnyt-pin-img" ||
+                            e.target.className === "mnyt-progress-area" ||
+                            e.target.className === "mnyt-progress-wrap mnyt-progress" ||
+                            e.target.className === "mnyt-progress-bar mnyt-progress" ||
+                            e.target.className === "mnyt-progress-pointer")
+                        {
+                            return false;
+                        }
+                        toggleVideo();
+                    }
+                    return false;
+                });
+                $(MINI_YOUTUBE_ID).click(function() {
+                    return false;
+                });
+                // Disable double click to full screen.
+                $(MINI_YOUTUBE_ID).dblclick(function() {
+                    return false;
+                });
+
+                // 7. If the video was playing before, make sure it's not paused
+                if (!videoPaused) {
+                    $video.get(0).play();
                 }
-                return false;
-            });
-            $(MINI_YOUTUBE_ID).click(function() {
-                return false;
-            });
-            // Disable double click to full screen.
-            $(MINI_YOUTUBE_ID).dblclick(function() {
-                return false;
-            });
 
-            // 7. If the video was playing before, make sure it's not paused
-            if (!videoPaused) {
-                $video.get(0).play();
-            }
+                // 8. Set the width and height of the video to fit the div
+                $video.css('width', miniScreenWidth);
+                $video.css('height', miniScreenHeight);
 
-            // 8. Set the width and height of the video to fit the div
-            $video.css('width', miniScreenWidth);
-            $video.css('height', miniScreenHeight);
+                // 9. Activate the draggable feature of the small screen
+                $(MINI_YOUTUBE_ID).drags();
 
-            // 9. Activate the draggable feature of the small screen
-            $(MINI_YOUTUBE_ID).drags();
+                // 10. Set flag to true
+                floated = true;
 
-            // 10. Set flag to true
-            floated = true;
-
-            // Add resizers to the right corners of the div
-            $(MINI_YOUTUBE_ID).append('<div>\
-                                            <div class="resizer" id="mnyt-br"></div>\
-                                            <img class="resize-icon" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png" />\
-                                            <div class="mnyt-control-icons">\
-                                                <button class="mnyt-size-button" id="mnyt-pin-button"><img class="mnyt-pin-img" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/pin.png" width="20px"/></button>\
-                                                <label class="mnyt-pin-label">Save screen settings.</label>\
-                                                <button class="mnyt-size-button" id="mnyt-small-button">S</button>\
-                                                <button class="mnyt-size-button" id="mnyt-medium-button">M</button>\
-                                                <button class="mnyt-size-button" id="mnyt-large-button">L</button>\
-                                                <button class="mnyt-size-button" id="mnyt-extra-large-button">XL</button>\
-                                            </div>\
-                                            <div class="mnyt-progress-area">\
-                                                <div class="mnyt-progress-wrap mnyt-progress">\
-                                                    <div class="mnyt-progress-bar mnyt-progress"></div>\
+                // Add resizers to the right corners of the div
+                $(MINI_YOUTUBE_ID).append('<div>\
+                                                <div class="resizer" id="mnyt-br"></div>\
+                                                <img class="resize-icon" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png" />\
+                                                <div class="mnyt-control-icons">\
+                                                    <button class="mnyt-size-button" id="mnyt-pin-button"><img class="mnyt-pin-img" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/pin.png" width="20px"/></button>\
+                                                    <label class="mnyt-pin-label">Save screen settings.</label>\
+                                                    <button class="mnyt-size-button" id="mnyt-small-button">S</button>\
+                                                    <button class="mnyt-size-button" id="mnyt-medium-button">M</button>\
+                                                    <button class="mnyt-size-button" id="mnyt-large-button">L</button>\
+                                                    <button class="mnyt-size-button" id="mnyt-extra-large-button">XL</button>\
                                                 </div>\
-                                            </div>\
-                                            <div class="mnyt-progress-pointer"></div>\
-                                      </div>');
+                                                <div class="mnyt-progress-area">\
+                                                    <div class="mnyt-progress-wrap mnyt-progress">\
+                                                        <div class="mnyt-progress-bar mnyt-progress"></div>\
+                                                    </div>\
+                                                </div>\
+                                                <div class="mnyt-progress-pointer"></div>\
+                                          </div>');
 
-            // Add listeners for the controls
-            $('#mnyt-small-button').click(handleTransitionSmall);
-            $('#mnyt-medium-button').click(handleTransitionMedium);
-            $('#mnyt-large-button').click(handleTransitionLarge);
-            $('#mnyt-extra-large-button').click(handleTransitionExtraLarge);
+                // Add listeners for the controls
+                $('#mnyt-small-button').click(handleTransitionSmall);
+                $('#mnyt-medium-button').click(handleTransitionMedium);
+                $('#mnyt-large-button').click(handleTransitionLarge);
+                $('#mnyt-extra-large-button').click(handleTransitionExtraLarge);
 
-            // Save the position and size of the screen if pin button is clicked
-            $('#mnyt-pin-button').click(pinButtonClicked);
+                // Save the position and size of the screen if pin button is clicked
+                $('#mnyt-pin-button').click(pinButtonClicked);
 
-            $('#mnyt-pin-button').on('mouseover', function(e) {
-                $('.mnyt-pin-label').show();
-            });
-            $('#mnyt-pin-button').on('mouseleave', function(e) {
-                $('.mnyt-pin-label').hide();
-            });
+                $('#mnyt-pin-button').on('mouseover', function(e) {
+                    $('.mnyt-pin-label').show();
+                });
+                $('#mnyt-pin-button').on('mouseleave', function(e) {
+                    $('.mnyt-pin-label').hide();
+                });
 
-            $('.mnyt-fastforward-icon').click(handleFastForward);
+                $('.mnyt-fastforward-icon').click(handleFastForward);
 
-            // Add listener for the resizers
-            $('.resizer').bind('mousedown.resizer', initDrag);
-            $('.resize-icon').bind('mousedown.resizer', initDrag);
+                // Add listener for the resizers
+                $('.resizer').bind('mousedown.resizer', initDrag);
+                $('.resize-icon').bind('mousedown.resizer', initDrag);
 
-            // Add listener for the progress bar
-            $('.mnyt-progress-area').hover(handleProgressHoverIn, handleProgressHoverOut);
-            $('.mnyt-progress-area').click(handleVideoProgress);
+                // Add listener for the progress bar
+                $('.mnyt-progress-area').hover(handleProgressHoverIn, handleProgressHoverOut);
+                $('.mnyt-progress-area').click(handleVideoProgress);
 
-            // Show Mini Facebook alert
-            if (!miniFacebookAlertShown) {
-                showMiniFacebookAlert();
+                // Show Mini Facebook alert
+                if (!miniFacebookAlertShown) {
+                    showMiniFacebookAlert();
+                }
+
+            } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + $('.html5-video-content').height()) {
+                putBackMiniScreen();
             }
-
-        } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + $('.html5-video-content').height()) {
-            // Put back the screen when the user scrolls up to the original player
-            // 1. Grab the video element
-            $video = $(VIDEO_STREAM_CLASS);
-
-            // 2. Store the status of the video 
-            var videoPaused = $video.get(0).paused;
-
-            // 3. Save the current top and left of the mini screen.
-            saveMiniYouTubeSettings();
-
-            // 4. Restore the width and heigh of the video
-            $video.css('width', originalWidth);
-            $video.css('height', originalHeight);
-
-            // Remove the resizers
-            $video.next().remove();
-
-            // 5. Take away the parent.
-            $video.removeClass('mnyt-video');
-            $video.unwrap();
-
-            // 6. Make the video status consistent
-            if (!videoPaused) {
-                $video.get(0).play();
-            }
-
-            // 7. Set flag to false
-            floated = false;
         }
     });
 
@@ -358,7 +335,7 @@ $(document).ready(function() {
         $('body').prepend($miniFacebookAlert);
 
         miniFacebookAlertShown = true;
-        chrome.storage.sync.set({MINI_FACEBOOK_ALERT_SHOWN: true});
+        chrome.storage.sync.set({"miniFacebookAlertShown": true});
 
         $('.alert-close').click(function() {
             $miniFacebookAlert.fadeOut(500, function() {
@@ -414,10 +391,10 @@ $(document).ready(function() {
         miniScreenLastHeight = $(MINI_YOUTUBE_ID).height();
         miniScreenLastWidth = $(MINI_YOUTUBE_ID).width();
         // Persist to browser storage
-        chrome.storage.sync.set({MINI_SCREEN_LAST_TOP: miniScreenLastTop,
-                                 MINI_SCREEN_LAST_LEFT: miniScreenLastLeft,
-                                 MINI_SCREEN_LAST_HEIGHT: miniScreenLastHeight,
-                                 MINI_SCREEN_LAST_WIDTH: miniScreenLastWidth});
+        chrome.storage.sync.set({"miniScreenLastTop": miniScreenLastTop,
+                                 "miniScreenLastLeft": miniScreenLastLeft,
+                                 "miniScreenLastHeight": miniScreenLastHeight,
+                                 "miniScreenLastWidth": miniScreenLastWidth});
     }
 
     // Update the size of the screen to small
@@ -567,9 +544,72 @@ $(document).ready(function() {
             $vid.pause();
     }
 
-    function preloadImage(url)
-    {
+    function preloadImage(url) {
         var img=new Image();
         img.src=url;
+    }
+
+    function getActivationStatus(callBack) {
+        chrome.runtime.sendMessage({"get_activation_status": true}, function(response) {
+            var activated = true;
+            if ("is_active" in response) {
+                activated = response["is_active"];
+            }
+            callBack(activated);
+        });
+    }
+
+    function updateActivationStatus(activated) {
+        miniYouTubeActivated = activated;
+        // If it's deactivated, remove the mini screen
+        if (!miniYouTubeActivated) {
+            putBackMiniScreen();
+        }
+    }
+
+    function removeMiniScreen() {
+        // 1. Grab the video element
+        $video = $(VIDEO_STREAM_CLASS);
+
+        // 2. Remove the resizers
+        $video.next().remove();
+
+        // 3. Take away the parent.
+        $video.removeClass('mnyt-video');
+        $video.unwrap();
+
+        // 4. Set flag to false
+        floated = false;
+    }
+
+    function putBackMiniScreen() {
+        // Put back the screen when the user scrolls up to the original player
+        // 1. Grab the video element
+        $video = $(VIDEO_STREAM_CLASS);
+
+        // 2. Store the status of the video
+        var videoPaused = $video.get(0).paused;
+
+        // 3. Save the current top and left of the mini screen.
+        saveMiniYouTubeSettings();
+
+        // 4. Restore the width and heigh of the video
+        $video.css('width', originalWidth);
+        $video.css('height', originalHeight);
+
+        // Remove the resizers
+        $video.next().remove();
+
+        // 5. Take away the parent.
+        $video.removeClass('mnyt-video');
+        $video.unwrap();
+
+        // 6. Make the video status consistent
+        if (!videoPaused) {
+            $video.get(0).play();
+        }
+
+        // 7. Set flag to false
+        floated = false;
     }
 });
