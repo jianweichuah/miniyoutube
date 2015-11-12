@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     function updateSwitchState(activated) {
         miniYouTubeActivated = activated;
         onOffSwitch.checked = miniYouTubeActivated;
+        chrome.runtime.sendMessage({"update_icon": miniYouTubeActivated});
         updateDescription();
     }
 
