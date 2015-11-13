@@ -19,6 +19,9 @@ hr.hr-style {
     opacity: 0.5;
     float: right;
 }
+.mnyt-share {
+    float: left;
+}
 a img:hover {
     opacity: 1;
 }
