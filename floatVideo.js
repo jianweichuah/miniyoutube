@@ -85,7 +85,11 @@ $(document).ready(function() {
                 if(e.target.className === "resizer" || 
                    e.target.className === "mnyt-size-button" || 
                    e.target.className === "mnyt-pin-img" ||
-                   e.target.className === "mnyt-progress-area") {
+                   e.target.className === "mnyt-progress-area" ||
+                   e.target.className === "mnyt-play-button" ||
+                   e.target.className === "mnyt-play-button-play" ||
+                   e.target.className === "mnyt-play-button-pause")
+                {
                     return false;
                 }
 
@@ -207,37 +211,43 @@ $(document).ready(function() {
                 // 5. Wrap the video into the small element div
                 $video.wrap($miniScreen);
 
+                // Add resizers to the right corners of the div
+                $(MINI_YOUTUBE_ID).append('<div class="mnyt-controls">\
+                                                <div class="resizer" id="mnyt-br"></div>\
+                                                <img class="resize-icon" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png" />\
+                                                <div class="mnyt-control-icons">\
+                                                    <button class="mnyt-size-button" id="mnyt-pin-button"><img class="mnyt-pin-img" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/pin.png" width="20px"/></button>\
+                                                    <label class="mnyt-pin-label">Save screen settings.</label>\
+                                                    <button class="mnyt-size-button" id="mnyt-small-button">S</button>\
+                                                    <button class="mnyt-size-button" id="mnyt-medium-button">M</button>\
+                                                    <button class="mnyt-size-button" id="mnyt-large-button">L</button>\
+                                                    <button class="mnyt-size-button" id="mnyt-extra-large-button">XL</button>\
+                                                </div>\
+                                                <div class="mnyt-play-button" id="mnyt-play-button">\
+                                                    <div class="mnyt-play-button-play"></div>\
+                                                    <div class="mnyt-play-button-pause"></div>\
+                                                </div>\
+                                                <div class="mnyt-progress-area">\
+                                                    <div class="mnyt-progress-wrap mnyt-progress">\
+                                                        <div class="mnyt-progress-bar mnyt-progress"></div>\
+                                                    </div>\
+                                                </div>\
+                                                <div class="mnyt-progress-pointer"></div>\
+                                          </div>');
+
                 // 6. Modify clicking to differentiate long vs short clicks.
-                // Long click -> dragging. Short click -> pause/play
-                $(MINI_YOUTUBE_ID).on('mousedown', function(e) {
-                    start = new Date().getTime();
-                });
                 $(MINI_YOUTUBE_ID).on('mouseover', function(e) {
                     $('.mnyt-control-icons').show();
+                    $('.mnyt-play-button').show();
                 });
                 $(MINI_YOUTUBE_ID).on('mouseleave', function(e) {
                     start = 0;
                     $('.mnyt-control-icons').hide();
+                    $('.mnyt-play-button').hide();
                 });
                 $(MINI_YOUTUBE_ID).on('mouseup', function(e) {
-                    // If it's a short click, toggle the video status.
                     if (resizing == true) {
                         stopDrag(e);
-                        return false;
-                    }
-
-                    if (new Date().getTime() < (start + longpress)) {
-                        // If the click is on the controls, don't pause
-                        if (e.target.className === "mnyt-size-button" ||
-                            e.target.className === "mnyt-pin-img" ||
-                            e.target.className === "mnyt-progress-area" ||
-                            e.target.className === "mnyt-progress-wrap mnyt-progress" ||
-                            e.target.className === "mnyt-progress-bar mnyt-progress" ||
-                            e.target.className === "mnyt-progress-pointer")
-                        {
-                            return false;
-                        }
-                        toggleVideo();
                     }
                     return false;
                 });
@@ -252,6 +262,9 @@ $(document).ready(function() {
                 // 7. If the video was playing before, make sure it's not paused
                 if (!videoPaused) {
                     $video.get(0).play();
+                    $(".mnyt-play-button-pause").show();
+                } else {
+                    $(".mnyt-play-button-play").show();
                 }
 
                 // 8. Set the width and height of the video to fit the div
@@ -264,31 +277,12 @@ $(document).ready(function() {
                 // 10. Set flag to true
                 floated = true;
 
-                // Add resizers to the right corners of the div
-                $(MINI_YOUTUBE_ID).append('<div>\
-                                                <div class="resizer" id="mnyt-br"></div>\
-                                                <img class="resize-icon" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png" />\
-                                                <div class="mnyt-control-icons">\
-                                                    <button class="mnyt-size-button" id="mnyt-pin-button"><img class="mnyt-pin-img" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/pin.png" width="20px"/></button>\
-                                                    <label class="mnyt-pin-label">Save screen settings.</label>\
-                                                    <button class="mnyt-size-button" id="mnyt-small-button">S</button>\
-                                                    <button class="mnyt-size-button" id="mnyt-medium-button">M</button>\
-                                                    <button class="mnyt-size-button" id="mnyt-large-button">L</button>\
-                                                    <button class="mnyt-size-button" id="mnyt-extra-large-button">XL</button>\
-                                                </div>\
-                                                <div class="mnyt-progress-area">\
-                                                    <div class="mnyt-progress-wrap mnyt-progress">\
-                                                        <div class="mnyt-progress-bar mnyt-progress"></div>\
-                                                    </div>\
-                                                </div>\
-                                                <div class="mnyt-progress-pointer"></div>\
-                                          </div>');
-
                 // Add listeners for the controls
                 $('#mnyt-small-button').click(handleTransitionSmall);
                 $('#mnyt-medium-button').click(handleTransitionMedium);
                 $('#mnyt-large-button').click(handleTransitionLarge);
                 $('#mnyt-extra-large-button').click(handleTransitionExtraLarge);
+                $('#mnyt-play-button').click(toggleVideo);
 
                 // Save the position and size of the screen if pin button is clicked
                 $('#mnyt-pin-button').click(pinButtonClicked);
@@ -538,10 +532,16 @@ $(document).ready(function() {
 
     function toggleVideo() {
         $vid = $(VIDEO_STREAM_CLASS).get(0);
-        if ($vid.paused)
+        if ($vid.paused) {
             $vid.play();
-        else
+            $(".mnyt-play-button-play").hide();
+            $(".mnyt-play-button-pause").show();
+        }
+        else {
             $vid.pause();
+            $(".mnyt-play-button-play").show();
+            $(".mnyt-play-button-pause").hide();
+        }
     }
 
     function preloadImage(url) {
