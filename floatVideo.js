@@ -227,6 +227,7 @@ $(document).ready(function() {
                                                     <div class="mnyt-play-button-play"></div>\
                                                     <div class="mnyt-play-button-pause"></div>\
                                                 </div>\
+                                                <button class="mnyt-size-button" id="mnyt-close-button">X</button>\
                                                 <div class="mnyt-progress-area">\
                                                     <div class="mnyt-progress-wrap mnyt-progress">\
                                                         <div class="mnyt-progress-bar mnyt-progress"></div>\
@@ -239,11 +240,13 @@ $(document).ready(function() {
                 $(MINI_YOUTUBE_ID).on('mouseover', function(e) {
                     $('.mnyt-control-icons').show();
                     $('.mnyt-play-button').show();
+                    $('#mnyt-close-button').show();
                 });
                 $(MINI_YOUTUBE_ID).on('mouseleave', function(e) {
                     start = 0;
                     $('.mnyt-control-icons').hide();
                     $('.mnyt-play-button').hide();
+                    $('#mnyt-close-button').hide();
                 });
                 $(MINI_YOUTUBE_ID).on('mouseup', function(e) {
                     if (resizing == true) {
@@ -286,6 +289,7 @@ $(document).ready(function() {
 
                 // Save the position and size of the screen if pin button is clicked
                 $('#mnyt-pin-button').click(pinButtonClicked);
+                $('#mnyt-close-button').click(closeButtonClicked);
 
                 $('#mnyt-pin-button').on('mouseover', function(e) {
                     $('.mnyt-pin-label').show();
@@ -562,7 +566,7 @@ $(document).ready(function() {
     function updateActivationStatus(activated) {
         miniYouTubeActivated = activated;
         // If it's deactivated, remove the mini screen
-        if (!miniYouTubeActivated) {
+        if (!miniYouTubeActivated && floated) {
             putBackMiniScreen();
         }
     }
@@ -611,5 +615,12 @@ $(document).ready(function() {
 
         // 7. Set flag to false
         floated = false;
+    }
+
+    function closeButtonClicked() {
+        putBackMiniScreen();
+        floated = false;
+        // Send message to disable Mini YouTube
+        chrome.runtime.sendMessage({"update_icon": false});
     }
 });

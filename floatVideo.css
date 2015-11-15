@@ -6,6 +6,15 @@
   top: 55px;
   z-index: 1000;
   background-color: black;
+  box-shadow: 0 0 10px #000000;
+}
+
+#mnyt-close-button {
+  position: absolute;
+  top: 3px;
+  right:3px;
+  border-radius: 50%;
+  display: none;
 }
 
 .mnyt-controls {
@@ -59,22 +68,22 @@
 }
 
 .mnyt-play-button-pause:before {
-    width: 8px;
-    height: 24px;
+    width: 7px;
+    height: 20px;
     background-color: #FFFFFF;
     position: absolute;
     content: "";
-    top: 13px;
+    top: 15px;
     left: 15px;
 }
 
 .mnyt-play-button-pause:after {
-    width: 8px;
-    height: 24px;
+    width: 7px;
+    height: 20px;
     background-color: #FFFFFF;
     position: absolute;
     content: "";
-    top: 13px;
+    top: 15px;
     right: 15px;
 }
 
