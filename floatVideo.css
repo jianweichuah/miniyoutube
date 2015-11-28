@@ -34,6 +34,7 @@
 
   border-radius: 50%;
   background: rgba(23,35,34,.75);
+  opacity: 0.5;
   border: 0;
   cursor: pointer;
   width: 50px;
@@ -47,6 +48,7 @@
 
 .mnyt-play-button:hover {
   background-color: #cc181e;
+  opacity: 1;
 }
 
 .mnyt-play-button-play {
@@ -55,7 +57,7 @@
   border-bottom: 10px solid transparent;
   border-top: 10px solid transparent;
   border-left: 15px solid white;
-  margin-left: auto;
+  margin-left: 19px;
   margin-right: auto;
   position: relative;
   top: 50%;
@@ -223,6 +225,7 @@
   width: 30px;
   height: 30px;
   background: rgba(23,35,34,.75);
+  opacity: 0.5;
   border-radius: 0.5em;
   border: 0;
   cursor: pointer;
@@ -242,6 +245,7 @@
 
 .mnyt-size-button:hover {
   background-color: #cc181e;
+  opacity: 1;
 }
 
 .mnyt-pin-label {
