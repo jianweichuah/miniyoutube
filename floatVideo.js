@@ -228,6 +228,11 @@ $(document).ready(function() {
                                                     <div class="mnyt-play-button-pause"></div>\
                                                 </div>\
                                                 <button class="mnyt-size-button" id="mnyt-close-button">X</button>\
+                                                <div class="mnyt-progress-time" id="mnyt-progress-time">\
+                                                    <span id="mnyt-progress-current-time"></span>\
+                                                    /\
+                                                    <span id="mnyt-progress-duration"></span>\
+                                                </div>\
                                                 <div class="mnyt-progress-area">\
                                                     <div class="mnyt-progress-wrap mnyt-progress">\
                                                         <div class="mnyt-progress-bar mnyt-progress"></div>\
@@ -241,12 +246,14 @@ $(document).ready(function() {
                     $('.mnyt-control-icons').show();
                     $('.mnyt-play-button').show();
                     $('#mnyt-close-button').show();
+                    $('#mnyt-progress-time').show();
                 });
                 $(MINI_YOUTUBE_ID).on('mouseleave', function(e) {
                     start = 0;
                     $('.mnyt-control-icons').hide();
                     $('.mnyt-play-button').hide();
                     $('#mnyt-close-button').hide();
+                    $('#mnyt-progress-time').hide();
                 });
                 $(MINI_YOUTUBE_ID).on('mouseup', function(e) {
                     if (resizing == true) {
@@ -482,6 +489,44 @@ $(document).ready(function() {
         $('.mnyt-progress-pointer').stop().animate({
             left: progressTotal - 5
         });
+
+        // Update video duration
+        $('#mnyt-progress-current-time').html(convertTime(Math.floor($video.currentTime)));
+        if (!$('#mnyt-progress-duration').html())
+            $('#mnyt-progress-duration').html(convertTime(Math.floor($video.duration)));
+    }
+
+    function convertTime(timeInSeconds) {
+        var hours = Math.floor(timeInSeconds / 3600);
+        timeInSeconds = timeInSeconds - hours * 3600;
+        var minutes = Math.floor(timeInSeconds / 60);
+        var seconds = timeInSeconds - minutes * 60;
+
+        var timeStr = [];
+        // Only put in hours if it's not 0
+        if (hours > 0) {
+            timeStr.push(hours);
+        }
+        // If hours > 0 but minutes == 0, put 00
+        if (minutes > 0) {
+            var minuteStr = minutes;
+            if (hours > 0 && minutes < 10)
+                minuteStr = "0".concat(minutes);
+            timeStr.push(minuteStr);
+        } else {
+            timeStr.push("0");
+        }
+
+        if (seconds > 0) {
+            var secondStr = seconds;
+            if (seconds < 10)
+                secondStr = "0".concat(seconds);
+            timeStr.push(secondStr);
+        } else {
+            timeStr.push("00");
+        }
+
+        return timeStr.join(":");
     }
 
     function initDrag(e) {
