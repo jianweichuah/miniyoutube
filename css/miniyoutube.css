@@ -1,0 +1,255 @@
+/* Large desktop */
+@media (min-width: 980px) {
+    body {
+        padding-top: 60px;
+    }
+    .linediv-l {
+        border-right: 1px white solid;
+    }
+    .linediv-r {
+        border-left: 1px white solid;
+    }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .copy {
+        padding: 2.5% 10%;
+    }
+    .linediv-l {
+        border-bottom: 1px white solid;
+    }
+    .linediv-r {
+        border-top: 1px white solid;
+    }
+}
+
+/* All form factors */
+
+/* Main body and headings */
+body {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.heading, .subheading {
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+p.lead {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 0px;
+}
+p {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.media-logo {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Video pitch and action */
+.pitch {
+    padding: 2.5% 0%;
+}
+.order {
+    padding: 2% 0%;
+}
+.actions {
+    background-color: #343434;
+    padding: 3% 0%;
+}
+.video, .thermometer, .order, .social, .statistics {
+    text-align: center;
+}
+.statistics h3, .statistics p {
+    color: white;
+}
+
+/* Marketing copy and footer */
+.copy {
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+}
+.asset {
+    padding: 2.5% 0%;
+}
+.footer {
+    color: #cccccc;
+    text-align: center;
+}
+.footer p {
+    font-size: 11px;
+}
+.footer a {
+    color: #ccccff;
+}
+
+.demo, .intro {
+    text-align: center;
+}
+
+.container {
+    color: black;
+}
+
+.name h1 {
+    margin-top: 0px;
+}
+
+.img-right {
+    float: right;
+    margin: 0 0 0 4em;
+}
+
+.img-left {
+    float: left;
+    margin: 0 4em 0 0;
+}
+
+.description {
+    font-family: "futura-pt","Futura","Century Gothic";
+    font-weight: 300;
+    font-size: 180%;
+}
+
+.description2 {
+    font-size: 125%;
+    color: #464646;
+}
+
+.explanation {
+    padding-top: 1em;
+    color: #888;
+}
+
+.download {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.download h2 {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif; 
+    color: black;
+    font-size: 50px;
+}
+
+.media {
+    color: #bbbbbb;
+    font-size: 50px;
+    background-color: #f1f2f7;
+    text-align: center;
+    font-weight: 600;
+}
+
+.footer {
+    background-color: #f1f2f7;
+}
+
+.rating {
+    font-size: 50px;
+    color: #f4d03f;
+}
+
+.rating-description {
+    font-style: italic;
+    font-size: 15px;
+    color: #626363;
+}
+
+.install-btn {
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    background-color: #fff;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.install-btn:focus {
+    outline: none;
+}
+
+.install-btn:hover {
+    background-color: #E0E0E0;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.twitter-tweet-button {
+    width: 82px !important;
+}
+
+.facebook-buttons {
+    width: 125px;
+}
+
+#___plusone_0, #___plusone_0 iframe {
+    width: 65px !important;
+}
+
+.img-polaroid {
+    width: 480px;
+}
+
+.logos img {
+    opacity: 0.4;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%); 
+}
+
+.logos img:hover {
+    opacity: 1;
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    filter: grayscale(0%); 
+}
+
+hr {
+  margin-top: 0px;
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.30), rgba(0,0,0,0)); 
+  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.30), rgba(0,0,0,0)); 
+  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.30), rgba(0,0,0,0)); 
+  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.30), rgba(0,0,0,0)); 
+}
+
+.embedhunt-embeddable {
+  display: block;
+  text-align: left;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.embedhunt-embeddable img {
+  opacity: 1;
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  filter: grayscale(0%); 
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mini Youtube Chrome Extension</title>
+
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="description" content="Mini Youtube - a Chrome Extension that makes video float while you're reading comments on YouTube.">
+        <meta name="keywords" content="miniyoutube, Mini YouTube, chrome extension, jianweichuah, Jian Wei Chuah, Software Developer, Software Engineer, YouTube, extension, web store, Chrome">
+        <meta name="author" content="Jian Wei Chuah">
+        <meta name="robots" content="index, follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="../../images/miniyoutube.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+        <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
+        <link rel="stylesheet" type="text/css" href="../../css/flat-ui.css"/>
+        <link rel="stylesheet" type="text/css" href="css/miniyoutube.css"/>
+        <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../../css/nprogress.css"/>
+        <script type="text/javascript" src='../../js/nprogress.js'></script>
+        <script type="text/javascript" src='js/jquery-2.1.3.min.js'></script>
+        <script type="text/javascript" src='js/jquery.lazyload.min.js'></script>
+        <script type="text/javascript" src='js/miniyoutube.js'></script>
+        <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/acphfpihfjpgnihkgelafhmjeoodbehp">
+    </head>
+    <body>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <div class="container">
+            <div class="intro">
+                <img class= "logo" src="../../images/miniyoutube.png" width="256px"/>
+                <div class="row-fluid heading">
+                    <div class="name span12">
+                        <h1>Mini YouTube</h1>
+                    </div>
+                </div>
+                <div class="row-fluid subheading">
+                    <div class="span12">
+                        <p class="lead">"Watch YouTube videos while you scroll to read comments."</p>
+                    </div>
+                </div>
+                <span class="rating">★★★★★</span>
+                <p class="rating-description">Chrome Web Store Rating</p>
+                <button onclick="chrome.webstore.install()" class="install-btn" id="install-button">
+                    Add to <img src="../../images/chrome.png" width="20px" style="vertical-align: middle;"/>  Now
+                </button>
+            </div>
+
+            <!-- Marketing sections -->
+            <div class="features">
+                <div class="row-fluid section1">
+                    <div class="span5 offset1 asset">
+                        <img class="img-polaroid" data-original="../../images/miniyoutube_transition.gif">
+                    </div>
+                    <div class="span5 copy">
+                        <div class="description">
+                            Automatic Transition
+                        </div>
+                        <div class="description2">
+                            Just scroll down and read some comments.
+                        </div>
+                        <div class="explanation">
+                            The video automatically transitions into the floating screen when the video player is out of view and goes
+                            back when you scroll back up.
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row-fluid section2">
+                    <div class="span5 offset1 copy copy-right">
+                         <div class="description">
+                            Draggable
+                        </div>
+                        <div class="description2">
+                            Just drag and place it anywhere you like.
+                        </div>
+                        <div class="explanation">
+                            The mini screen is draggable. You can drag and place it anywhere you like so it doesn't hide that interesting comment you want to read!
+                        </div>
+                    </div>
+                    <div class="span5 asset">
+                        <img class="img-polaroid img-right" data-original="../../images/miniyoutube_drag.gif">
+                    </div>
+                </div>
+                <hr>
+                <div class="row-fluid section1">
+                    <div class="span5 offset1 asset">
+                        <img class="img-polaroid img-left" data-original="../../images/miniyoutube_play.gif">
+                    </div>
+                    <div class="span5 copy">
+                        <div class="description">
+                            Play and Pause
+                        </div>
+                        <div class="description2">
+                            Just click on a screen to play/pause.
+                        </div>
+                        <div class="explanation">
+                            Cat comes into your room when you're reading comments on YouTube? Don't worry, click on that video to pause it and resume when you come back later!
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row-fluid section2">
+                    <div class="span5 offset1 copy copy-right">
+                        <div class="description">
+                            Resizable
+                        </div>
+                        <div class="description2">
+                            Just resize it to your preference.
+                        </div>
+                        <div class="explanation">
+                            The screen is too small? Just hover to the bottom right corner and drag it to the size you like!
+                        </div>
+                    </div>
+                    <div class="span5 asset">
+                        <img class="img-polaroid img-right" data-original="../../images/miniyoutube_resize.gif">
+                    </div>
+                </div>
+                <hr>
+                <div class="row-fluid section1">
+                    <div class="span5 offset1 asset">
+                        <img class="img-polaroid img-left" data-original="../../images/miniyoutube_memory.gif">
+                    </div>
+                    <div class="span5 copy">
+                        <div class="description">
+                            Memory
+                        </div>
+                        <div class="description2">
+                            It just remembers.
+                        </div>
+                        <div class="explanation">
+                            Resize, drag and place it to your preference. It remembers your configurations for the next videos.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="download">
+                    <button onclick="chrome.webstore.install()" class="install-btn btn-large" id="install-button">
+                        Add to <img src="../../images/chrome.png" width="20px" style="vertical-align: middle;"/>  Now
+                    </button>
+                    <br/><br/>
+                    <a target="_blank" href="https://chrome.google.com/webstore/detail/mini-youtube/acphfpihfjpgnihkgelafhmjeoodbehp">
+                        <img src="../../images/chrome-webstore.png">
+                    </a>
+                </div>
+            </div>
+
+        </div>  
+        <div class="media">
+            <span class="title">Featured on</span><br/>
+            <div class="logos">
+                <script type="text/javascript" id="embedhunt-14339" class="embedhunt-async-script-loader">
+                  (function() {
+                    function async_load(){
+                      var s = document.createElement('script');
+                      s.type = 'text/javascript';
+                      s.async = true;
+                      var theUrl = '//embedhunt.com/products/14339/widget';
+                      s.src = theUrl; 
+                      var embedder = document.getElementById('embedhunt-14339');
+                      embedder.parentNode.insertBefore(s, embedder);
+                    }
+                    if (window.attachEvent)
+                      window.attachEvent('onload', async_load);
+                    else
+                      window.addEventListener('load', async_load, false);
+                  })();
+                </script>
+                <a target="_blank" href="http://www.producthunt.com/posts/mini-youtube">
+                    <img class="media-logo" src="../../images/ProductHunt.png">
+                </a>
+                <a target="_blank" href="http://digiwonk.wonderhowto.com/how-to/our-top-5-chrome-extensions-for-youtube-0160356/">
+                    <img class="media-logo" src="../../images/wonderhowto.png">
+                </a>
+                <a target="_blank" href="http://www.chip.de/downloads/Mini-YouTube-fuer-Google-Chrome_76571047.html">
+                    <img class="media-logo" src="../../images/chip.png">
+                </a>
+                <a target="_blank" href="https://www.arturogoga.com/2015/02/16/crea-un-mini-youtube-que-permita-la-navegacion-en-chrome/">
+                    <img class="media-logo" src="../../images/arturogoga.png">
+                </a>
+                <a target="_blank" href="http://hvg.hu/tudomany/20150218_youtube_komment_video">
+                    <img class="media-logo" src="../../images/hvg.png">
+                </a>
+                <a target="_blank" href="http://lifehacker.ru/2015/02/23/mini-youtube-chrome/">
+                    <img class="media-logo" src="../../images/lifehacker_russia.png">
+                </a>
+                <a target="_blank" href="http://free.com.tw/mini-youtube/">
+                    <img class="media-logo" src="../../images/freetw.png">
+                </a>
+            </div>
+        </div>
+
+        <div class="row-fluid footer">
+            <div class="span12">
+                <br/>
+                <div class="social-buttons">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://chrome.google.com/webstore/detail/mini-youtube/acphfpihfjpgnihkgelafhmjeoodbehp" data-text="Watch YouTube videos while you scroll to read comments with this Chrome extension!">Tweet</a>
+                    <a class="github-button" href="https://github.com/jianweichuah/miniyoutube" data-icon="octicon-star" data-count-href="/jianweichuah/miniyoutube/stargazers" data-count-api="/repos/jianweichuah/miniyoutube#stargazers_count">Star</a>
+                    <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fmini-youtube%2Facphfpihfjpgnihkgelafhmjeoodbehp&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=1491872824423043" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true" class="facebook-buttons"></iframe>
+                    <div id="google-plus-button" class="g-plusone" data-size="medium" data-href="https://chrome.google.com/webstore/detail/mini-youtube/acphfpihfjpgnihkgelafhmjeoodbehp"></div>
+                </div>
+                <p>Made with <span style="font-size: 15px; color: red;">&hearts;</span> in Toronto by <a href="/">jianweichuah</a></p>
+            </div>
+        </div>
+    </body>
+</html>
