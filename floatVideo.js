@@ -43,7 +43,7 @@ $(document).ready(function() {
 
     // Read from the storage to see if the settings exist.
     // If yes, populate the variables
-    chrome.storage.sync.get([MINI_SCREEN_LAST_TOP, MINI_SCREEN_LAST_LEFT, 
+    chrome.storage.sync.get([MINI_SCREEN_LAST_TOP, MINI_SCREEN_LAST_LEFT,
                              MINI_SCREEN_LAST_HEIGHT, MINI_SCREEN_LAST_WIDTH,
                              MINI_FACEBOOK_ALERT_SHOWN], function(items) {
         if (items[MINI_SCREEN_LAST_TOP])
@@ -82,8 +82,8 @@ $(document).ready(function() {
 
             return $el.css('cursor', opt.cursor).on("mousedown", function(e) {
                 // If the clicked div is resizer, don't make it draggable.
-                if(e.target.className === "resizer" || 
-                   e.target.className === "mnyt-size-button" || 
+                if(e.target.className === "resizer" ||
+                   e.target.className === "mnyt-size-button" ||
                    e.target.className === "mnyt-pin-img" ||
                    e.target.className === "mnyt-progress-area" ||
                    e.target.className === "mnyt-play-button" ||
@@ -168,7 +168,7 @@ $(document).ready(function() {
                 } else {
                     removeMiniScreen();
                 }
-            } else if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.html5-video-content').height()) {
+            } else if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.video-stream').height()) {
                 // 1. Create the mini screen div to hold the video
                 $miniScreen = $('<div id="miniyoutube"></div');
 
@@ -320,7 +320,7 @@ $(document).ready(function() {
                     showMiniFacebookAlert();
                 }
 
-            } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + $('.html5-video-content').height()) {
+            } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + originalHeight) {
                 putBackMiniScreen();
             }
         }
