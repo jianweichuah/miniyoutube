@@ -15,7 +15,6 @@ $(document).ready(function() {
     var minWidth = 310;
     var resizing = false;
     var flashAlertShown = false;
-    var miniFacebookAlertShown = false;
     var miniYouTubeActivated = true;
 
     // A list of predefined sizes of the screen
@@ -33,7 +32,6 @@ $(document).ready(function() {
     var MINI_SCREEN_LAST_LEFT = 'miniScreenLastLeft';
     var MINI_SCREEN_LAST_HEIGHT = 'miniScreenLastHeight';
     var MINI_SCREEN_LAST_WIDTH = 'miniScreenLastWidth';
-    var MINI_FACEBOOK_ALERT_SHOWN = 'miniFacebookAlertShown';
     var MINI_YOUTUBE_ID = '#miniyoutube';
     var VIDEO_STREAM_CLASS = '.video-stream';
 
@@ -44,8 +42,7 @@ $(document).ready(function() {
     // Read from the storage to see if the settings exist.
     // If yes, populate the variables
     chrome.storage.sync.get([MINI_SCREEN_LAST_TOP, MINI_SCREEN_LAST_LEFT,
-                             MINI_SCREEN_LAST_HEIGHT, MINI_SCREEN_LAST_WIDTH,
-                             MINI_FACEBOOK_ALERT_SHOWN], function(items) {
+                             MINI_SCREEN_LAST_HEIGHT, MINI_SCREEN_LAST_WIDTH], function(items) {
         if (items[MINI_SCREEN_LAST_TOP])
             miniScreenLastTop = items[MINI_SCREEN_LAST_TOP];
         if (items[MINI_SCREEN_LAST_LEFT])
@@ -54,8 +51,6 @@ $(document).ready(function() {
             miniScreenLastHeight = items[MINI_SCREEN_LAST_HEIGHT];
         if (items[MINI_SCREEN_LAST_WIDTH])
             miniScreenLastWidth = items[MINI_SCREEN_LAST_WIDTH];
-        if (items[MINI_FACEBOOK_ALERT_SHOWN])
-            miniFacebookAlertShown = items[MINI_FACEBOOK_ALERT_SHOWN];
     });
 
     // Update activation status
@@ -315,39 +310,11 @@ $(document).ready(function() {
                 $('.mnyt-progress-area').hover(handleProgressHoverIn, handleProgressHoverOut);
                 $('.mnyt-progress-area').click(handleVideoProgress);
 
-                // Show Mini Facebook alert
-                if (!miniFacebookAlertShown) {
-                    showMiniFacebookAlert();
-                }
-
             } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + originalHeight) {
                 putBackMiniScreen();
             }
         }
     });
-
-    function showMiniFacebookAlert() {
-        $miniFacebookAlert = $('<div style="width: 100%">\
-                                    <div class="alert alert-info" role="alert">\
-                                        <a class="alert-close">&times;</a>\
-                                        <img src="https://raw.githubusercontent.com/jianweichuah/minifacebook/master/icon16.png" height="10px">\
-                                        Use Facebook? Try\
-                                        <a href="https://chrome.google.com/webstore/detail/mini-facebook/ojfhdmbkbfeblfemipgndpbnofhhpmgd" target="_blank">\
-                                            Mini Facebook!\
-                                        </a>\
-                                    </div>\
-                                 </div>');
-        $('body').prepend($miniFacebookAlert);
-
-        miniFacebookAlertShown = true;
-        chrome.storage.sync.set({"miniFacebookAlertShown": true});
-
-        $('.alert-close').click(function() {
-            $miniFacebookAlert.fadeOut(500, function() {
-                $(this).remove();
-            })
-        });
-    }
 
     function handleProgressHoverIn() {
         $('.mnyt-progress-wrap').height(5);
