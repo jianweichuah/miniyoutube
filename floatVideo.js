@@ -83,7 +83,11 @@ $(document).ready(function() {
                    e.target.className === "mnyt-progress-area" ||
                    e.target.className === "mnyt-play-button" ||
                    e.target.className === "mnyt-play-button-play" ||
-                   e.target.className === "mnyt-play-button-pause")
+                   e.target.className === "mnyt-play-button-pause" ||
+                   e.target.className === "mnyt-progress-area" ||
+                   e.target.className === "mnyt-progress-bar mnyt-progress" ||
+                   e.target.className === "mnyt-progress-wrap mnyt-progress" ||
+                   e.target.className === "mnyt-progress-pointer")
                 {
                     return false;
                 }
