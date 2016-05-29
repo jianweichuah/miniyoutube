@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Mini YouTube",
   "description": "Makes YouTube video float while you're reading/writing comments so you can do both at the same time.",
-  "version": "1.2.18",
+  "version": "1.2.20",
 
   "icons": { "16": "icon16.png",
              "48": "icon48.png",
@@ -26,6 +26,7 @@
   },
 
   "permissions": [
-    "storage"
+    "storage",
+    "tabs"
   ]
 }

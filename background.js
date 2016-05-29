@@ -19,7 +19,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
         // 2. Update icon
         updateIcon();
     } else if ("get_activation_status" in message) {
-    // Message is to get activation status
+        // Message is to get activation status
         sendResponse({"is_active": getActivationStatus()});
     }
 });
@@ -45,7 +45,7 @@ function setActivationStatus(isActive) {
     miniYouTubeActivated = isActive;
     chrome.storage.sync.set({"miniYouTubeActivated": miniYouTubeActivated});
     // Send message to each tab with youtube to update the status in the content script
-    chrome.tabs.query({url: "https://www.youtube.com/*"},function(tabs){     
+    chrome.tabs.query({url: "https://www.youtube.com/*"},function(tabs){
         tabs.forEach(function(tab){
             chrome.tabs.sendMessage(tab.id, {"update_activation_status": miniYouTubeActivated});
         });
