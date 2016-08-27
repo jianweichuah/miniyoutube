@@ -523,10 +523,11 @@ $(document).ready(function() {
         }
 
         var newWidth = dragStartWidth + e.clientX - dragStartX;
+        // Experimental: Allow manually resizing to bigger screen sizes.
         // Make sure the new width does not exceed the max width
-        if (newWidth > maxWidth) {
-            newWidth = maxWidth;
-        }
+        // if (newWidth > maxWidth) {
+        //     newWidth = maxWidth;
+        // }
         if (newWidth < minWidth) {
             newWidth = minWidth;
         }
