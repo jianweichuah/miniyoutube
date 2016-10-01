@@ -41,7 +41,7 @@ $(document).ready(function() {
 
     // Read from the storage to see if the settings exist.
     // If yes, populate the variables
-    chrome.storage.sync.get([MINI_SCREEN_LAST_TOP, MINI_SCREEN_LAST_LEFT,
+    browser.storage.local.get([MINI_SCREEN_LAST_TOP, MINI_SCREEN_LAST_LEFT,
                              MINI_SCREEN_LAST_HEIGHT, MINI_SCREEN_LAST_WIDTH], function(items) {
         if (items[MINI_SCREEN_LAST_TOP])
             miniScreenLastTop = items[MINI_SCREEN_LAST_TOP];
@@ -57,7 +57,7 @@ $(document).ready(function() {
     getActivationStatus(updateActivationStatus);
 
     // Add a listener for the activation status
-    chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+    browser.runtime.onMessage.addListener(function(message, sender, sendResponse) {
         if ("update_activation_status" in message) {
             // 1. Update status
             updateActivationStatus(message["update_activation_status"]);
@@ -370,7 +370,7 @@ $(document).ready(function() {
         miniScreenLastHeight = $(MINI_YOUTUBE_ID).height();
         miniScreenLastWidth = $(MINI_YOUTUBE_ID).width();
         // Persist to browser storage
-        chrome.storage.sync.set({"miniScreenLastTop": miniScreenLastTop,
+        browser.storage.local.set({"miniScreenLastTop": miniScreenLastTop,
                                  "miniScreenLastLeft": miniScreenLastLeft,
                                  "miniScreenLastHeight": miniScreenLastHeight,
                                  "miniScreenLastWidth": miniScreenLastWidth});
@@ -558,7 +558,7 @@ $(document).ready(function() {
     }
 
     function getActivationStatus(callBack) {
-        chrome.runtime.sendMessage({"get_activation_status": true}, function(response) {
+        browser.runtime.sendMessage({"get_activation_status": true}, function(response) {
             var activated = true;
             if ("is_active" in response) {
                 activated = response["is_active"];
@@ -629,6 +629,6 @@ $(document).ready(function() {
         putBackMiniScreen();
         floated = false;
         // Send message to disable Mini YouTube
-        chrome.runtime.sendMessage({"update_icon": false});
+        browser.runtime.sendMessage({"update_icon": false});
     }
 });

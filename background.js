@@ -2,7 +2,7 @@ var MINI_YOUTUBE_ACTIVATED = 'miniYouTubeActivated';
 var miniYouTubeActivated = true;
 
 // Check if Mini YouTube is enabled
-chrome.storage.sync.get([MINI_YOUTUBE_ACTIVATED], function(items) {
+browser.storage.local.get([MINI_YOUTUBE_ACTIVATED], function(items) {
     if (items[MINI_YOUTUBE_ACTIVATED])
         miniYouTubeActivated = items[MINI_YOUTUBE_ACTIVATED];
 });
@@ -11,7 +11,7 @@ chrome.storage.sync.get([MINI_YOUTUBE_ACTIVATED], function(items) {
 updateIcon();
 
 // Receive and handle message from popup
-chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+browser.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     // The message is to update icon
     if ("update_icon" in message) {
         // 1. Update status
@@ -25,11 +25,12 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 });
 
 function updateIcon() {
+    console.log(miniYouTubeActivated);
     var iconPath = "icon128.png";
     if (!miniYouTubeActivated)
         iconPath = "icon128_grey.png";
 
-    chrome.browserAction.setIcon({
+    browser.browserAction.setIcon({
         path : {
           "19": iconPath,
           "38": iconPath
@@ -43,11 +44,11 @@ function getActivationStatus() {
 
 function setActivationStatus(isActive) {
     miniYouTubeActivated = isActive;
-    chrome.storage.sync.set({"miniYouTubeActivated": miniYouTubeActivated});
+    browser.storage.local.set({"miniYouTubeActivated": miniYouTubeActivated});
     // Send message to each tab with youtube to update the status in the content script
-    chrome.tabs.query({url: "https://www.youtube.com/*"},function(tabs){
+    browser.tabs.query({url: "https://www.youtube.com/*"},function(tabs){
         tabs.forEach(function(tab){
-            chrome.tabs.sendMessage(tab.id, {"update_activation_status": miniYouTubeActivated});
+            browser.tabs.sendMessage(tab.id, {"update_activation_status": miniYouTubeActivated});
         });
     });
 }
