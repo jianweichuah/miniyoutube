@@ -1,3 +1,8 @@
+// Try if Edge browser object exists, else default to chrome
+var browser = self.browser;
+if (typeof browser === "undefined") {
+    browser = self.chrome;
+}
 $(document).ready(function() {
     // Handle dragging.
     var floated = false;
@@ -41,17 +46,7 @@ $(document).ready(function() {
 
     // Read from the storage to see if the settings exist.
     // If yes, populate the variables
-    browser.storage.local.get([MINI_SCREEN_LAST_TOP, MINI_SCREEN_LAST_LEFT,
-                             MINI_SCREEN_LAST_HEIGHT, MINI_SCREEN_LAST_WIDTH], function(items) {
-        if (items[MINI_SCREEN_LAST_TOP])
-            miniScreenLastTop = items[MINI_SCREEN_LAST_TOP];
-        if (items[MINI_SCREEN_LAST_LEFT])
-            miniScreenLastLeft = items[MINI_SCREEN_LAST_LEFT];
-        if (items[MINI_SCREEN_LAST_HEIGHT])
-            miniScreenLastHeight = items[MINI_SCREEN_LAST_HEIGHT];
-        if (items[MINI_SCREEN_LAST_WIDTH])
-            miniScreenLastWidth = items[MINI_SCREEN_LAST_WIDTH];
-    });
+    getMiniScreenPositions();
 
     // Update activation status
     getActivationStatus(updateActivationStatus);
@@ -370,10 +365,12 @@ $(document).ready(function() {
         miniScreenLastHeight = $(MINI_YOUTUBE_ID).height();
         miniScreenLastWidth = $(MINI_YOUTUBE_ID).width();
         // Persist to browser storage
-        browser.storage.local.set({"miniScreenLastTop": miniScreenLastTop,
-                                 "miniScreenLastLeft": miniScreenLastLeft,
-                                 "miniScreenLastHeight": miniScreenLastHeight,
-                                 "miniScreenLastWidth": miniScreenLastWidth});
+        browser.runtime.sendMessage({"update_miniscreen_positions": {
+            "miniScreenLastTop": miniScreenLastTop,
+            "miniScreenLastLeft": miniScreenLastLeft,
+            "miniScreenLastHeight": miniScreenLastHeight,
+            "miniScreenLastWidth": miniScreenLastWidth
+        }});
     }
 
     // Update the size of the screen to small
@@ -564,6 +561,26 @@ $(document).ready(function() {
                 activated = response["is_active"];
             }
             callBack(activated);
+        });
+    }
+
+    function getMiniScreenPositions() {
+        browser.runtime.sendMessage({"get_miniscreen_positions": true}, function(response) {
+            if ("positions" in response) {
+                var items = response["positions"];
+                if (items[MINI_SCREEN_LAST_TOP]) {
+                    miniScreenLastTop = items[MINI_SCREEN_LAST_TOP];
+                }
+                if (items[MINI_SCREEN_LAST_LEFT]) {
+                    miniScreenLastLeft = items[MINI_SCREEN_LAST_LEFT];
+                }
+                if (items[MINI_SCREEN_LAST_HEIGHT]) {
+                    miniScreenLastHeight = items[MINI_SCREEN_LAST_HEIGHT];
+                }
+                if (items[MINI_SCREEN_LAST_WIDTH]) {
+                    miniScreenLastWidth = items[MINI_SCREEN_LAST_WIDTH];
+                }
+            }
         });
     }
 
