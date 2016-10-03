@@ -1,8 +1,20 @@
 var MINI_YOUTUBE_ACTIVATED = 'miniYouTubeActivated';
 var miniYouTubeActivated = true;
 
+// Try if Edge browser object exists, else default to chrome
+var browser = self.browser;
+if (typeof browser === "undefined") {
+    var browser = self.chrome;
+}
+
+// Try cloud sync, else fallback to localstorage
+var storage = browser.storage.sync;
+if (typeof storage !== "undefined") {
+    storage = browser.storage.local;
+}
+
 // Check if Mini YouTube is enabled
-browser.storage.local.get([MINI_YOUTUBE_ACTIVATED], function(items) {
+storage.get([MINI_YOUTUBE_ACTIVATED], function(items) {
     if (items[MINI_YOUTUBE_ACTIVATED])
         miniYouTubeActivated = items[MINI_YOUTUBE_ACTIVATED];
 });
@@ -25,7 +37,6 @@ browser.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 });
 
 function updateIcon() {
-    console.log(miniYouTubeActivated);
     var iconPath = "icon128.png";
     if (!miniYouTubeActivated)
         iconPath = "icon128_grey.png";
@@ -44,7 +55,7 @@ function getActivationStatus() {
 
 function setActivationStatus(isActive) {
     miniYouTubeActivated = isActive;
-    browser.storage.local.set({"miniYouTubeActivated": miniYouTubeActivated});
+    storage.set({"miniYouTubeActivated": miniYouTubeActivated});
     // Send message to each tab with youtube to update the status in the content script
     browser.tabs.query({url: "https://www.youtube.com/*"},function(tabs){
         tabs.forEach(function(tab){
