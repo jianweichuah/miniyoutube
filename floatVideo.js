@@ -210,6 +210,9 @@ $(document).ready(function() {
                 // 5. Wrap the video into the small element div
                 $video.wrap($miniScreen);
 
+                // Move the div to the top level body.
+                // *This is needed in Chrome after the update on 9 October 2016.
+                $(MINI_YOUTUBE_ID).appendTo('body');
                 // Add resizers to the right corners of the div
                 $(MINI_YOUTUBE_ID).append('<div class="mnyt-controls">\
                                                 <div class="resizer" id="mnyt-br"></div>\
@@ -613,6 +616,10 @@ $(document).ready(function() {
 
         // 3. Save the current top and left of the mini screen.
         saveMiniYouTubeSettings();
+
+        // Move the div back to 'html5-video-container'.
+        // *This is needed in Chrome after the update on 9 October 2016.
+        $(MINI_YOUTUBE_ID).appendTo('.html5-video-container');
 
         // 4. Restore the width and heigh of the video
         $video.css('width', originalWidth);
