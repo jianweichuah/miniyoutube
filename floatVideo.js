@@ -433,23 +433,7 @@ $(document).ready(function() {
 
         // If the video has ended and the screen is still around, clear it.
         if (floated == true && $video.currentTime == $video.duration) {
-            // 1. Grab the video element
-            $miniScreen = $(VIDEO_STREAM_CLASS);
-
-            // 2. Restore the width and heigh of the video
-            $miniScreen.css('width', originalWidth);
-            $miniScreen.css('height', originalHeight);
-
-            // Remove the resizers
-            $('.resizer').unbind('mousedown');
-            $miniScreen.next().remove();
-
-            // 3. Take away the parent.
-            $miniScreen.removeClass('mnyt-video');
-            $miniScreen.unwrap();
-
-            // 4. Set flag to false
-            floated = false;
+            putBackMiniScreen();
             return false;
         }
 
@@ -618,7 +602,7 @@ $(document).ready(function() {
         saveMiniYouTubeSettings();
 
         // Move the div back to 'html5-video-container'.
-        // *This is needed in Chrome after the update on 9 October 2016.
+        // This is needed in Chrome after the update on 9 October 2016.
         $(MINI_YOUTUBE_ID).appendTo('.html5-video-container');
 
         // 4. Restore the width and heigh of the video
