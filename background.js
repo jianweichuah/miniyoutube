@@ -57,9 +57,9 @@ browser.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 });
 
 function updateIcon() {
-    var iconPath = "icon128.png";
+    var iconPath = "images/icon128.png";
     if (!miniYouTubeActivated)
-        iconPath = "icon128_grey.png";
+        iconPath = "images/icon128_grey.png";
 
     browser.browserAction.setIcon({
         path : {

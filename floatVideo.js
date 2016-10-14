@@ -42,7 +42,7 @@ $(document).ready(function() {
 
     // Preload images
     preloadImage("https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/pin.png");
-    preloadImage("https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png");
+    preloadImage("https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/brCorner.png");
 
     // Read from the storage to see if the settings exist.
     // If yes, populate the variables
@@ -211,7 +211,7 @@ $(document).ready(function() {
                 // Add resizers to the right corners of the div
                 $(MINI_YOUTUBE_ID).append('<div class="mnyt-controls">\
                                                 <div class="resizer" id="mnyt-br"></div>\
-                                                <img class="resize-icon" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png" />\
+                                                <img class="resize-icon" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/brCorner.png" />\
                                                 <div class="mnyt-control-icons">\
                                                     <button class="mnyt-size-button" id="mnyt-pin-button"><img class="mnyt-pin-img" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/pin.png" width="20px"/></button>\
                                                     <label class="mnyt-pin-label">Save screen settings.</label>\
@@ -347,7 +347,7 @@ $(document).ready(function() {
         // Show settings saved alert
         $settingsSavedAlert = $('<div style="width: 100%">\
                                     <div class="alert alert-success" role="alert">\
-                                        <img src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/icon16.png" height="10px">\
+                                        <img src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/icon16.png" height="10px">\
                                         Mini YouTube: Screen settings saved!\
                                     </div>\
                                  </div>');

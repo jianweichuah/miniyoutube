@@ -15,7 +15,6 @@ cp -R images    $DES/
 cp *.html       $DES/
 cp *.js         $DES/
 cp *.css        $DES/
-cp *.png        $DES/
 cp LICENSE.md   $DES/
 
 echo "*** MiniYouTube Chrome: Package done."

@@ -2,8 +2,8 @@
 #
 # This script assumes a linux environment
 
-echo "*** MiniYouTube Chrome: Creating web store package"
-echo "*** MiniYouTube Chrome: Copying files"
+echo "*** MiniYouTube Edge: Creating web store package"
+echo "*** MiniYouTube Edge: Copying files"
 
 DES=dist/build/edge
 rm -rf $DES
@@ -15,7 +15,6 @@ cp -R images    $DES/
 cp *.html       $DES/
 cp *.js         $DES/
 cp *.css        $DES/
-cp *.png        $DES/
 cp LICENSE.md   $DES/
 
-echo "*** MiniYouTube Chrome: Package done."
+echo "*** MiniYouTube Edge: Package done."
