@@ -1,3 +1,8 @@
+// Try if Edge browser object exists, else default to chrome
+var browser = self.browser;
+if (typeof browser === "undefined") {
+    browser = self.chrome;
+}
 document.addEventListener("DOMContentLoaded", function(event) {
     var miniYouTubeActivated = true;
     var onOffSwitch = document.getElementById('myonoffswitch');
