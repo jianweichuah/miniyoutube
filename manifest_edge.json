@@ -1,12 +1,14 @@
 {
   "manifest_version": 2,
   "name": "Mini YouTube",
+  "author": "Mini YouTube contributors",
   "description": "Makes YouTube video float while you're reading/writing comments so you can do both at the same time.",
   "version": "1.2.23",
+  "minimum_edge_version": "38.14393",
 
-  "icons": { "16": "icon16.png",
-             "48": "icon48.png",
-             "128": "icon128.png" },
+  "icons": { "16": "images/icon16.png",
+             "48": "images/icon48.png",
+             "128": "images/icon128.png" },
 
   "content_scripts": [{
     "matches": ["https://www.youtube.com/*"],
@@ -21,7 +23,11 @@
 
   "browser_action": {
     "default_title": "Mini YouTube",
-    "default_icon": "icon128.png",
+    "default_icon": {
+      "19": "images/icon128.png",
+      "38": "images/icon128.png",
+      "128": "images/icon128.png"
+    },
     "default_popup": "popup.html"
   },
 

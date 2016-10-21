@@ -1,3 +1,8 @@
+// Try if Edge browser object exists, else default to chrome
+var browser = self.browser;
+if (typeof browser === "undefined") {
+    browser = self.chrome;
+}
 $(document).ready(function() {
     // Handle dragging.
     var floated = false;
@@ -37,27 +42,17 @@ $(document).ready(function() {
 
     // Preload images
     preloadImage("https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/pin.png");
-    preloadImage("https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png");
+    preloadImage("https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/brCorner.png");
 
     // Read from the storage to see if the settings exist.
     // If yes, populate the variables
-    chrome.storage.sync.get([MINI_SCREEN_LAST_TOP, MINI_SCREEN_LAST_LEFT,
-                             MINI_SCREEN_LAST_HEIGHT, MINI_SCREEN_LAST_WIDTH], function(items) {
-        if (items[MINI_SCREEN_LAST_TOP])
-            miniScreenLastTop = items[MINI_SCREEN_LAST_TOP];
-        if (items[MINI_SCREEN_LAST_LEFT])
-            miniScreenLastLeft = items[MINI_SCREEN_LAST_LEFT];
-        if (items[MINI_SCREEN_LAST_HEIGHT])
-            miniScreenLastHeight = items[MINI_SCREEN_LAST_HEIGHT];
-        if (items[MINI_SCREEN_LAST_WIDTH])
-            miniScreenLastWidth = items[MINI_SCREEN_LAST_WIDTH];
-    });
+    getMiniScreenPositions();
 
     // Update activation status
     getActivationStatus(updateActivationStatus);
 
     // Add a listener for the activation status
-    chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+    browser.runtime.onMessage.addListener(function(message, sender, sendResponse) {
         if ("update_activation_status" in message) {
             // 1. Update status
             updateActivationStatus(message["update_activation_status"]);
@@ -216,7 +211,7 @@ $(document).ready(function() {
                 // Add resizers to the right corners of the div
                 $(MINI_YOUTUBE_ID).append('<div class="mnyt-controls">\
                                                 <div class="resizer" id="mnyt-br"></div>\
-                                                <img class="resize-icon" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/brCorner.png" />\
+                                                <img class="resize-icon" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/brCorner.png" />\
                                                 <div class="mnyt-control-icons">\
                                                     <button class="mnyt-size-button" id="mnyt-pin-button"><img class="mnyt-pin-img" src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/pin.png" width="20px"/></button>\
                                                     <label class="mnyt-pin-label">Save screen settings.</label>\
@@ -352,7 +347,7 @@ $(document).ready(function() {
         // Show settings saved alert
         $settingsSavedAlert = $('<div style="width: 100%">\
                                     <div class="alert alert-success" role="alert">\
-                                        <img src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/icon16.png" height="10px">\
+                                        <img src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/icon16.png" height="10px">\
                                         Mini YouTube: Screen settings saved!\
                                     </div>\
                                  </div>');
@@ -370,10 +365,12 @@ $(document).ready(function() {
         miniScreenLastHeight = $(MINI_YOUTUBE_ID).height();
         miniScreenLastWidth = $(MINI_YOUTUBE_ID).width();
         // Persist to browser storage
-        chrome.storage.sync.set({"miniScreenLastTop": miniScreenLastTop,
-                                 "miniScreenLastLeft": miniScreenLastLeft,
-                                 "miniScreenLastHeight": miniScreenLastHeight,
-                                 "miniScreenLastWidth": miniScreenLastWidth});
+        browser.runtime.sendMessage({"update_miniscreen_positions": {
+            "miniScreenLastTop": miniScreenLastTop,
+            "miniScreenLastLeft": miniScreenLastLeft,
+            "miniScreenLastHeight": miniScreenLastHeight,
+            "miniScreenLastWidth": miniScreenLastWidth
+        }});
     }
 
     // Update the size of the screen to small
@@ -558,12 +555,32 @@ $(document).ready(function() {
     }
 
     function getActivationStatus(callBack) {
-        chrome.runtime.sendMessage({"get_activation_status": true}, function(response) {
+        browser.runtime.sendMessage({"get_activation_status": true}, function(response) {
             var activated = true;
             if ("is_active" in response) {
                 activated = response["is_active"];
             }
             callBack(activated);
+        });
+    }
+
+    function getMiniScreenPositions() {
+        browser.runtime.sendMessage({"get_miniscreen_positions": true}, function(response) {
+            if ("positions" in response) {
+                var items = response["positions"];
+                if (items[MINI_SCREEN_LAST_TOP]) {
+                    miniScreenLastTop = items[MINI_SCREEN_LAST_TOP];
+                }
+                if (items[MINI_SCREEN_LAST_LEFT]) {
+                    miniScreenLastLeft = items[MINI_SCREEN_LAST_LEFT];
+                }
+                if (items[MINI_SCREEN_LAST_HEIGHT]) {
+                    miniScreenLastHeight = items[MINI_SCREEN_LAST_HEIGHT];
+                }
+                if (items[MINI_SCREEN_LAST_WIDTH]) {
+                    miniScreenLastWidth = items[MINI_SCREEN_LAST_WIDTH];
+                }
+            }
         });
     }
 
@@ -629,6 +646,6 @@ $(document).ready(function() {
         putBackMiniScreen();
         floated = false;
         // Send message to disable Mini YouTube
-        chrome.runtime.sendMessage({"update_icon": false});
+        browser.runtime.sendMessage({"update_icon": false});
     }
 });

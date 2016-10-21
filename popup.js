@@ -1,3 +1,8 @@
+// Try if Edge browser object exists, else default to chrome
+var browser = self.browser;
+if (typeof browser === "undefined") {
+    browser = self.chrome;
+}
 document.addEventListener("DOMContentLoaded", function(event) {
     var miniYouTubeActivated = true;
     var onOffSwitch = document.getElementById('myonoffswitch');
@@ -11,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     onOffSwitch.onclick = toggleSwitch;
 
     function getActivationStatus(callBack) {
-        chrome.runtime.sendMessage({"get_activation_status": true}, function(response) {
+        browser.runtime.sendMessage({"get_activation_status": true}, function(response) {
             var activated = true;
             if ("is_active" in response) {
                 activated = response["is_active"];
@@ -23,14 +28,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     function toggleSwitch() {
         miniYouTubeActivated = onOffSwitch.checked;
         // Send a message to background.js to save status and update icon
-        chrome.runtime.sendMessage({"update_icon": miniYouTubeActivated});
+        browser.runtime.sendMessage({"update_icon": miniYouTubeActivated});
         updateDescription();
     }
 
     function updateSwitchState(activated) {
         miniYouTubeActivated = activated;
         onOffSwitch.checked = miniYouTubeActivated;
-        chrome.runtime.sendMessage({"update_icon": miniYouTubeActivated});
+        browser.runtime.sendMessage({"update_icon": miniYouTubeActivated});
         updateDescription();
     }
 

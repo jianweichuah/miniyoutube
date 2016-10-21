@@ -1,8 +1,19 @@
 # Mini Youtube
-A chrome extension that makes YouTube video float while you're reading/writing comments so you can do both at the same time.
+An extension that makes YouTube video float while you're reading/writing comments so you can do both at the same time.
 The floating screen is resizable and can be dragged and placed anywhere on the screen.
 
+## Chrome
 Download it on the [Chrome Web Store](http://goo.gl/TyNOlF)
+
+## Edge
+1. [Download the latest zip](https://github.com/japborst/miniyoutube/archive/master.zip)
+2. Extract the zip file somewhere safe (it will need to remain there as long as you use the extension)
+3. Browse to `about:flags` in Edge and turn on the option `Enable extension developer features`
+4. Restart your browser
+5. Go to Extensions in the browser menu and click `Load extension`
+6. Select the `miniyoutube-master` folder you extracted earlier
+
+Edge disables side-loaded extensions whenever you restart the browser, unfortunately. However after a few seconds you will get a prompt to re-enable them with a single click.
 
 ![Banner](https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/screenshots/promotional_tile_marquee.png)
 
