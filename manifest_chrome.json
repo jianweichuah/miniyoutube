@@ -3,7 +3,7 @@
   "name": "Mini YouTube",
   "author": "Mini YouTube contributors",
   "description": "Makes YouTube video float while you're reading/writing comments so you can do both at the same time.",
-  "version": "1.2.23",
+  "version": "1.2.24",
 
   "icons": { "16": "images/icon16.png",
              "48": "images/icon48.png",
