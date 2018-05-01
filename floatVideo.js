@@ -348,7 +348,7 @@ $(document).ready(function() {
         $settingsSavedAlert = $('<div style="width: 100%">\
                                     <div class="alert alert-success" role="alert">\
                                         <img src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/icon16.png" height="10px">\
-                                        Mini YouTube: Screen settings saved!\
+                                        Mini Y: Screen settings saved!\
                                     </div>\
                                  </div>');
         $('body').prepend($settingsSavedAlert);
