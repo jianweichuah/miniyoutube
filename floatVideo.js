@@ -22,6 +22,8 @@ $(document).ready(function() {
     var flashAlertShown = false;
     var miniYouTubeActivated = true;
 
+    var PAGE_TOP_MARGIN_PX = 60;
+
     // A list of predefined sizes of the screen
     var SMALL_WIDTH = 310;
     var SMALL_HEIGHT = 175;
@@ -107,8 +109,8 @@ $(document).ready(function() {
 
                     // Prevent going out of screen vertically.
                     var top = e.pageY + pos_y - drg_h;
-                    if (top < $(document).scrollTop() + 55) {
-                        top = $(document).scrollTop() + 55;
+                    if (top < $(document).scrollTop() + PAGE_TOP_MARGIN_PX) {
+                        top = $(document).scrollTop() + PAGE_TOP_MARGIN_PX;
                     } else if (top > $(document).scrollTop() + $(window).height() - drg_h - 5) {
                         top = $(document).scrollTop() + $(window).height() - drg_h - 5;
                     }
@@ -168,7 +170,7 @@ $(document).ready(function() {
 
                 // Put the screen back to its last position, if defined.
                 // Else default to top right.
-                var miniScreenTop = 55;
+                var miniScreenTop = 60;
                 var miniScreenHeight = 175;
                 var miniScreenLeft = $(window).width() - 380;
                 var miniScreenWidth = 310;

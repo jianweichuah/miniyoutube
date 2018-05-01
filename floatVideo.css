@@ -3,7 +3,7 @@
   height: 175px;
   position: fixed;
   left: 5px;
-  top: 55px;
+  top: 60px;
   z-index: 1000;
   background-color: black;
   box-shadow: 0 0 10px #000000;
@@ -130,7 +130,7 @@
 .alert {
   position: fixed;
   width: 90%;
-  top: 52px;
+  top: 60px;
   z-index: 1000;
   padding: 15px;
   margin-bottom: 20px;
