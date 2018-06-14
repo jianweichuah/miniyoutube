@@ -141,7 +141,7 @@ $(document).ready(function() {
                 if (!flashAlertShown) {
                     $flashNotSupportedAlert = $('<div style="width: 100%">\
                                                     <div class="alert alert-danger" role="alert">\
-                                                        <img src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/icon16.png" height="10px">\
+                                                        <img src="https://raw.githubusercontent.com/jianweichuah/miniyoutube/master/images/icon16.png" height="10px">\
                                                         Mini YouTube: Flash videos not currently supported!\
                                                     </div>\
                                                  </div>');
