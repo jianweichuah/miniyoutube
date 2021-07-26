@@ -8,7 +8,7 @@ The floating screen is resizable and can be dragged and placed anywhere on the s
 3. 
 ```bash
 cd <path_of_downloaded_folder>
-xattr -d com.apple.quarantine Timer3000.app
+xattr -d com.apple.quarantine Mini\ Y.app
 ```
 4. a. safari -> preferences -> enable development menu
    
