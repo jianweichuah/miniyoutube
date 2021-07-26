@@ -1,0 +1,697 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD4D55FF26AEB73E00871891 /* floatVideo.css in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D226AEB73E00871891 /* floatVideo.css */; };
+		DD4D560026AEB73E00871891 /* miniyoutube_1.2.16.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D426AEB73E00871891 /* miniyoutube_1.2.16.zip */; };
+		DD4D560126AEB73E00871891 /* miniyoutube_1.2.17.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D526AEB73E00871891 /* miniyoutube_1.2.17.zip */; };
+		DD4D560226AEB73E00871891 /* miniyoutube_1.2.19.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D626AEB73E00871891 /* miniyoutube_1.2.19.zip */; };
+		DD4D560326AEB73E00871891 /* miniyoutube_1.2.25.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D726AEB73E00871891 /* miniyoutube_1.2.25.zip */; };
+		DD4D560426AEB73E00871891 /* miniyoutube_1.2.24.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D826AEB73E00871891 /* miniyoutube_1.2.24.zip */; };
+		DD4D560526AEB73E00871891 /* miniyoutube_1.2.18.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D926AEB73E00871891 /* miniyoutube_1.2.18.zip */; };
+		DD4D560626AEB73E00871891 /* miniyoutube_1.2.20.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55DA26AEB73E00871891 /* miniyoutube_1.2.20.zip */; };
+		DD4D560726AEB73E00871891 /* miniyoutube_1.2.21.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55DB26AEB73E00871891 /* miniyoutube_1.2.21.zip */; };
+		DD4D560826AEB73E00871891 /* miniyoutube_1.2.23.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55DC26AEB73E00871891 /* miniyoutube_1.2.23.zip */; };
+		DD4D560926AEB73E00871891 /* miniyoutube_1.2.22.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55DD26AEB73E00871891 /* miniyoutube_1.2.22.zip */; };
+		DD4D560A26AEB73E00871891 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55DE26AEB73E00871891 /* LICENSE.md */; };
+		DD4D560B26AEB73E00871891 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55DF26AEB73E00871891 /* popup.js */; };
+		DD4D560C26AEB73E00871891 /* promotional_tile_large.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E126AEB73E00871891 /* promotional_tile_large.png */; };
+		DD4D560D26AEB73E00871891 /* promotional_tile_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E226AEB73E00871891 /* promotional_tile_small.jpg */; };
+		DD4D560E26AEB73E00871891 /* promotional_tile_marquee.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E326AEB73E00871891 /* promotional_tile_marquee.png */; };
+		DD4D560F26AEB73E00871891 /* Screenshot1.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E426AEB73E00871891 /* Screenshot1.png */; };
+		DD4D561026AEB73E00871891 /* Screenshot2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E526AEB73E00871891 /* Screenshot2.png */; };
+		DD4D561126AEB73E00871891 /* Screenshot3.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E626AEB73E00871891 /* Screenshot3.png */; };
+		DD4D561226AEB73E00871891 /* jquery-2.1.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E726AEB73E00871891 /* jquery-2.1.3.min.js */; };
+		DD4D561326AEB73E00871891 /* floatVideo.js in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E826AEB73E00871891 /* floatVideo.js */; };
+		DD4D561426AEB73E00871891 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E926AEB73E00871891 /* background.js */; };
+		DD4D561526AEB73E00871891 /* make-chrome.sh in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55EB26AEB73E00871891 /* make-chrome.sh */; };
+		DD4D561626AEB73E00871891 /* make-edge.sh in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55EC26AEB73E00871891 /* make-edge.sh */; };
+		DD4D561726AEB73E00871891 /* icon16.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55EE26AEB73E00871891 /* icon16.png */; };
+		DD4D561826AEB73E00871891 /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55EF26AEB73E00871891 /* coffee.png */; };
+		DD4D561926AEB73E00871891 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F026AEB73E00871891 /* pin.png */; };
+		DD4D561A26AEB73E00871891 /* icon48.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F126AEB73E00871891 /* icon48.png */; };
+		DD4D561B26AEB73E00871891 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F226AEB73E00871891 /* github.png */; };
+		DD4D561C26AEB73E00871891 /* icon128_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F326AEB73E00871891 /* icon128_grey.png */; };
+		DD4D561D26AEB73E00871891 /* icon128.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F426AEB73E00871891 /* icon128.png */; };
+		DD4D561E26AEB73E00871891 /* facebook_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F526AEB73E00871891 /* facebook_2.png */; };
+		DD4D561F26AEB73E00871891 /* brCorner.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F626AEB73E00871891 /* brCorner.png */; };
+		DD4D562026AEB73E00871891 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F726AEB73E00871891 /* twitter.png */; };
+		DD4D562126AEB73E00871891 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F826AEB73E00871891 /* star.png */; };
+		DD4D562226AEB73E00871891 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F926AEB73E00871891 /* facebook.png */; };
+		DD4D562326AEB73E00871891 /* paypal.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FA26AEB73E00871891 /* paypal.png */; };
+		DD4D562426AEB73E00871891 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FB26AEB73E00871891 /* popup.html */; };
+		DD4D562626AEB73E00871891 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FD26AEB73E00871891 /* manifest.json */; };
+		DD4D562726AEB73E00871891 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FE26AEB73E00871891 /* popup.css */; };
+		DD4D562926AEC1D500871891 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DD4D562826AEC1D500871891 /* README.md */; };
+		DD7E370726AEAAF500DB7ECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E370626AEAAF500DB7ECF /* AppDelegate.swift */; };
+		DD7E370A26AEAAF500DB7ECF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7E370826AEAAF500DB7ECF /* Main.storyboard */; };
+		DD7E370C26AEAAF500DB7ECF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E370B26AEAAF500DB7ECF /* ViewController.swift */; };
+		DD7E370E26AEAAF600DB7ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7E370D26AEAAF600DB7ECF /* Assets.xcassets */; };
+		DD7E371526AEAAF600DB7ECF /* Mini Y Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DD7E371426AEAAF600DB7ECF /* Mini Y Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DD7E371A26AEAAF600DB7ECF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7E371926AEAAF600DB7ECF /* Cocoa.framework */; };
+		DD7E371D26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E371C26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD7E371626AEAAF600DB7ECF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD7E36FA26AEAAF500DB7ECF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD7E371326AEAAF600DB7ECF;
+			remoteInfo = "Mini Y Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DD7E372526AEAAF600DB7ECF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DD7E371526AEAAF600DB7ECF /* Mini Y Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DD4D55D226AEB73E00871891 /* floatVideo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = floatVideo.css; sourceTree = "<group>"; };
+		DD4D55D426AEB73E00871891 /* miniyoutube_1.2.16.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.16.zip; sourceTree = "<group>"; };
+		DD4D55D526AEB73E00871891 /* miniyoutube_1.2.17.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.17.zip; sourceTree = "<group>"; };
+		DD4D55D626AEB73E00871891 /* miniyoutube_1.2.19.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.19.zip; sourceTree = "<group>"; };
+		DD4D55D726AEB73E00871891 /* miniyoutube_1.2.25.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.25.zip; sourceTree = "<group>"; };
+		DD4D55D826AEB73E00871891 /* miniyoutube_1.2.24.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.24.zip; sourceTree = "<group>"; };
+		DD4D55D926AEB73E00871891 /* miniyoutube_1.2.18.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.18.zip; sourceTree = "<group>"; };
+		DD4D55DA26AEB73E00871891 /* miniyoutube_1.2.20.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.20.zip; sourceTree = "<group>"; };
+		DD4D55DB26AEB73E00871891 /* miniyoutube_1.2.21.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.21.zip; sourceTree = "<group>"; };
+		DD4D55DC26AEB73E00871891 /* miniyoutube_1.2.23.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.23.zip; sourceTree = "<group>"; };
+		DD4D55DD26AEB73E00871891 /* miniyoutube_1.2.22.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.22.zip; sourceTree = "<group>"; };
+		DD4D55DE26AEB73E00871891 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		DD4D55DF26AEB73E00871891 /* popup.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
+		DD4D55E126AEB73E00871891 /* promotional_tile_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promotional_tile_large.png; sourceTree = "<group>"; };
+		DD4D55E226AEB73E00871891 /* promotional_tile_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = promotional_tile_small.jpg; sourceTree = "<group>"; };
+		DD4D55E326AEB73E00871891 /* promotional_tile_marquee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promotional_tile_marquee.png; sourceTree = "<group>"; };
+		DD4D55E426AEB73E00871891 /* Screenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot1.png; sourceTree = "<group>"; };
+		DD4D55E526AEB73E00871891 /* Screenshot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot2.png; sourceTree = "<group>"; };
+		DD4D55E626AEB73E00871891 /* Screenshot3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot3.png; sourceTree = "<group>"; };
+		DD4D55E726AEB73E00871891 /* jquery-2.1.3.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-2.1.3.min.js"; sourceTree = "<group>"; };
+		DD4D55E826AEB73E00871891 /* floatVideo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = floatVideo.js; sourceTree = "<group>"; };
+		DD4D55E926AEB73E00871891 /* background.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
+		DD4D55EB26AEB73E00871891 /* make-chrome.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "make-chrome.sh"; sourceTree = "<group>"; };
+		DD4D55EC26AEB73E00871891 /* make-edge.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "make-edge.sh"; sourceTree = "<group>"; };
+		DD4D55EE26AEB73E00871891 /* icon16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon16.png; sourceTree = "<group>"; };
+		DD4D55EF26AEB73E00871891 /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
+		DD4D55F026AEB73E00871891 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		DD4D55F126AEB73E00871891 /* icon48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon48.png; sourceTree = "<group>"; };
+		DD4D55F226AEB73E00871891 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
+		DD4D55F326AEB73E00871891 /* icon128_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon128_grey.png; sourceTree = "<group>"; };
+		DD4D55F426AEB73E00871891 /* icon128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon128.png; sourceTree = "<group>"; };
+		DD4D55F526AEB73E00871891 /* facebook_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_2.png; sourceTree = "<group>"; };
+		DD4D55F626AEB73E00871891 /* brCorner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brCorner.png; sourceTree = "<group>"; };
+		DD4D55F726AEB73E00871891 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		DD4D55F826AEB73E00871891 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		DD4D55F926AEB73E00871891 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		DD4D55FA26AEB73E00871891 /* paypal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paypal.png; sourceTree = "<group>"; };
+		DD4D55FB26AEB73E00871891 /* popup.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
+		DD4D55FD26AEB73E00871891 /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		DD4D55FE26AEB73E00871891 /* popup.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
+		DD4D562826AEC1D500871891 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DD7E370226AEAAF500DB7ECF /* Mini Y.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Y.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD7E370526AEAAF500DB7ECF /* Mini_Y.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mini_Y.entitlements; sourceTree = "<group>"; };
+		DD7E370626AEAAF500DB7ECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD7E370926AEAAF500DB7ECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD7E370B26AEAAF500DB7ECF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD7E370D26AEAAF600DB7ECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD7E370F26AEAAF600DB7ECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD7E371426AEAAF600DB7ECF /* Mini Y Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Mini Y Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD7E371926AEAAF600DB7ECF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DD7E371C26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		DD7E371E26AEAAF600DB7ECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD7E371F26AEAAF600DB7ECF /* Mini_Y_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mini_Y_Extension.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD7E36FF26AEAAF500DB7ECF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7E371126AEAAF600DB7ECF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7E371A26AEAAF600DB7ECF /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD4D55D126AEB73E00871891 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD4D55D226AEB73E00871891 /* floatVideo.css */,
+				DD4D55D326AEB73E00871891 /* miniyoutube_chrome_releases */,
+				DD4D55DE26AEB73E00871891 /* LICENSE.md */,
+				DD4D55DF26AEB73E00871891 /* popup.js */,
+				DD4D55E026AEB73E00871891 /* screenshots */,
+				DD4D55E726AEB73E00871891 /* jquery-2.1.3.min.js */,
+				DD4D55E826AEB73E00871891 /* floatVideo.js */,
+				DD4D55E926AEB73E00871891 /* background.js */,
+				DD4D55EA26AEB73E00871891 /* dist */,
+				DD4D55ED26AEB73E00871891 /* images */,
+				DD4D55FB26AEB73E00871891 /* popup.html */,
+				DD4D55FD26AEB73E00871891 /* manifest.json */,
+				DD4D55FE26AEB73E00871891 /* popup.css */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DD4D55D326AEB73E00871891 /* miniyoutube_chrome_releases */ = {
+			isa = PBXGroup;
+			children = (
+				DD4D55D426AEB73E00871891 /* miniyoutube_1.2.16.zip */,
+				DD4D55D526AEB73E00871891 /* miniyoutube_1.2.17.zip */,
+				DD4D55D626AEB73E00871891 /* miniyoutube_1.2.19.zip */,
+				DD4D55D726AEB73E00871891 /* miniyoutube_1.2.25.zip */,
+				DD4D55D826AEB73E00871891 /* miniyoutube_1.2.24.zip */,
+				DD4D55D926AEB73E00871891 /* miniyoutube_1.2.18.zip */,
+				DD4D55DA26AEB73E00871891 /* miniyoutube_1.2.20.zip */,
+				DD4D55DB26AEB73E00871891 /* miniyoutube_1.2.21.zip */,
+				DD4D55DC26AEB73E00871891 /* miniyoutube_1.2.23.zip */,
+				DD4D55DD26AEB73E00871891 /* miniyoutube_1.2.22.zip */,
+			);
+			path = miniyoutube_chrome_releases;
+			sourceTree = "<group>";
+		};
+		DD4D55E026AEB73E00871891 /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				DD4D55E126AEB73E00871891 /* promotional_tile_large.png */,
+				DD4D55E226AEB73E00871891 /* promotional_tile_small.jpg */,
+				DD4D55E326AEB73E00871891 /* promotional_tile_marquee.png */,
+				DD4D55E426AEB73E00871891 /* Screenshot1.png */,
+				DD4D55E526AEB73E00871891 /* Screenshot2.png */,
+				DD4D55E626AEB73E00871891 /* Screenshot3.png */,
+			);
+			path = screenshots;
+			sourceTree = "<group>";
+		};
+		DD4D55EA26AEB73E00871891 /* dist */ = {
+			isa = PBXGroup;
+			children = (
+				DD4D55EB26AEB73E00871891 /* make-chrome.sh */,
+				DD4D55EC26AEB73E00871891 /* make-edge.sh */,
+			);
+			path = dist;
+			sourceTree = "<group>";
+		};
+		DD4D55ED26AEB73E00871891 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				DD4D55EE26AEB73E00871891 /* icon16.png */,
+				DD4D55EF26AEB73E00871891 /* coffee.png */,
+				DD4D55F026AEB73E00871891 /* pin.png */,
+				DD4D55F126AEB73E00871891 /* icon48.png */,
+				DD4D55F226AEB73E00871891 /* github.png */,
+				DD4D55F326AEB73E00871891 /* icon128_grey.png */,
+				DD4D55F426AEB73E00871891 /* icon128.png */,
+				DD4D55F526AEB73E00871891 /* facebook_2.png */,
+				DD4D55F626AEB73E00871891 /* brCorner.png */,
+				DD4D55F726AEB73E00871891 /* twitter.png */,
+				DD4D55F826AEB73E00871891 /* star.png */,
+				DD4D55F926AEB73E00871891 /* facebook.png */,
+				DD4D55FA26AEB73E00871891 /* paypal.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		DD7E36F926AEAAF500DB7ECF = {
+			isa = PBXGroup;
+			children = (
+				DD4D562826AEC1D500871891 /* README.md */,
+				DD7E370426AEAAF500DB7ECF /* Mini Y */,
+				DD7E371B26AEAAF600DB7ECF /* Mini Y Extension */,
+				DD7E371826AEAAF600DB7ECF /* Frameworks */,
+				DD7E370326AEAAF500DB7ECF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD7E370326AEAAF500DB7ECF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD7E370226AEAAF500DB7ECF /* Mini Y.app */,
+				DD7E371426AEAAF600DB7ECF /* Mini Y Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD7E370426AEAAF500DB7ECF /* Mini Y */ = {
+			isa = PBXGroup;
+			children = (
+				DD7E370526AEAAF500DB7ECF /* Mini_Y.entitlements */,
+				DD7E370626AEAAF500DB7ECF /* AppDelegate.swift */,
+				DD7E370826AEAAF500DB7ECF /* Main.storyboard */,
+				DD7E370B26AEAAF500DB7ECF /* ViewController.swift */,
+				DD7E370D26AEAAF600DB7ECF /* Assets.xcassets */,
+				DD7E370F26AEAAF600DB7ECF /* Info.plist */,
+			);
+			path = "Mini Y";
+			sourceTree = "<group>";
+		};
+		DD7E371826AEAAF600DB7ECF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD7E371926AEAAF600DB7ECF /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD7E371B26AEAAF600DB7ECF /* Mini Y Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DD4D55D126AEB73E00871891 /* Resources */,
+				DD7E371C26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift */,
+				DD7E371E26AEAAF600DB7ECF /* Info.plist */,
+				DD7E371F26AEAAF600DB7ECF /* Mini_Y_Extension.entitlements */,
+			);
+			path = "Mini Y Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD7E370126AEAAF500DB7ECF /* Mini Y */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD7E372626AEAAF600DB7ECF /* Build configuration list for PBXNativeTarget "Mini Y" */;
+			buildPhases = (
+				DD7E36FE26AEAAF500DB7ECF /* Sources */,
+				DD7E36FF26AEAAF500DB7ECF /* Frameworks */,
+				DD7E370026AEAAF500DB7ECF /* Resources */,
+				DD7E372526AEAAF600DB7ECF /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD7E371726AEAAF600DB7ECF /* PBXTargetDependency */,
+			);
+			name = "Mini Y";
+			productName = "Mini Y";
+			productReference = DD7E370226AEAAF500DB7ECF /* Mini Y.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DD7E371326AEAAF600DB7ECF /* Mini Y Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD7E372226AEAAF600DB7ECF /* Build configuration list for PBXNativeTarget "Mini Y Extension" */;
+			buildPhases = (
+				DD7E371026AEAAF600DB7ECF /* Sources */,
+				DD7E371126AEAAF600DB7ECF /* Frameworks */,
+				DD7E371226AEAAF600DB7ECF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mini Y Extension";
+			productName = "Mini Y Extension";
+			productReference = DD7E371426AEAAF600DB7ECF /* Mini Y Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD7E36FA26AEAAF500DB7ECF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					DD7E370126AEAAF500DB7ECF = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					DD7E371326AEAAF600DB7ECF = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = DD7E36FD26AEAAF500DB7ECF /* Build configuration list for PBXProject "Mini Y" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD7E36F926AEAAF500DB7ECF;
+			productRefGroup = DD7E370326AEAAF500DB7ECF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD7E370126AEAAF500DB7ECF /* Mini Y */,
+				DD7E371326AEAAF600DB7ECF /* Mini Y Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD7E370026AEAAF500DB7ECF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD4D562926AEC1D500871891 /* README.md in Resources */,
+				DD7E370E26AEAAF600DB7ECF /* Assets.xcassets in Resources */,
+				DD7E370A26AEAAF500DB7ECF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7E371226AEAAF600DB7ECF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD4D561026AEB73E00871891 /* Screenshot2.png in Resources */,
+				DD4D560926AEB73E00871891 /* miniyoutube_1.2.22.zip in Resources */,
+				DD4D560026AEB73E00871891 /* miniyoutube_1.2.16.zip in Resources */,
+				DD4D560C26AEB73E00871891 /* promotional_tile_large.png in Resources */,
+				DD4D560B26AEB73E00871891 /* popup.js in Resources */,
+				DD4D561626AEB73E00871891 /* make-edge.sh in Resources */,
+				DD4D560626AEB73E00871891 /* miniyoutube_1.2.20.zip in Resources */,
+				DD4D561426AEB73E00871891 /* background.js in Resources */,
+				DD4D560826AEB73E00871891 /* miniyoutube_1.2.23.zip in Resources */,
+				DD4D561C26AEB73E00871891 /* icon128_grey.png in Resources */,
+				DD4D562326AEB73E00871891 /* paypal.png in Resources */,
+				DD4D562426AEB73E00871891 /* popup.html in Resources */,
+				DD4D562626AEB73E00871891 /* manifest.json in Resources */,
+				DD4D561526AEB73E00871891 /* make-chrome.sh in Resources */,
+				DD4D562126AEB73E00871891 /* star.png in Resources */,
+				DD4D560A26AEB73E00871891 /* LICENSE.md in Resources */,
+				DD4D562226AEB73E00871891 /* facebook.png in Resources */,
+				DD4D561E26AEB73E00871891 /* facebook_2.png in Resources */,
+				DD4D561F26AEB73E00871891 /* brCorner.png in Resources */,
+				DD4D561326AEB73E00871891 /* floatVideo.js in Resources */,
+				DD4D560226AEB73E00871891 /* miniyoutube_1.2.19.zip in Resources */,
+				DD4D560326AEB73E00871891 /* miniyoutube_1.2.25.zip in Resources */,
+				DD4D561126AEB73E00871891 /* Screenshot3.png in Resources */,
+				DD4D561B26AEB73E00871891 /* github.png in Resources */,
+				DD4D561926AEB73E00871891 /* pin.png in Resources */,
+				DD4D562726AEB73E00871891 /* popup.css in Resources */,
+				DD4D560F26AEB73E00871891 /* Screenshot1.png in Resources */,
+				DD4D560D26AEB73E00871891 /* promotional_tile_small.jpg in Resources */,
+				DD4D561826AEB73E00871891 /* coffee.png in Resources */,
+				DD4D560526AEB73E00871891 /* miniyoutube_1.2.18.zip in Resources */,
+				DD4D560726AEB73E00871891 /* miniyoutube_1.2.21.zip in Resources */,
+				DD4D561226AEB73E00871891 /* jquery-2.1.3.min.js in Resources */,
+				DD4D560126AEB73E00871891 /* miniyoutube_1.2.17.zip in Resources */,
+				DD4D562026AEB73E00871891 /* twitter.png in Resources */,
+				DD4D55FF26AEB73E00871891 /* floatVideo.css in Resources */,
+				DD4D561D26AEB73E00871891 /* icon128.png in Resources */,
+				DD4D560426AEB73E00871891 /* miniyoutube_1.2.24.zip in Resources */,
+				DD4D560E26AEB73E00871891 /* promotional_tile_marquee.png in Resources */,
+				DD4D561A26AEB73E00871891 /* icon48.png in Resources */,
+				DD4D561726AEB73E00871891 /* icon16.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD7E36FE26AEAAF500DB7ECF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7E370C26AEAAF500DB7ECF /* ViewController.swift in Sources */,
+				DD7E370726AEAAF500DB7ECF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7E371026AEAAF600DB7ECF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7E371D26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD7E371726AEAAF600DB7ECF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD7E371326AEAAF600DB7ECF /* Mini Y Extension */;
+			targetProxy = DD7E371626AEAAF600DB7ECF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DD7E370826AEAAF500DB7ECF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD7E370926AEAAF500DB7ECF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD7E372026AEAAF600DB7ECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DD7E372126AEAAF600DB7ECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		DD7E372326AEAAF600DB7ECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Mini Y Extension/Mini_Y_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N7XPLA95Y2;
+				INFOPLIST_FILE = "Mini Y Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonas.Mini-Y.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DD7E372426AEAAF600DB7ECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Mini Y Extension/Mini_Y_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N7XPLA95Y2;
+				INFOPLIST_FILE = "Mini Y Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonas.Mini-Y.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DD7E372726AEAAF600DB7ECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mini Y/Mini_Y.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = N7XPLA95Y2;
+				INFOPLIST_FILE = "Mini Y/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonas.Mini-Y";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DD7E372826AEAAF600DB7ECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mini Y/Mini_Y.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = N7XPLA95Y2;
+				INFOPLIST_FILE = "Mini Y/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonas.Mini-Y";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD7E36FD26AEAAF500DB7ECF /* Build configuration list for PBXProject "Mini Y" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD7E372026AEAAF600DB7ECF /* Debug */,
+				DD7E372126AEAAF600DB7ECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD7E372226AEAAF600DB7ECF /* Build configuration list for PBXNativeTarget "Mini Y Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD7E372326AEAAF600DB7ECF /* Debug */,
+				DD7E372426AEAAF600DB7ECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD7E372626AEAAF600DB7ECF /* Build configuration list for PBXNativeTarget "Mini Y" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD7E372726AEAAF600DB7ECF /* Debug */,
+				DD7E372826AEAAF600DB7ECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD7E36FA26AEAAF500DB7ECF /* Project object */;
+}
