@@ -7,6 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD4D55FF26AEB73E00871891 /* floatVideo.css in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D226AEB73E00871891 /* floatVideo.css */; };
+		DD4D560026AEB73E00871891 /* miniyoutube_1.2.16.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D426AEB73E00871891 /* miniyoutube_1.2.16.zip */; };
+		DD4D560126AEB73E00871891 /* miniyoutube_1.2.17.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D526AEB73E00871891 /* miniyoutube_1.2.17.zip */; };
+		DD4D560226AEB73E00871891 /* miniyoutube_1.2.19.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D626AEB73E00871891 /* miniyoutube_1.2.19.zip */; };
+		DD4D560326AEB73E00871891 /* miniyoutube_1.2.25.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D726AEB73E00871891 /* miniyoutube_1.2.25.zip */; };
+		DD4D560426AEB73E00871891 /* miniyoutube_1.2.24.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D826AEB73E00871891 /* miniyoutube_1.2.24.zip */; };
+		DD4D560526AEB73E00871891 /* miniyoutube_1.2.18.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55D926AEB73E00871891 /* miniyoutube_1.2.18.zip */; };
+		DD4D560626AEB73E00871891 /* miniyoutube_1.2.20.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55DA26AEB73E00871891 /* miniyoutube_1.2.20.zip */; };
+		DD4D560726AEB73E00871891 /* miniyoutube_1.2.21.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55DB26AEB73E00871891 /* miniyoutube_1.2.21.zip */; };
+		DD4D560826AEB73E00871891 /* miniyoutube_1.2.23.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55DC26AEB73E00871891 /* miniyoutube_1.2.23.zip */; };
+		DD4D560926AEB73E00871891 /* miniyoutube_1.2.22.zip in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55DD26AEB73E00871891 /* miniyoutube_1.2.22.zip */; };
+		DD4D560A26AEB73E00871891 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55DE26AEB73E00871891 /* LICENSE.md */; };
+		DD4D560B26AEB73E00871891 /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55DF26AEB73E00871891 /* popup.js */; };
+		DD4D560C26AEB73E00871891 /* promotional_tile_large.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E126AEB73E00871891 /* promotional_tile_large.png */; };
+		DD4D560D26AEB73E00871891 /* promotional_tile_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E226AEB73E00871891 /* promotional_tile_small.jpg */; };
+		DD4D560E26AEB73E00871891 /* promotional_tile_marquee.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E326AEB73E00871891 /* promotional_tile_marquee.png */; };
+		DD4D560F26AEB73E00871891 /* Screenshot1.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E426AEB73E00871891 /* Screenshot1.png */; };
+		DD4D561026AEB73E00871891 /* Screenshot2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E526AEB73E00871891 /* Screenshot2.png */; };
+		DD4D561126AEB73E00871891 /* Screenshot3.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E626AEB73E00871891 /* Screenshot3.png */; };
+		DD4D561226AEB73E00871891 /* jquery-2.1.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E726AEB73E00871891 /* jquery-2.1.3.min.js */; };
+		DD4D561326AEB73E00871891 /* floatVideo.js in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E826AEB73E00871891 /* floatVideo.js */; };
+		DD4D561426AEB73E00871891 /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55E926AEB73E00871891 /* background.js */; };
+		DD4D561526AEB73E00871891 /* make-chrome.sh in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55EB26AEB73E00871891 /* make-chrome.sh */; };
+		DD4D561626AEB73E00871891 /* make-edge.sh in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55EC26AEB73E00871891 /* make-edge.sh */; };
+		DD4D561726AEB73E00871891 /* icon16.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55EE26AEB73E00871891 /* icon16.png */; };
+		DD4D561826AEB73E00871891 /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55EF26AEB73E00871891 /* coffee.png */; };
+		DD4D561926AEB73E00871891 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F026AEB73E00871891 /* pin.png */; };
+		DD4D561A26AEB73E00871891 /* icon48.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F126AEB73E00871891 /* icon48.png */; };
+		DD4D561B26AEB73E00871891 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F226AEB73E00871891 /* github.png */; };
+		DD4D561C26AEB73E00871891 /* icon128_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F326AEB73E00871891 /* icon128_grey.png */; };
+		DD4D561D26AEB73E00871891 /* icon128.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F426AEB73E00871891 /* icon128.png */; };
+		DD4D561E26AEB73E00871891 /* facebook_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F526AEB73E00871891 /* facebook_2.png */; };
+		DD4D561F26AEB73E00871891 /* brCorner.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F626AEB73E00871891 /* brCorner.png */; };
+		DD4D562026AEB73E00871891 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F726AEB73E00871891 /* twitter.png */; };
+		DD4D562126AEB73E00871891 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F826AEB73E00871891 /* star.png */; };
+		DD4D562226AEB73E00871891 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F926AEB73E00871891 /* facebook.png */; };
+		DD4D562326AEB73E00871891 /* paypal.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FA26AEB73E00871891 /* paypal.png */; };
+		DD4D562426AEB73E00871891 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FB26AEB73E00871891 /* popup.html */; };
+		DD4D562526AEB73E00871891 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FC26AEB73E00871891 /* README.md */; };
+		DD4D562626AEB73E00871891 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FD26AEB73E00871891 /* manifest.json */; };
+		DD4D562726AEB73E00871891 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FE26AEB73E00871891 /* popup.css */; };
 		DD7E370726AEAAF500DB7ECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E370626AEAAF500DB7ECF /* AppDelegate.swift */; };
 		DD7E370A26AEAAF500DB7ECF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7E370826AEAAF500DB7ECF /* Main.storyboard */; };
 		DD7E370C26AEAAF500DB7ECF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E370B26AEAAF500DB7ECF /* ViewController.swift */; };
@@ -14,22 +55,6 @@
 		DD7E371526AEAAF600DB7ECF /* Mini Y Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DD7E371426AEAAF600DB7ECF /* Mini Y Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DD7E371A26AEAAF600DB7ECF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7E371926AEAAF600DB7ECF /* Cocoa.framework */; };
 		DD7E371D26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E371C26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift */; };
-		DD7E373A26AEAAF700DB7ECF /* floatVideo.css in Resources */ = {isa = PBXBuildFile; fileRef = DD7E372A26AEAAF700DB7ECF /* floatVideo.css */; };
-		DD7E373B26AEAAF700DB7ECF /* miniyoutube_chrome_releases in Resources */ = {isa = PBXBuildFile; fileRef = DD7E372B26AEAAF700DB7ECF /* miniyoutube_chrome_releases */; };
-		DD7E373C26AEAAF700DB7ECF /* manifest_edge.json in Resources */ = {isa = PBXBuildFile; fileRef = DD7E372C26AEAAF700DB7ECF /* manifest_edge.json */; };
-		DD7E373D26AEAAF700DB7ECF /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = DD7E372D26AEAAF700DB7ECF /* LICENSE.md */; };
-		DD7E373E26AEAAF700DB7ECF /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = DD7E372E26AEAAF700DB7ECF /* popup.js */; };
-		DD7E373F26AEAAF700DB7ECF /* screenshots in Resources */ = {isa = PBXBuildFile; fileRef = DD7E372F26AEAAF700DB7ECF /* screenshots */; };
-		DD7E374026AEAAF700DB7ECF /* jquery-2.1.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373026AEAAF700DB7ECF /* jquery-2.1.3.min.js */; };
-		DD7E374126AEAAF700DB7ECF /* floatVideo.js in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373126AEAAF700DB7ECF /* floatVideo.js */; };
-		DD7E374226AEAAF700DB7ECF /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373226AEAAF700DB7ECF /* background.js */; };
-		DD7E374326AEAAF700DB7ECF /* dist in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373326AEAAF700DB7ECF /* dist */; };
-		DD7E374426AEAAF700DB7ECF /* images in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373426AEAAF700DB7ECF /* images */; };
-		DD7E374526AEAAF700DB7ECF /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373526AEAAF700DB7ECF /* popup.html */; };
-		DD7E374626AEAAF700DB7ECF /* manifest_chrome.json in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373626AEAAF700DB7ECF /* manifest_chrome.json */; };
-		DD7E374726AEAAF700DB7ECF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373726AEAAF700DB7ECF /* README.md */; };
-		DD7E374826AEAAF700DB7ECF /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373826AEAAF700DB7ECF /* manifest.json */; };
-		DD7E374926AEAAF700DB7ECF /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373926AEAAF700DB7ECF /* popup.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +82,47 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DD4D55D226AEB73E00871891 /* floatVideo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = floatVideo.css; sourceTree = "<group>"; };
+		DD4D55D426AEB73E00871891 /* miniyoutube_1.2.16.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.16.zip; sourceTree = "<group>"; };
+		DD4D55D526AEB73E00871891 /* miniyoutube_1.2.17.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.17.zip; sourceTree = "<group>"; };
+		DD4D55D626AEB73E00871891 /* miniyoutube_1.2.19.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.19.zip; sourceTree = "<group>"; };
+		DD4D55D726AEB73E00871891 /* miniyoutube_1.2.25.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.25.zip; sourceTree = "<group>"; };
+		DD4D55D826AEB73E00871891 /* miniyoutube_1.2.24.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.24.zip; sourceTree = "<group>"; };
+		DD4D55D926AEB73E00871891 /* miniyoutube_1.2.18.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.18.zip; sourceTree = "<group>"; };
+		DD4D55DA26AEB73E00871891 /* miniyoutube_1.2.20.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.20.zip; sourceTree = "<group>"; };
+		DD4D55DB26AEB73E00871891 /* miniyoutube_1.2.21.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.21.zip; sourceTree = "<group>"; };
+		DD4D55DC26AEB73E00871891 /* miniyoutube_1.2.23.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.23.zip; sourceTree = "<group>"; };
+		DD4D55DD26AEB73E00871891 /* miniyoutube_1.2.22.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = miniyoutube_1.2.22.zip; sourceTree = "<group>"; };
+		DD4D55DE26AEB73E00871891 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		DD4D55DF26AEB73E00871891 /* popup.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
+		DD4D55E126AEB73E00871891 /* promotional_tile_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promotional_tile_large.png; sourceTree = "<group>"; };
+		DD4D55E226AEB73E00871891 /* promotional_tile_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = promotional_tile_small.jpg; sourceTree = "<group>"; };
+		DD4D55E326AEB73E00871891 /* promotional_tile_marquee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = promotional_tile_marquee.png; sourceTree = "<group>"; };
+		DD4D55E426AEB73E00871891 /* Screenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot1.png; sourceTree = "<group>"; };
+		DD4D55E526AEB73E00871891 /* Screenshot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot2.png; sourceTree = "<group>"; };
+		DD4D55E626AEB73E00871891 /* Screenshot3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot3.png; sourceTree = "<group>"; };
+		DD4D55E726AEB73E00871891 /* jquery-2.1.3.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-2.1.3.min.js"; sourceTree = "<group>"; };
+		DD4D55E826AEB73E00871891 /* floatVideo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = floatVideo.js; sourceTree = "<group>"; };
+		DD4D55E926AEB73E00871891 /* background.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = background.js; sourceTree = "<group>"; };
+		DD4D55EB26AEB73E00871891 /* make-chrome.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "make-chrome.sh"; sourceTree = "<group>"; };
+		DD4D55EC26AEB73E00871891 /* make-edge.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "make-edge.sh"; sourceTree = "<group>"; };
+		DD4D55EE26AEB73E00871891 /* icon16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon16.png; sourceTree = "<group>"; };
+		DD4D55EF26AEB73E00871891 /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
+		DD4D55F026AEB73E00871891 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		DD4D55F126AEB73E00871891 /* icon48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon48.png; sourceTree = "<group>"; };
+		DD4D55F226AEB73E00871891 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
+		DD4D55F326AEB73E00871891 /* icon128_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon128_grey.png; sourceTree = "<group>"; };
+		DD4D55F426AEB73E00871891 /* icon128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon128.png; sourceTree = "<group>"; };
+		DD4D55F526AEB73E00871891 /* facebook_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_2.png; sourceTree = "<group>"; };
+		DD4D55F626AEB73E00871891 /* brCorner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brCorner.png; sourceTree = "<group>"; };
+		DD4D55F726AEB73E00871891 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		DD4D55F826AEB73E00871891 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		DD4D55F926AEB73E00871891 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		DD4D55FA26AEB73E00871891 /* paypal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paypal.png; sourceTree = "<group>"; };
+		DD4D55FB26AEB73E00871891 /* popup.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
+		DD4D55FC26AEB73E00871891 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DD4D55FD26AEB73E00871891 /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		DD4D55FE26AEB73E00871891 /* popup.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
 		DD7E370226AEAAF500DB7ECF /* Mini Y.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Y.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7E370526AEAAF500DB7ECF /* Mini_Y.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mini_Y.entitlements; sourceTree = "<group>"; };
 		DD7E370626AEAAF500DB7ECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,22 +135,6 @@
 		DD7E371C26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
 		DD7E371E26AEAAF600DB7ECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD7E371F26AEAAF600DB7ECF /* Mini_Y_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mini_Y_Extension.entitlements; sourceTree = "<group>"; };
-		DD7E372A26AEAAF700DB7ECF /* floatVideo.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = floatVideo.css; path = ../../miniyoutube/floatVideo.css; sourceTree = "<group>"; };
-		DD7E372B26AEAAF700DB7ECF /* miniyoutube_chrome_releases */ = {isa = PBXFileReference; lastKnownFileType = folder; name = miniyoutube_chrome_releases; path = ../../miniyoutube/miniyoutube_chrome_releases; sourceTree = "<group>"; };
-		DD7E372C26AEAAF700DB7ECF /* manifest_edge.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest_edge.json; path = ../../miniyoutube/manifest_edge.json; sourceTree = "<group>"; };
-		DD7E372D26AEAAF700DB7ECF /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../../miniyoutube/LICENSE.md; sourceTree = "<group>"; };
-		DD7E372E26AEAAF700DB7ECF /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = ../../miniyoutube/popup.js; sourceTree = "<group>"; };
-		DD7E372F26AEAAF700DB7ECF /* screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; name = screenshots; path = ../../miniyoutube/screenshots; sourceTree = "<group>"; };
-		DD7E373026AEAAF700DB7ECF /* jquery-2.1.3.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "jquery-2.1.3.min.js"; path = "../../miniyoutube/jquery-2.1.3.min.js"; sourceTree = "<group>"; };
-		DD7E373126AEAAF700DB7ECF /* floatVideo.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = floatVideo.js; path = ../../miniyoutube/floatVideo.js; sourceTree = "<group>"; };
-		DD7E373226AEAAF700DB7ECF /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../miniyoutube/background.js; sourceTree = "<group>"; };
-		DD7E373326AEAAF700DB7ECF /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = ../../miniyoutube/dist; sourceTree = "<group>"; };
-		DD7E373426AEAAF700DB7ECF /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = ../../miniyoutube/images; sourceTree = "<group>"; };
-		DD7E373526AEAAF700DB7ECF /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = ../../miniyoutube/popup.html; sourceTree = "<group>"; };
-		DD7E373626AEAAF700DB7ECF /* manifest_chrome.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest_chrome.json; path = ../../miniyoutube/manifest_chrome.json; sourceTree = "<group>"; };
-		DD7E373726AEAAF700DB7ECF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../miniyoutube/README.md; sourceTree = "<group>"; };
-		DD7E373826AEAAF700DB7ECF /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../miniyoutube/manifest.json; sourceTree = "<group>"; };
-		DD7E373926AEAAF700DB7ECF /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = popup.css; path = ../../miniyoutube/popup.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +156,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD4D55D126AEB73E00871891 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD4D55D226AEB73E00871891 /* floatVideo.css */,
+				DD4D55D326AEB73E00871891 /* miniyoutube_chrome_releases */,
+				DD4D55DE26AEB73E00871891 /* LICENSE.md */,
+				DD4D55DF26AEB73E00871891 /* popup.js */,
+				DD4D55E026AEB73E00871891 /* screenshots */,
+				DD4D55E726AEB73E00871891 /* jquery-2.1.3.min.js */,
+				DD4D55E826AEB73E00871891 /* floatVideo.js */,
+				DD4D55E926AEB73E00871891 /* background.js */,
+				DD4D55EA26AEB73E00871891 /* dist */,
+				DD4D55ED26AEB73E00871891 /* images */,
+				DD4D55FB26AEB73E00871891 /* popup.html */,
+				DD4D55FC26AEB73E00871891 /* README.md */,
+				DD4D55FD26AEB73E00871891 /* manifest.json */,
+				DD4D55FE26AEB73E00871891 /* popup.css */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DD4D55D326AEB73E00871891 /* miniyoutube_chrome_releases */ = {
+			isa = PBXGroup;
+			children = (
+				DD4D55D426AEB73E00871891 /* miniyoutube_1.2.16.zip */,
+				DD4D55D526AEB73E00871891 /* miniyoutube_1.2.17.zip */,
+				DD4D55D626AEB73E00871891 /* miniyoutube_1.2.19.zip */,
+				DD4D55D726AEB73E00871891 /* miniyoutube_1.2.25.zip */,
+				DD4D55D826AEB73E00871891 /* miniyoutube_1.2.24.zip */,
+				DD4D55D926AEB73E00871891 /* miniyoutube_1.2.18.zip */,
+				DD4D55DA26AEB73E00871891 /* miniyoutube_1.2.20.zip */,
+				DD4D55DB26AEB73E00871891 /* miniyoutube_1.2.21.zip */,
+				DD4D55DC26AEB73E00871891 /* miniyoutube_1.2.23.zip */,
+				DD4D55DD26AEB73E00871891 /* miniyoutube_1.2.22.zip */,
+			);
+			path = miniyoutube_chrome_releases;
+			sourceTree = "<group>";
+		};
+		DD4D55E026AEB73E00871891 /* screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				DD4D55E126AEB73E00871891 /* promotional_tile_large.png */,
+				DD4D55E226AEB73E00871891 /* promotional_tile_small.jpg */,
+				DD4D55E326AEB73E00871891 /* promotional_tile_marquee.png */,
+				DD4D55E426AEB73E00871891 /* Screenshot1.png */,
+				DD4D55E526AEB73E00871891 /* Screenshot2.png */,
+				DD4D55E626AEB73E00871891 /* Screenshot3.png */,
+			);
+			path = screenshots;
+			sourceTree = "<group>";
+		};
+		DD4D55EA26AEB73E00871891 /* dist */ = {
+			isa = PBXGroup;
+			children = (
+				DD4D55EB26AEB73E00871891 /* make-chrome.sh */,
+				DD4D55EC26AEB73E00871891 /* make-edge.sh */,
+			);
+			path = dist;
+			sourceTree = "<group>";
+		};
+		DD4D55ED26AEB73E00871891 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				DD4D55EE26AEB73E00871891 /* icon16.png */,
+				DD4D55EF26AEB73E00871891 /* coffee.png */,
+				DD4D55F026AEB73E00871891 /* pin.png */,
+				DD4D55F126AEB73E00871891 /* icon48.png */,
+				DD4D55F226AEB73E00871891 /* github.png */,
+				DD4D55F326AEB73E00871891 /* icon128_grey.png */,
+				DD4D55F426AEB73E00871891 /* icon128.png */,
+				DD4D55F526AEB73E00871891 /* facebook_2.png */,
+				DD4D55F626AEB73E00871891 /* brCorner.png */,
+				DD4D55F726AEB73E00871891 /* twitter.png */,
+				DD4D55F826AEB73E00871891 /* star.png */,
+				DD4D55F926AEB73E00871891 /* facebook.png */,
+				DD4D55FA26AEB73E00871891 /* paypal.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		DD7E36F926AEAAF500DB7ECF = {
 			isa = PBXGroup;
 			children = (
@@ -149,37 +279,13 @@
 		DD7E371B26AEAAF600DB7ECF /* Mini Y Extension */ = {
 			isa = PBXGroup;
 			children = (
-				DD7E372926AEAAF700DB7ECF /* Resources */,
+				DD4D55D126AEB73E00871891 /* Resources */,
 				DD7E371C26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift */,
 				DD7E371E26AEAAF600DB7ECF /* Info.plist */,
 				DD7E371F26AEAAF600DB7ECF /* Mini_Y_Extension.entitlements */,
 			);
 			path = "Mini Y Extension";
 			sourceTree = "<group>";
-		};
-		DD7E372926AEAAF700DB7ECF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				DD7E372A26AEAAF700DB7ECF /* floatVideo.css */,
-				DD7E372B26AEAAF700DB7ECF /* miniyoutube_chrome_releases */,
-				DD7E372C26AEAAF700DB7ECF /* manifest_edge.json */,
-				DD7E372D26AEAAF700DB7ECF /* LICENSE.md */,
-				DD7E372E26AEAAF700DB7ECF /* popup.js */,
-				DD7E372F26AEAAF700DB7ECF /* screenshots */,
-				DD7E373026AEAAF700DB7ECF /* jquery-2.1.3.min.js */,
-				DD7E373126AEAAF700DB7ECF /* floatVideo.js */,
-				DD7E373226AEAAF700DB7ECF /* background.js */,
-				DD7E373326AEAAF700DB7ECF /* dist */,
-				DD7E373426AEAAF700DB7ECF /* images */,
-				DD7E373526AEAAF700DB7ECF /* popup.html */,
-				DD7E373626AEAAF700DB7ECF /* manifest_chrome.json */,
-				DD7E373726AEAAF700DB7ECF /* README.md */,
-				DD7E373826AEAAF700DB7ECF /* manifest.json */,
-				DD7E373926AEAAF700DB7ECF /* popup.css */,
-			);
-			name = Resources;
-			path = "Mini Y Extension";
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -270,22 +376,47 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD7E373D26AEAAF700DB7ECF /* LICENSE.md in Resources */,
-				DD7E374526AEAAF700DB7ECF /* popup.html in Resources */,
-				DD7E374426AEAAF700DB7ECF /* images in Resources */,
-				DD7E374626AEAAF700DB7ECF /* manifest_chrome.json in Resources */,
-				DD7E374926AEAAF700DB7ECF /* popup.css in Resources */,
-				DD7E373C26AEAAF700DB7ECF /* manifest_edge.json in Resources */,
-				DD7E374326AEAAF700DB7ECF /* dist in Resources */,
-				DD7E374026AEAAF700DB7ECF /* jquery-2.1.3.min.js in Resources */,
-				DD7E374826AEAAF700DB7ECF /* manifest.json in Resources */,
-				DD7E373E26AEAAF700DB7ECF /* popup.js in Resources */,
-				DD7E374226AEAAF700DB7ECF /* background.js in Resources */,
-				DD7E373A26AEAAF700DB7ECF /* floatVideo.css in Resources */,
-				DD7E374726AEAAF700DB7ECF /* README.md in Resources */,
-				DD7E374126AEAAF700DB7ECF /* floatVideo.js in Resources */,
-				DD7E373F26AEAAF700DB7ECF /* screenshots in Resources */,
-				DD7E373B26AEAAF700DB7ECF /* miniyoutube_chrome_releases in Resources */,
+				DD4D561026AEB73E00871891 /* Screenshot2.png in Resources */,
+				DD4D560926AEB73E00871891 /* miniyoutube_1.2.22.zip in Resources */,
+				DD4D560026AEB73E00871891 /* miniyoutube_1.2.16.zip in Resources */,
+				DD4D560C26AEB73E00871891 /* promotional_tile_large.png in Resources */,
+				DD4D560B26AEB73E00871891 /* popup.js in Resources */,
+				DD4D561626AEB73E00871891 /* make-edge.sh in Resources */,
+				DD4D560626AEB73E00871891 /* miniyoutube_1.2.20.zip in Resources */,
+				DD4D561426AEB73E00871891 /* background.js in Resources */,
+				DD4D560826AEB73E00871891 /* miniyoutube_1.2.23.zip in Resources */,
+				DD4D561C26AEB73E00871891 /* icon128_grey.png in Resources */,
+				DD4D562326AEB73E00871891 /* paypal.png in Resources */,
+				DD4D562426AEB73E00871891 /* popup.html in Resources */,
+				DD4D562626AEB73E00871891 /* manifest.json in Resources */,
+				DD4D561526AEB73E00871891 /* make-chrome.sh in Resources */,
+				DD4D562126AEB73E00871891 /* star.png in Resources */,
+				DD4D560A26AEB73E00871891 /* LICENSE.md in Resources */,
+				DD4D562226AEB73E00871891 /* facebook.png in Resources */,
+				DD4D561E26AEB73E00871891 /* facebook_2.png in Resources */,
+				DD4D561F26AEB73E00871891 /* brCorner.png in Resources */,
+				DD4D561326AEB73E00871891 /* floatVideo.js in Resources */,
+				DD4D560226AEB73E00871891 /* miniyoutube_1.2.19.zip in Resources */,
+				DD4D560326AEB73E00871891 /* miniyoutube_1.2.25.zip in Resources */,
+				DD4D561126AEB73E00871891 /* Screenshot3.png in Resources */,
+				DD4D561B26AEB73E00871891 /* github.png in Resources */,
+				DD4D561926AEB73E00871891 /* pin.png in Resources */,
+				DD4D562726AEB73E00871891 /* popup.css in Resources */,
+				DD4D560F26AEB73E00871891 /* Screenshot1.png in Resources */,
+				DD4D560D26AEB73E00871891 /* promotional_tile_small.jpg in Resources */,
+				DD4D561826AEB73E00871891 /* coffee.png in Resources */,
+				DD4D560526AEB73E00871891 /* miniyoutube_1.2.18.zip in Resources */,
+				DD4D560726AEB73E00871891 /* miniyoutube_1.2.21.zip in Resources */,
+				DD4D561226AEB73E00871891 /* jquery-2.1.3.min.js in Resources */,
+				DD4D562526AEB73E00871891 /* README.md in Resources */,
+				DD4D560126AEB73E00871891 /* miniyoutube_1.2.17.zip in Resources */,
+				DD4D562026AEB73E00871891 /* twitter.png in Resources */,
+				DD4D55FF26AEB73E00871891 /* floatVideo.css in Resources */,
+				DD4D561D26AEB73E00871891 /* icon128.png in Resources */,
+				DD4D560426AEB73E00871891 /* miniyoutube_1.2.24.zip in Resources */,
+				DD4D560E26AEB73E00871891 /* promotional_tile_marquee.png in Resources */,
+				DD4D561A26AEB73E00871891 /* icon48.png in Resources */,
+				DD4D561726AEB73E00871891 /* icon16.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
