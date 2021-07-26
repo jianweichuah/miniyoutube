@@ -2,6 +2,20 @@
 An extension that makes YouTube video float while you're reading/writing comments so you can do both at the same time.
 The floating screen is resizable and can be dragged and placed anywhere on the screen.
 
+## Safari
+1. [Download the latest zip](https://github.com/Jonass-K/miniyoutube/releases/download/v1.3.0/Mini_Y.zip)
+2. Extract the zip file and move the application to the Application directory
+3. 
+```bash
+cd <path_of_downloaded_folder>
+xattr -d com.apple.quarantine Timer3000.app
+```
+4. a. safari -> preferences -> enable development menu
+   
+   b. safari -> develop menu -> click allow unsigned extension (need to do this every time safari is restarted
+   
+   c. safari -> preferences -> extensions tab -> click the extension
+
 ## Chrome
 Download it on the [Chrome Web Store](http://goo.gl/TyNOlF)
 
@@ -24,6 +38,8 @@ Edge disables side-loaded extensions whenever you restart the browser, unfortuna
 ![Screenshot 2](https://raw.github.com/jianweichuah/miniyoutube/master/screenshots/Screenshot2.png)
 
 # Changelogs
+v1.3.0:
+- The extension is now also available for safari.
 
 v1.2.2:
 - Show alert "flash videos not supported" when a flash video is being played
