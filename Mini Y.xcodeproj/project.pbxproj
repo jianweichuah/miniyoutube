@@ -45,9 +45,9 @@
 		DD4D562226AEB73E00871891 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55F926AEB73E00871891 /* facebook.png */; };
 		DD4D562326AEB73E00871891 /* paypal.png in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FA26AEB73E00871891 /* paypal.png */; };
 		DD4D562426AEB73E00871891 /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FB26AEB73E00871891 /* popup.html */; };
-		DD4D562526AEB73E00871891 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FC26AEB73E00871891 /* README.md */; };
 		DD4D562626AEB73E00871891 /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FD26AEB73E00871891 /* manifest.json */; };
 		DD4D562726AEB73E00871891 /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = DD4D55FE26AEB73E00871891 /* popup.css */; };
+		DD4D562926AEC1D500871891 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DD4D562826AEC1D500871891 /* README.md */; };
 		DD7E370726AEAAF500DB7ECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E370626AEAAF500DB7ECF /* AppDelegate.swift */; };
 		DD7E370A26AEAAF500DB7ECF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7E370826AEAAF500DB7ECF /* Main.storyboard */; };
 		DD7E370C26AEAAF500DB7ECF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E370B26AEAAF500DB7ECF /* ViewController.swift */; };
@@ -120,9 +120,9 @@
 		DD4D55F926AEB73E00871891 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		DD4D55FA26AEB73E00871891 /* paypal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paypal.png; sourceTree = "<group>"; };
 		DD4D55FB26AEB73E00871891 /* popup.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
-		DD4D55FC26AEB73E00871891 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DD4D55FD26AEB73E00871891 /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
 		DD4D55FE26AEB73E00871891 /* popup.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
+		DD4D562826AEC1D500871891 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DD7E370226AEAAF500DB7ECF /* Mini Y.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Y.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD7E370526AEAAF500DB7ECF /* Mini_Y.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mini_Y.entitlements; sourceTree = "<group>"; };
 		DD7E370626AEAAF500DB7ECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,7 +170,6 @@
 				DD4D55EA26AEB73E00871891 /* dist */,
 				DD4D55ED26AEB73E00871891 /* images */,
 				DD4D55FB26AEB73E00871891 /* popup.html */,
-				DD4D55FC26AEB73E00871891 /* README.md */,
 				DD4D55FD26AEB73E00871891 /* manifest.json */,
 				DD4D55FE26AEB73E00871891 /* popup.css */,
 			);
@@ -239,6 +238,7 @@
 		DD7E36F926AEAAF500DB7ECF = {
 			isa = PBXGroup;
 			children = (
+				DD4D562826AEC1D500871891 /* README.md */,
 				DD7E370426AEAAF500DB7ECF /* Mini Y */,
 				DD7E371B26AEAAF600DB7ECF /* Mini Y Extension */,
 				DD7E371826AEAAF600DB7ECF /* Frameworks */,
@@ -367,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD4D562926AEC1D500871891 /* README.md in Resources */,
 				DD7E370E26AEAAF600DB7ECF /* Assets.xcassets in Resources */,
 				DD7E370A26AEAAF500DB7ECF /* Main.storyboard in Resources */,
 			);
@@ -408,7 +409,6 @@
 				DD4D560526AEB73E00871891 /* miniyoutube_1.2.18.zip in Resources */,
 				DD4D560726AEB73E00871891 /* miniyoutube_1.2.21.zip in Resources */,
 				DD4D561226AEB73E00871891 /* jquery-2.1.3.min.js in Resources */,
-				DD4D562526AEB73E00871891 /* README.md in Resources */,
 				DD4D560126AEB73E00871891 /* miniyoutube_1.2.17.zip in Resources */,
 				DD4D562026AEB73E00871891 /* twitter.png in Resources */,
 				DD4D55FF26AEB73E00871891 /* floatVideo.css in Resources */,
@@ -582,6 +582,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Mini Y Extension/Mini_Y_Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N7XPLA95Y2;
 				INFOPLIST_FILE = "Mini Y Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -589,7 +590,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Mini-Y.Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonas.Mini-Y.Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -601,6 +602,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Mini Y Extension/Mini_Y_Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N7XPLA95Y2;
 				INFOPLIST_FILE = "Mini Y Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -608,7 +610,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Mini-Y.Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonas.Mini-Y.Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -624,13 +626,14 @@
 				CODE_SIGN_ENTITLEMENTS = "Mini Y/Mini_Y.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = N7XPLA95Y2;
 				INFOPLIST_FILE = "Mini Y/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Mini-Y";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonas.Mini-Y";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -645,13 +648,14 @@
 				CODE_SIGN_ENTITLEMENTS = "Mini Y/Mini_Y.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = N7XPLA95Y2;
 				INFOPLIST_FILE = "Mini Y/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Mini-Y";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonas.Mini-Y";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
