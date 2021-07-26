@@ -1,0 +1,562 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD7E370726AEAAF500DB7ECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E370626AEAAF500DB7ECF /* AppDelegate.swift */; };
+		DD7E370A26AEAAF500DB7ECF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD7E370826AEAAF500DB7ECF /* Main.storyboard */; };
+		DD7E370C26AEAAF500DB7ECF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E370B26AEAAF500DB7ECF /* ViewController.swift */; };
+		DD7E370E26AEAAF600DB7ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD7E370D26AEAAF600DB7ECF /* Assets.xcassets */; };
+		DD7E371526AEAAF600DB7ECF /* Mini Y Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DD7E371426AEAAF600DB7ECF /* Mini Y Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DD7E371A26AEAAF600DB7ECF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7E371926AEAAF600DB7ECF /* Cocoa.framework */; };
+		DD7E371D26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7E371C26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift */; };
+		DD7E373A26AEAAF700DB7ECF /* floatVideo.css in Resources */ = {isa = PBXBuildFile; fileRef = DD7E372A26AEAAF700DB7ECF /* floatVideo.css */; };
+		DD7E373B26AEAAF700DB7ECF /* miniyoutube_chrome_releases in Resources */ = {isa = PBXBuildFile; fileRef = DD7E372B26AEAAF700DB7ECF /* miniyoutube_chrome_releases */; };
+		DD7E373C26AEAAF700DB7ECF /* manifest_edge.json in Resources */ = {isa = PBXBuildFile; fileRef = DD7E372C26AEAAF700DB7ECF /* manifest_edge.json */; };
+		DD7E373D26AEAAF700DB7ECF /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = DD7E372D26AEAAF700DB7ECF /* LICENSE.md */; };
+		DD7E373E26AEAAF700DB7ECF /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = DD7E372E26AEAAF700DB7ECF /* popup.js */; };
+		DD7E373F26AEAAF700DB7ECF /* screenshots in Resources */ = {isa = PBXBuildFile; fileRef = DD7E372F26AEAAF700DB7ECF /* screenshots */; };
+		DD7E374026AEAAF700DB7ECF /* jquery-2.1.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373026AEAAF700DB7ECF /* jquery-2.1.3.min.js */; };
+		DD7E374126AEAAF700DB7ECF /* floatVideo.js in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373126AEAAF700DB7ECF /* floatVideo.js */; };
+		DD7E374226AEAAF700DB7ECF /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373226AEAAF700DB7ECF /* background.js */; };
+		DD7E374326AEAAF700DB7ECF /* dist in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373326AEAAF700DB7ECF /* dist */; };
+		DD7E374426AEAAF700DB7ECF /* images in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373426AEAAF700DB7ECF /* images */; };
+		DD7E374526AEAAF700DB7ECF /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373526AEAAF700DB7ECF /* popup.html */; };
+		DD7E374626AEAAF700DB7ECF /* manifest_chrome.json in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373626AEAAF700DB7ECF /* manifest_chrome.json */; };
+		DD7E374726AEAAF700DB7ECF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373726AEAAF700DB7ECF /* README.md */; };
+		DD7E374826AEAAF700DB7ECF /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373826AEAAF700DB7ECF /* manifest.json */; };
+		DD7E374926AEAAF700DB7ECF /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = DD7E373926AEAAF700DB7ECF /* popup.css */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD7E371626AEAAF600DB7ECF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD7E36FA26AEAAF500DB7ECF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD7E371326AEAAF600DB7ECF;
+			remoteInfo = "Mini Y Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DD7E372526AEAAF600DB7ECF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DD7E371526AEAAF600DB7ECF /* Mini Y Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DD7E370226AEAAF500DB7ECF /* Mini Y.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini Y.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD7E370526AEAAF500DB7ECF /* Mini_Y.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mini_Y.entitlements; sourceTree = "<group>"; };
+		DD7E370626AEAAF500DB7ECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD7E370926AEAAF500DB7ECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD7E370B26AEAAF500DB7ECF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD7E370D26AEAAF600DB7ECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD7E370F26AEAAF600DB7ECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD7E371426AEAAF600DB7ECF /* Mini Y Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Mini Y Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD7E371926AEAAF600DB7ECF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DD7E371C26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		DD7E371E26AEAAF600DB7ECF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD7E371F26AEAAF600DB7ECF /* Mini_Y_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mini_Y_Extension.entitlements; sourceTree = "<group>"; };
+		DD7E372A26AEAAF700DB7ECF /* floatVideo.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = floatVideo.css; path = ../../miniyoutube/floatVideo.css; sourceTree = "<group>"; };
+		DD7E372B26AEAAF700DB7ECF /* miniyoutube_chrome_releases */ = {isa = PBXFileReference; lastKnownFileType = folder; name = miniyoutube_chrome_releases; path = ../../miniyoutube/miniyoutube_chrome_releases; sourceTree = "<group>"; };
+		DD7E372C26AEAAF700DB7ECF /* manifest_edge.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest_edge.json; path = ../../miniyoutube/manifest_edge.json; sourceTree = "<group>"; };
+		DD7E372D26AEAAF700DB7ECF /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../../miniyoutube/LICENSE.md; sourceTree = "<group>"; };
+		DD7E372E26AEAAF700DB7ECF /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = popup.js; path = ../../miniyoutube/popup.js; sourceTree = "<group>"; };
+		DD7E372F26AEAAF700DB7ECF /* screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; name = screenshots; path = ../../miniyoutube/screenshots; sourceTree = "<group>"; };
+		DD7E373026AEAAF700DB7ECF /* jquery-2.1.3.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "jquery-2.1.3.min.js"; path = "../../miniyoutube/jquery-2.1.3.min.js"; sourceTree = "<group>"; };
+		DD7E373126AEAAF700DB7ECF /* floatVideo.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = floatVideo.js; path = ../../miniyoutube/floatVideo.js; sourceTree = "<group>"; };
+		DD7E373226AEAAF700DB7ECF /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = ../../miniyoutube/background.js; sourceTree = "<group>"; };
+		DD7E373326AEAAF700DB7ECF /* dist */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dist; path = ../../miniyoutube/dist; sourceTree = "<group>"; };
+		DD7E373426AEAAF700DB7ECF /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = images; path = ../../miniyoutube/images; sourceTree = "<group>"; };
+		DD7E373526AEAAF700DB7ECF /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = popup.html; path = ../../miniyoutube/popup.html; sourceTree = "<group>"; };
+		DD7E373626AEAAF700DB7ECF /* manifest_chrome.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest_chrome.json; path = ../../miniyoutube/manifest_chrome.json; sourceTree = "<group>"; };
+		DD7E373726AEAAF700DB7ECF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../miniyoutube/README.md; sourceTree = "<group>"; };
+		DD7E373826AEAAF700DB7ECF /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = ../../miniyoutube/manifest.json; sourceTree = "<group>"; };
+		DD7E373926AEAAF700DB7ECF /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = popup.css; path = ../../miniyoutube/popup.css; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD7E36FF26AEAAF500DB7ECF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7E371126AEAAF600DB7ECF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7E371A26AEAAF600DB7ECF /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD7E36F926AEAAF500DB7ECF = {
+			isa = PBXGroup;
+			children = (
+				DD7E370426AEAAF500DB7ECF /* Mini Y */,
+				DD7E371B26AEAAF600DB7ECF /* Mini Y Extension */,
+				DD7E371826AEAAF600DB7ECF /* Frameworks */,
+				DD7E370326AEAAF500DB7ECF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD7E370326AEAAF500DB7ECF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD7E370226AEAAF500DB7ECF /* Mini Y.app */,
+				DD7E371426AEAAF600DB7ECF /* Mini Y Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD7E370426AEAAF500DB7ECF /* Mini Y */ = {
+			isa = PBXGroup;
+			children = (
+				DD7E370526AEAAF500DB7ECF /* Mini_Y.entitlements */,
+				DD7E370626AEAAF500DB7ECF /* AppDelegate.swift */,
+				DD7E370826AEAAF500DB7ECF /* Main.storyboard */,
+				DD7E370B26AEAAF500DB7ECF /* ViewController.swift */,
+				DD7E370D26AEAAF600DB7ECF /* Assets.xcassets */,
+				DD7E370F26AEAAF600DB7ECF /* Info.plist */,
+			);
+			path = "Mini Y";
+			sourceTree = "<group>";
+		};
+		DD7E371826AEAAF600DB7ECF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD7E371926AEAAF600DB7ECF /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD7E371B26AEAAF600DB7ECF /* Mini Y Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DD7E372926AEAAF700DB7ECF /* Resources */,
+				DD7E371C26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift */,
+				DD7E371E26AEAAF600DB7ECF /* Info.plist */,
+				DD7E371F26AEAAF600DB7ECF /* Mini_Y_Extension.entitlements */,
+			);
+			path = "Mini Y Extension";
+			sourceTree = "<group>";
+		};
+		DD7E372926AEAAF700DB7ECF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD7E372A26AEAAF700DB7ECF /* floatVideo.css */,
+				DD7E372B26AEAAF700DB7ECF /* miniyoutube_chrome_releases */,
+				DD7E372C26AEAAF700DB7ECF /* manifest_edge.json */,
+				DD7E372D26AEAAF700DB7ECF /* LICENSE.md */,
+				DD7E372E26AEAAF700DB7ECF /* popup.js */,
+				DD7E372F26AEAAF700DB7ECF /* screenshots */,
+				DD7E373026AEAAF700DB7ECF /* jquery-2.1.3.min.js */,
+				DD7E373126AEAAF700DB7ECF /* floatVideo.js */,
+				DD7E373226AEAAF700DB7ECF /* background.js */,
+				DD7E373326AEAAF700DB7ECF /* dist */,
+				DD7E373426AEAAF700DB7ECF /* images */,
+				DD7E373526AEAAF700DB7ECF /* popup.html */,
+				DD7E373626AEAAF700DB7ECF /* manifest_chrome.json */,
+				DD7E373726AEAAF700DB7ECF /* README.md */,
+				DD7E373826AEAAF700DB7ECF /* manifest.json */,
+				DD7E373926AEAAF700DB7ECF /* popup.css */,
+			);
+			name = Resources;
+			path = "Mini Y Extension";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD7E370126AEAAF500DB7ECF /* Mini Y */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD7E372626AEAAF600DB7ECF /* Build configuration list for PBXNativeTarget "Mini Y" */;
+			buildPhases = (
+				DD7E36FE26AEAAF500DB7ECF /* Sources */,
+				DD7E36FF26AEAAF500DB7ECF /* Frameworks */,
+				DD7E370026AEAAF500DB7ECF /* Resources */,
+				DD7E372526AEAAF600DB7ECF /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD7E371726AEAAF600DB7ECF /* PBXTargetDependency */,
+			);
+			name = "Mini Y";
+			productName = "Mini Y";
+			productReference = DD7E370226AEAAF500DB7ECF /* Mini Y.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DD7E371326AEAAF600DB7ECF /* Mini Y Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD7E372226AEAAF600DB7ECF /* Build configuration list for PBXNativeTarget "Mini Y Extension" */;
+			buildPhases = (
+				DD7E371026AEAAF600DB7ECF /* Sources */,
+				DD7E371126AEAAF600DB7ECF /* Frameworks */,
+				DD7E371226AEAAF600DB7ECF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mini Y Extension";
+			productName = "Mini Y Extension";
+			productReference = DD7E371426AEAAF600DB7ECF /* Mini Y Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD7E36FA26AEAAF500DB7ECF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					DD7E370126AEAAF500DB7ECF = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					DD7E371326AEAAF600DB7ECF = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = DD7E36FD26AEAAF500DB7ECF /* Build configuration list for PBXProject "Mini Y" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD7E36F926AEAAF500DB7ECF;
+			productRefGroup = DD7E370326AEAAF500DB7ECF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD7E370126AEAAF500DB7ECF /* Mini Y */,
+				DD7E371326AEAAF600DB7ECF /* Mini Y Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD7E370026AEAAF500DB7ECF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7E370E26AEAAF600DB7ECF /* Assets.xcassets in Resources */,
+				DD7E370A26AEAAF500DB7ECF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7E371226AEAAF600DB7ECF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7E373D26AEAAF700DB7ECF /* LICENSE.md in Resources */,
+				DD7E374526AEAAF700DB7ECF /* popup.html in Resources */,
+				DD7E374426AEAAF700DB7ECF /* images in Resources */,
+				DD7E374626AEAAF700DB7ECF /* manifest_chrome.json in Resources */,
+				DD7E374926AEAAF700DB7ECF /* popup.css in Resources */,
+				DD7E373C26AEAAF700DB7ECF /* manifest_edge.json in Resources */,
+				DD7E374326AEAAF700DB7ECF /* dist in Resources */,
+				DD7E374026AEAAF700DB7ECF /* jquery-2.1.3.min.js in Resources */,
+				DD7E374826AEAAF700DB7ECF /* manifest.json in Resources */,
+				DD7E373E26AEAAF700DB7ECF /* popup.js in Resources */,
+				DD7E374226AEAAF700DB7ECF /* background.js in Resources */,
+				DD7E373A26AEAAF700DB7ECF /* floatVideo.css in Resources */,
+				DD7E374726AEAAF700DB7ECF /* README.md in Resources */,
+				DD7E374126AEAAF700DB7ECF /* floatVideo.js in Resources */,
+				DD7E373F26AEAAF700DB7ECF /* screenshots in Resources */,
+				DD7E373B26AEAAF700DB7ECF /* miniyoutube_chrome_releases in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD7E36FE26AEAAF500DB7ECF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7E370C26AEAAF500DB7ECF /* ViewController.swift in Sources */,
+				DD7E370726AEAAF500DB7ECF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD7E371026AEAAF600DB7ECF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD7E371D26AEAAF600DB7ECF /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD7E371726AEAAF600DB7ECF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD7E371326AEAAF600DB7ECF /* Mini Y Extension */;
+			targetProxy = DD7E371626AEAAF600DB7ECF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DD7E370826AEAAF500DB7ECF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD7E370926AEAAF500DB7ECF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD7E372026AEAAF600DB7ECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DD7E372126AEAAF600DB7ECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		DD7E372326AEAAF600DB7ECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Mini Y Extension/Mini_Y_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Mini Y Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Mini-Y.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DD7E372426AEAAF600DB7ECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Mini Y Extension/Mini_Y_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Mini Y Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Mini-Y.Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		DD7E372726AEAAF600DB7ECF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mini Y/Mini_Y.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Mini Y/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Mini-Y";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		DD7E372826AEAAF600DB7ECF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mini Y/Mini_Y.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Mini Y/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yourCompany.Mini-Y";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD7E36FD26AEAAF500DB7ECF /* Build configuration list for PBXProject "Mini Y" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD7E372026AEAAF600DB7ECF /* Debug */,
+				DD7E372126AEAAF600DB7ECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD7E372226AEAAF600DB7ECF /* Build configuration list for PBXNativeTarget "Mini Y Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD7E372326AEAAF600DB7ECF /* Debug */,
+				DD7E372426AEAAF600DB7ECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD7E372626AEAAF600DB7ECF /* Build configuration list for PBXNativeTarget "Mini Y" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD7E372726AEAAF600DB7ECF /* Debug */,
+				DD7E372826AEAAF600DB7ECF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD7E36FA26AEAAF500DB7ECF /* Project object */;
+}
