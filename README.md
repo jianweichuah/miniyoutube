@@ -3,7 +3,7 @@ An extension that makes YouTube video float while you're reading/writing comment
 The floating screen is resizable and can be dragged and placed anywhere on the screen.
 
 ## Safari
-# Faster installation but annoying on the long run:
+### Faster installation but annoying on the long run:
 1. [Download the latest zip](https://github.com/Jonass-K/miniyoutube/releases/download/v1.3.0/Mini_Y.zip)
 2. Extract the zip file and move the application to the Application directory
 3. 
@@ -17,7 +17,7 @@ xattr -d com.apple.quarantine Mini\ Y.app
    
    c. extensions tab -> click the extension and allow the website youtube.com
    
-# Bit more complicated but much better on the long run:
+### Bit more complicated but much better on the long run:
 1. Clone the repository
 2. Open the project in Xcode and sign both targets with your apple id account
    ![Signing Targets Screenshot](https://github.com/Jonass-K/miniyoutube/blob/safari-extension/Bildschirmfoto%202021-07-26%20um%2012.34.33.png?raw=true)
