@@ -135,6 +135,10 @@ $(document).ready(function() {
     $(window).scroll(function() {
         // Do nothing if it's not activated
         if (miniYouTubeActivated) {
+            var ytVideoContainer = $('.html5-video-container');
+            if (!ytVideoContainer.length) {
+                ytVideoContainer = $('.html5-video-player');
+            }
             // If this is a Flash video page, tell the user it's not supported.
             if ($('#movie_player').length && $('#movie_player').is('embed')) {
                 // Only show the alert if it hasn't been shown before.
@@ -164,7 +168,7 @@ $(document).ready(function() {
                 } else {
                     removeMiniScreen();
                 }
-            } else if (floated == false && $(document).scrollTop() > $('.html5-video-container').offset().top + $('.video-stream').height()) {
+            } else if (floated == false && $(document).scrollTop() > ytVideoContainer.offset().top + $('.video-stream').height()) {
                 // 1. Create the mini screen div to hold the video
                 $miniScreen = $('<div id="miniyoutube"></div');
 
@@ -314,7 +318,7 @@ $(document).ready(function() {
                 $('.mnyt-progress-area').hover(handleProgressHoverIn, handleProgressHoverOut);
                 $('.mnyt-progress-area').click(handleVideoProgress);
 
-            } else if (floated == true && $(document).scrollTop() <= $('.html5-video-container').offset().top + originalHeight) {
+            } else if (floated == true && $(document).scrollTop() <= ytVideoContainer.offset().top + originalHeight) {
                 putBackMiniScreen();
             }
         }
@@ -622,7 +626,12 @@ $(document).ready(function() {
 
         // Move the div back to 'html5-video-container'.
         // This is needed in Chrome after the update on 9 October 2016.
-        $(MINI_YOUTUBE_ID).appendTo('.html5-video-container');
+        var ytVideoContainerClass = '.html5-video-container';
+        var ytVideoContainer = $(ytVideoContainerClass);
+        if (!ytVideoContainer.length) {
+            ytVideoContainerClass = '.html5-video-player';
+        }
+        $(MINI_YOUTUBE_ID).appendTo(ytVideoContainerClass);
 
         // 4. Restore the width and heigh of the video
         $video.css('width', originalWidth);

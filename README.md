@@ -25,8 +25,11 @@ Edge disables side-loaded extensions whenever you restart the browser, unfortuna
 
 # Changelogs
 
+v1.2.3:
+- Minor fixes to accommodate the change of class names on the video page.
+
 v1.2.2:
-- Show alert "flash videos not supported" when a flash video is being played
+- Show alert "flash videos not supported" when a flash video is being played.
 
 v1.2.1:
 - Added option to pin the screen which would save the screen position and size for the future (even after you restart chrome).
